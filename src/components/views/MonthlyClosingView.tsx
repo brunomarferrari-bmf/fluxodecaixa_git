@@ -44,11 +44,6 @@ export const MonthlyClosingView: React.FC<MonthlyClosingViewProps> = ({
     setEndDate(defaultEndDate);
   };
 
-  const handleClearDates = () => {
-    setStartDate('');
-    setEndDate('');
-  };
-
   // Filter transactions belonging to date range
   const monthTransactions = transactions.filter((tx) => {
     if (startDate && tx.date < startDate) return false;
@@ -163,16 +158,6 @@ export const MonthlyClosingView: React.FC<MonthlyClosingViewProps> = ({
               <RotateCcw className="w-3.5 h-3.5 text-[#C19848]" />
               <span>Mês Atual</span>
             </button>
-
-            {(startDate || endDate) && (
-              <button
-                onClick={handleClearDates}
-                className="px-2.5 py-2 rounded-md bg-white hover:bg-gray-50 text-gray-500 border border-gray-200 transition-all cursor-pointer text-xs font-medium"
-                title="Limpar Filtro de Datas"
-              >
-                Limpar
-              </button>
-            )}
           </div>
         </div>
       </div>
