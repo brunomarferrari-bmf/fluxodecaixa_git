@@ -159,7 +159,7 @@ export const CalendarView: React.FC<CalendarViewProps> = ({
           </div>
           <div>
             <h2 className="text-xl font-extrabold text-gray-900 tracking-tight">
-              Calendário
+              Lançamentos
             </h2>
             <p className="text-xs text-gray-500 font-medium">
               Controle e acompanhamento do fluxo de caixa por período
