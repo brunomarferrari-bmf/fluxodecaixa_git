@@ -106,7 +106,7 @@ export interface FilterState {
   searchQuery: string;
 }
 
-export type ActiveView = 'inicio' | 'calendario' | 'semanal' | 'fechamento' | 'busca' | 'tags' | 'categorias' | 'excel' | 'recorrencias' | 'contas';
+export type ActiveView = 'inicio' | 'calendario' | 'semanal' | 'fechamento' | 'busca' | 'tags' | 'categorias' | 'excel' | 'recorrencias' | 'contas' | 'projecao';
 
 export interface ImportValidationResult {
   validRows: Array<{

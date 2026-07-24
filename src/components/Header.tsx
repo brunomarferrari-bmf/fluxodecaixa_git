@@ -3,7 +3,7 @@ import { ActiveView, UserProfile } from '../types';
 import {
   LayoutDashboard,
   Calendar,
-  PieChart,
+  TrendingUp,
   Search,
   Menu,
 } from 'lucide-react';
@@ -25,6 +25,7 @@ export const Header: React.FC<HeaderProps> = ({
 }) => {
   const navItems = [
     { id: 'calendario', label: 'Calendário', icon: Calendar },
+    { id: 'projecao', label: 'Projeção de Caixa', icon: TrendingUp },
   ] as const;
 
   return (
