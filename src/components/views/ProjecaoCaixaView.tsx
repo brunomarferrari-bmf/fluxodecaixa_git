@@ -7,10 +7,13 @@ import {
 } from '../../utils/formatters';
 import {
   TrendingUp,
-  RotateCcw,
-  Check,
-  RefreshCw,
   Wallet,
+  Building2,
+  ArrowUpRight,
+  ArrowDownRight,
+  Calendar,
+  CalendarDays,
+  RefreshCw,
 } from 'lucide-react';
 
 interface ProjecaoCaixaViewProps {
@@ -29,16 +32,6 @@ export const ProjecaoCaixaView: React.FC<ProjecaoCaixaViewProps> = ({
   // Selected Account Filter ('all' or account.id)
   const defaultAccountId = accounts.find((a) => a.isDefault)?.id || (accounts.length > 0 ? accounts[0].id : 'all');
   const [selectedAccountId, setSelectedAccountId] = useState<string>(defaultAccountId);
-
-  // Simulated Tx IDs for Parte 2
-  const [simulatedTxIds, setSimulatedTxIds] = useState<Set<string>>(new Set());
-
-  // Next 28 Days Limit Date
-  const next28DaysDate = (() => {
-    const d = new Date();
-    d.setDate(d.getDate() + 28);
-    return d.toISOString().split('T')[0];
-  })();
 
   const selectedAccount = accounts.find((a) => a.id === selectedAccountId);
 
@@ -76,35 +69,58 @@ export const ProjecaoCaixaView: React.FC<ProjecaoCaixaViewProps> = ({
     return 0;
   })();
 
-  // Filter future transactions in the next 28 days
-  const future28DaysTxs = transactions
+  // End of current week (Sunday) ISO string
+  const endOfWeekIso = (() => {
+    const now = new Date();
+    const dayOfWeek = now.getDay(); // 0 is Sun, 1 is Mon...
+    const distanceToSun = dayOfWeek === 0 ? 0 : 7 - dayOfWeek;
+    const sunDate = new Date(now);
+    sunDate.setDate(now.getDate() + distanceToSun);
+    return sunDate.toISOString().split('T')[0];
+  })();
+
+  // End of current month ISO string
+  const endOfMonthIso = (() => {
+    const now = new Date();
+    const lastDay = new Date(now.getFullYear(), now.getMonth() + 1, 0);
+    return lastDay.toISOString().split('T')[0];
+  })();
+
+  // Filter future transactions (today onwards) for selected account
+  const allFutureTxs = transactions
     .filter((tx) => {
-      if (tx.date < todayIso || tx.date > next28DaysDate) return false;
+      if (tx.date < todayIso) return false;
       if (selectedAccountId === 'all') return true;
       if (!selectedAccount) return false;
       return tx.accountId === selectedAccount.id || (!tx.accountId && selectedAccount.isDefault);
     })
     .sort((a, b) => a.date.localeCompare(b.date));
 
-  // Calculate simulated addition from selected checkboxes
-  const simulatedAddition = future28DaysTxs.reduce((sum, tx) => {
-    if (simulatedTxIds.has(tx.id)) {
-      return sum + (tx.type === 'entrada' ? tx.amount : -tx.amount);
-    }
-    return sum;
-  }, 0);
+  // Future Txs in current week
+  const futureWeekTxs = allFutureTxs.filter((tx) => tx.date <= endOfWeekIso);
+  const weekFutureEntries = futureWeekTxs.filter((t) => t.type === 'entrada').reduce((sum, t) => sum + t.amount, 0);
+  const weekFutureExits = futureWeekTxs.filter((t) => t.type === 'saida').reduce((sum, t) => sum + t.amount, 0);
+  const weekFutureNet = weekFutureEntries - weekFutureExits;
 
-  const simulatedBalance = updatedRealBalance + simulatedAddition;
+  // Future Txs in current month
+  const futureMonthTxs = allFutureTxs.filter((tx) => tx.date <= endOfMonthIso);
+  const monthFutureEntries = futureMonthTxs.filter((t) => t.type === 'entrada').reduce((sum, t) => sum + t.amount, 0);
+  const monthFutureExits = futureMonthTxs.filter((t) => t.type === 'saida').reduce((sum, t) => sum + t.amount, 0);
+  const monthFutureNet = monthFutureEntries - monthFutureExits;
 
-  const toggleSimulatedTx = (txId: string) => {
-    const next = new Set(simulatedTxIds);
-    if (next.has(txId)) {
-      next.delete(txId);
+  // Calculate Running Balance line by line
+  let currentRunningBalance = updatedRealBalance;
+  const runningBalanceTxs = allFutureTxs.map((tx) => {
+    if (tx.type === 'entrada') {
+      currentRunningBalance += tx.amount;
     } else {
-      next.add(txId);
+      currentRunningBalance -= tx.amount;
     }
-    setSimulatedTxIds(next);
-  };
+    return {
+      ...tx,
+      projectedAccountBalance: currentRunningBalance,
+    };
+  });
 
   return (
     <div className="space-y-6 animate-fade-in pb-12">
@@ -120,7 +136,7 @@ export const ProjecaoCaixaView: React.FC<ProjecaoCaixaViewProps> = ({
               Projeção de Caixa
             </h2>
             <p className="text-xs text-gray-500 font-medium">
-              Acompanhamento de saldo real atualizado e simulação para os próximos 28 dias
+              Saldo real de hoje e projeção acumulada linha a linha para lançamentos futuros
             </p>
           </div>
         </div>
@@ -133,10 +149,7 @@ export const ProjecaoCaixaView: React.FC<ProjecaoCaixaViewProps> = ({
             </label>
             <select
               value={selectedAccountId}
-              onChange={(e) => {
-                setSelectedAccountId(e.target.value);
-                setSimulatedTxIds(new Set());
-              }}
+              onChange={(e) => setSelectedAccountId(e.target.value)}
               className="bg-white border border-gray-300 rounded-md px-3 py-1.5 text-xs text-gray-900 font-medium focus:outline-none focus:ring-2 focus:ring-[#C19848]/30 focus:border-[#C19848]"
             >
               <option value="all">Todas as Contas (Consolidado)</option>
@@ -155,153 +168,222 @@ export const ProjecaoCaixaView: React.FC<ProjecaoCaixaViewProps> = ({
           <Wallet className="w-10 h-10 text-[#C19848] mx-auto" />
           <h3 className="text-base font-bold text-gray-800">Nenhuma conta cadastrada</h3>
           <p className="text-xs text-gray-500 max-w-md mx-auto">
-            Cadastre suas contas bancárias ou caixas na seção de <strong>Cadastro de Contas</strong> para visualizar o Saldo Atualizado e realizar simulações de fluxo de caixa.
+            Cadastre suas contas bancárias na seção de <strong>Cadastro de Contas</strong> para visualizar a projeção de caixa linha a linha.
           </p>
         </div>
       ) : (
         <>
-          {/* PARTE 1: SALDO ATUALIZADO (FATO) */}
-          <div className="bg-white border border-gray-200 rounded-lg p-5 shadow-xs space-y-3">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-extrabold uppercase tracking-wider text-gray-600 flex items-center gap-1.5">
-                <Wallet className="w-4 h-4 text-emerald-600" />
-                PARTE 1: SALDO ATUALIZADO (FATO)
-              </span>
-              <span className="text-[11px] text-gray-400 font-medium">
-                {selectedAccount
-                  ? `Data de referência: ${formatDateBR(selectedAccount.referenceDate)}`
-                  : 'Consolidado até a data de hoje'}
-              </span>
-            </div>
-
-            <div className="p-4 bg-emerald-50/60 border border-emerald-200 rounded-lg flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-              <div>
-                <span className="text-[11px] text-emerald-800 font-bold block uppercase tracking-wide">
-                  Saldo Atualizado {selectedAccount ? `— ${selectedAccount.nickname}` : '— Consolidado'}
+          {/* HEADER CARDS: 3 Containers (Saldo Atualizado + Semana Vigente + Mês Vigente) */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            
+            {/* Container 1: PARTE 1 - SALDO ATUALIZADO (FATO) */}
+            <div className="bg-white border border-emerald-200 rounded-lg p-5 shadow-xs flex flex-col justify-between space-y-3 relative overflow-hidden bg-emerald-50/20">
+              <div className="flex items-center justify-between">
+                <span className="text-[10px] font-extrabold uppercase tracking-wider text-emerald-800 flex items-center gap-1.5">
+                  <Wallet className="w-3.5 h-3.5 text-emerald-600" />
+                  Saldo Atualizado (Fato)
                 </span>
-                <p className={`text-2xl sm:text-3xl font-extrabold font-mono mt-0.5 ${
+                <span className="text-[10px] text-gray-400 font-medium">Hoje</span>
+              </div>
+
+              <div>
+                <span className="text-[11px] text-emerald-900 font-semibold block">
+                  {selectedAccount ? selectedAccount.nickname : 'Consolidado todas as contas'}
+                </span>
+                <p className={`text-2xl font-extrabold font-mono mt-0.5 ${
                   updatedRealBalance >= 0 ? 'text-emerald-700' : 'text-red-600'
                 }`}>
                   {formatCurrency(updatedRealBalance)}
                 </p>
               </div>
 
-              {selectedAccount && (
-                <div className="text-right text-[11px] text-gray-500 space-y-0.5">
-                  <p>Instituição: <span className="font-semibold text-gray-800">{selectedAccount.financialInstitution || 'Outros'}</span></p>
-                  <p>Titular: <span className="font-semibold text-gray-800">{selectedAccount.ownerType === 'PF' ? 'Pessoa Física' : 'Pessoa Jurídica'}</span></p>
-                  <p>Saldo de partida: <span className="font-mono font-semibold text-gray-800">{formatCurrency(selectedAccount.initialBalance)}</span></p>
-                </div>
-              )}
-            </div>
-          </div>
-
-          {/* PARTE 2: PRÓXIMOS 28 DIAS (SIMULAÇÃO) */}
-          <div className="bg-white border border-gray-200 rounded-lg p-5 shadow-xs space-y-4">
-            <div className="border-b border-gray-100 pb-3">
-              <h3 className="text-base font-bold text-gray-900 flex items-center gap-2">
-                Parte 2: Próximos 28 Dias (Simulação)
-              </h3>
-              <p className="text-xs text-gray-500 font-medium mt-0.5">
-                Selecione lançamentos futuros para simular como seu saldo pode se comportar.
-              </p>
+              <div className="pt-2 border-t border-emerald-100 flex items-center justify-between text-[10px] text-gray-500 font-medium">
+                <span>Data ref: {selectedAccount ? formatDateBR(selectedAccount.referenceDate) : formatDateBR(todayIso)}</span>
+                {selectedAccount && <span>Partida: {formatCurrency(selectedAccount.initialBalance)}</span>}
+              </div>
             </div>
 
-            {/* Simulated Balance Box */}
-            <div className="p-4 bg-amber-50/60 border border-amber-200 rounded-lg flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-              <div>
-                <span className="text-xs font-bold text-amber-900 uppercase tracking-wide block">
-                  Saldo Simulado
+            {/* Container 2: LANÇAMENTOS FUTUROS — SEMANA VIGENTE */}
+            <div className="bg-white border border-amber-200 rounded-lg p-5 shadow-xs flex flex-col justify-between space-y-3 relative overflow-hidden bg-amber-50/20">
+              <div className="flex items-center justify-between">
+                <span className="text-[10px] font-extrabold uppercase tracking-wider text-amber-900 flex items-center gap-1.5">
+                  <CalendarDays className="w-3.5 h-3.5 text-amber-600" />
+                  Futuro — Semana Vigente
                 </span>
-                <p className={`text-2xl sm:text-3xl font-extrabold font-mono mt-0.5 ${
-                  simulatedBalance >= 0 ? 'text-amber-800' : 'text-red-600'
+                <span className="text-[10px] text-amber-700 font-semibold">Até {formatDateBR(endOfWeekIso).substring(0, 5)}</span>
+              </div>
+
+              <div>
+                <span className="text-[11px] text-amber-900 font-semibold block">
+                  Resultado Previsto na Semana ({futureWeekTxs.length} lança.)
+                </span>
+                <p className={`text-2xl font-extrabold font-mono mt-0.5 ${
+                  weekFutureNet >= 0 ? 'text-emerald-600' : 'text-red-600'
                 }`}>
-                  {formatCurrency(simulatedBalance)}
-                </p>
-                <p className="text-[10px] text-amber-700 mt-1 italic font-medium">
-                  Simulação não salva. Suas seleções são apagadas ao sair desta tela.
+                  {weekFutureNet >= 0 ? '+' : ''}{formatCurrency(weekFutureNet)}
                 </p>
               </div>
 
-              {simulatedTxIds.size > 0 && (
-                <button
-                  type="button"
-                  onClick={() => setSimulatedTxIds(new Set())}
-                  className="flex items-center gap-1.5 px-3.5 py-1.5 rounded bg-amber-100 hover:bg-amber-200 text-amber-900 text-xs font-bold transition-all cursor-pointer self-start sm:self-auto shadow-2xs active:scale-95"
-                >
-                  <RotateCcw className="w-3.5 h-3.5" />
-                  <span>Limpar Seleção ({simulatedTxIds.size})</span>
-                </button>
-              )}
+              <div className="pt-2 border-t border-amber-100 flex items-center justify-between text-[10px] text-gray-500 font-medium">
+                <span className="text-emerald-600 font-semibold">Entradas: +{formatCurrency(weekFutureEntries)}</span>
+                <span className="text-red-600 font-semibold">Saídas: -{formatCurrency(weekFutureExits)}</span>
+              </div>
             </div>
 
-            {/* List of Future Transactions in the Next 28 Days */}
-            <div className="space-y-2">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-gray-600">
-                Lançamentos Futuros ({future28DaysTxs.length})
-              </h4>
+            {/* Container 3: LANÇAMENTOS FUTUROS — MÊS VIGENTE */}
+            <div className="bg-white border border-blue-200 rounded-lg p-5 shadow-xs flex flex-col justify-between space-y-3 relative overflow-hidden bg-blue-50/20">
+              <div className="flex items-center justify-between">
+                <span className="text-[10px] font-extrabold uppercase tracking-wider text-blue-900 flex items-center gap-1.5">
+                  <Calendar className="w-3.5 h-3.5 text-blue-600" />
+                  Futuro — Mês Vigente
+                </span>
+                <span className="text-[10px] text-blue-700 font-semibold">Até {formatDateBR(endOfMonthIso).substring(0, 5)}</span>
+              </div>
 
-              {future28DaysTxs.length === 0 ? (
-                <div className="p-6 text-center bg-gray-50 border border-gray-200 rounded-md text-gray-500 text-xs font-medium">
-                  Nenhum lançamento previsto para os próximos 28 dias nesta seleção.
-                </div>
-              ) : (
-                <div className="border border-gray-200 rounded-md divide-y divide-gray-100 overflow-hidden bg-white">
-                  {future28DaysTxs.map((tx) => {
-                    const isChecked = simulatedTxIds.has(tx.id);
-                    const isRecurrence = Boolean(tx.recurrenceRuleId);
+              <div>
+                <span className="text-[11px] text-blue-900 font-semibold block">
+                  Resultado Previsto no Mês ({futureMonthTxs.length} lança.)
+                </span>
+                <p className={`text-2xl font-extrabold font-mono mt-0.5 ${
+                  monthFutureNet >= 0 ? 'text-emerald-600' : 'text-red-600'
+                }`}>
+                  {monthFutureNet >= 0 ? '+' : ''}{formatCurrency(monthFutureNet)}
+                </p>
+              </div>
 
-                    return (
-                      <div
-                        key={tx.id}
-                        onClick={() => toggleSimulatedTx(tx.id)}
-                        className={`p-3.5 flex items-center justify-between gap-3 transition-colors cursor-pointer select-none ${
-                          isChecked ? 'bg-amber-50/70' : 'hover:bg-gray-50'
-                        }`}
-                      >
-                        <div className="flex items-center gap-3 min-w-0">
-                          <button
-                            type="button"
-                            className={`w-5 h-5 rounded flex items-center justify-center border transition-colors shrink-0 ${
-                              isChecked
-                                ? 'bg-[#C19848] border-[#C19848] text-[#203723]'
-                                : 'bg-white border-gray-300 text-transparent'
-                            }`}
-                          >
-                            <Check className="w-3.5 h-3.5 stroke-[3]" />
-                          </button>
+              <div className="pt-2 border-t border-blue-100 flex items-center justify-between text-[10px] text-gray-500 font-medium">
+                <span className="text-emerald-600 font-semibold">Entradas: +{formatCurrency(monthFutureEntries)}</span>
+                <span className="text-red-600 font-semibold">Saídas: -{formatCurrency(monthFutureExits)}</span>
+              </div>
+            </div>
 
-                          <div className="min-w-0">
-                            <div className="flex items-center gap-2">
-                              <p className="text-xs font-bold text-gray-900 truncate">
-                                {tx.title}
-                              </p>
-                              {isRecurrence && (
-                                <span className="inline-flex items-center gap-0.5 text-[10px] text-amber-700 bg-amber-100 px-1.5 py-0.2 rounded font-semibold" title="Gerado por recorrência">
-                                  <RefreshCw className="w-3 h-3" />
-                                  <span>Recorrente</span>
-                                </span>
-                              )}
-                            </div>
-                            <p className="text-[11px] text-gray-500">
-                              {formatDateBR(tx.date)} • {tx.category} • {tx.paymentMethod}
-                            </p>
-                          </div>
+          </div>
+
+          {/* MAIN PROJECTION LIST (LINHA A LINHA - SALDO DE CONTAS ACUMULADO) */}
+          <div className="bg-white border border-gray-200 rounded-lg p-5 shadow-xs space-y-4">
+            <div className="border-b border-gray-100 pb-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <div>
+                <h3 className="text-base font-bold text-gray-900 uppercase tracking-wide">
+                  Lista de Lançamentos Futuros — Projeção Acumulada
+                </h3>
+                <p className="text-xs text-gray-500 font-medium mt-0.5">
+                  Visualização detalhada linha a linha com a atualização automática do Saldo de Contas após cada movimento
+                </p>
+              </div>
+              <span className="text-xs font-semibold text-gray-500 bg-gray-100 px-2.5 py-1 rounded">
+                Total: {runningBalanceTxs.length} lançamentos futuros
+              </span>
+            </div>
+
+            {runningBalanceTxs.length === 0 ? (
+              <div className="p-10 text-center bg-gray-50 border border-gray-200 rounded-lg text-gray-500 text-xs font-medium space-y-1">
+                <p className="font-bold text-gray-700 text-sm">Nenhum lançamento futuro agendado</p>
+                <p>Todos os lançamentos previstos já foram realizados ou não há novas movimentações cadastradas.</p>
+              </div>
+            ) : (
+              <div className="space-y-2">
+                {runningBalanceTxs.map((tx) => {
+                  const isEntrada = tx.type === 'entrada';
+                  const isRecurrence = Boolean(tx.recurrenceRuleId);
+
+                  return (
+                    <div
+                      key={tx.id}
+                      className="bg-white border border-gray-200 hover:border-gray-300 rounded-lg p-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 transition-all shadow-2xs"
+                    >
+                      {/* Left Block: Icon + Details */}
+                      <div className="flex items-center gap-3 min-w-0">
+                        {/* Type Icon Badge */}
+                        <div
+                          className={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 ${
+                            isEntrada
+                              ? 'bg-emerald-100 text-emerald-700 border border-emerald-200'
+                              : 'bg-red-100 text-red-700 border border-red-200'
+                          }`}
+                        >
+                          {isEntrada ? (
+                            <ArrowUpRight className="w-5 h-5" />
+                          ) : (
+                            <ArrowDownRight className="w-5 h-5" />
+                          )}
                         </div>
 
-                        <div className="text-right shrink-0">
-                          <p className={`text-xs sm:text-sm font-bold font-mono ${
-                            tx.type === 'entrada' ? 'text-emerald-600' : 'text-red-600'
-                          }`}>
-                            {tx.type === 'entrada' ? '+' : '-'} {formatCurrency(tx.amount)}
+                        {/* Text Infos */}
+                        <div className="min-w-0">
+                          <div className="flex items-center gap-2 flex-wrap">
+                            <span
+                              className={`text-[10px] font-bold uppercase px-2 py-0.5 rounded ${
+                                isEntrada
+                                  ? 'bg-emerald-50 text-emerald-800 border border-emerald-200'
+                                  : 'bg-red-50 text-red-800 border border-red-200'
+                              }`}
+                            >
+                              {isEntrada ? 'Entrada' : 'Saída'}
+                            </span>
+
+                            {tx.category && (
+                              <span className="text-[10px] font-semibold text-amber-900 bg-amber-100/80 px-2 py-0.5 rounded border border-amber-200/60">
+                                {tx.category}
+                              </span>
+                            )}
+
+                            {isRecurrence && (
+                              <span
+                                className="inline-flex items-center gap-1 text-[10px] text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded font-semibold border border-amber-200"
+                                title="Gerado por regra de recorrência"
+                              >
+                                <RefreshCw className="w-3 h-3" />
+                                Recorrente
+                              </span>
+                            )}
+                          </div>
+
+                          <h4 className="text-xs font-bold text-gray-900 mt-1 truncate">
+                            {tx.title}
+                          </h4>
+
+                          <p className="text-[11px] text-gray-500 mt-0.5 font-medium">
+                            <span className="font-semibold text-gray-700">{formatDateBR(tx.date)}</span>
+                            {tx.paymentMethod ? ` • ${tx.paymentMethod}` : ''}
+                            {tx.description ? ` • ${tx.description}` : ''}
                           </p>
                         </div>
                       </div>
-                    );
-                  })}
-                </div>
-              )}
-            </div>
+
+                      {/* Right Block: Amount & Cumulative Running Account Balance */}
+                      <div className="flex items-center sm:items-end justify-between sm:justify-end gap-4 shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-gray-100">
+                        {/* Transaction Amount */}
+                        <div className="text-right">
+                          <span className="text-[9px] uppercase font-semibold text-gray-400 block">Valor</span>
+                          <p
+                            className={`text-sm sm:text-base font-extrabold font-mono ${
+                              isEntrada ? 'text-emerald-600' : 'text-red-600'
+                            }`}
+                          >
+                            {isEntrada ? '+' : '-'} {formatCurrency(tx.amount)}
+                          </p>
+                        </div>
+
+                        {/* Running Account Balance after this transaction */}
+                        <div className="text-right bg-slate-50 border border-slate-200/80 px-3 py-1.5 rounded-md">
+                          <span className="text-[9px] uppercase font-bold text-slate-500 block">
+                            Saldo de Contas
+                          </span>
+                          <p
+                            className={`text-xs sm:text-sm font-extrabold font-mono ${
+                              tx.projectedAccountBalance >= 0 ? 'text-slate-800' : 'text-red-700'
+                            }`}
+                          >
+                            {formatCurrency(tx.projectedAccountBalance)}
+                          </p>
+                        </div>
+                      </div>
+
+                    </div>
+                  );
+                })}
+              </div>
+            )}
           </div>
         </>
       )}
