@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   Transaction,
   Tag,
@@ -73,7 +73,8 @@ export default function App() {
   const [transfers, setTransfers] = useState<AccountTransfer[]>([]);
   const [userProfile, setUserProfile] = useState<UserProfile>(DEFAULT_PROFILE);
   const [dataLoading, setDataLoading] = useState(true);
-  const initialLoadedRef = useRef(false);
+  // Tracks which userId has already been loaded — prevents re-running on auth state noise
+  const loadedUserIdRef = useRef<string | null>(null);
 
   // User Profile Sidebar State
   const [isProfileOpen, setIsProfileOpen] = useState(false);
@@ -95,58 +96,58 @@ export default function App() {
     setTimeout(() => setToastMessage(''), 3500);
   };
 
-  const userId = user?.id;
-
-  // ─── Load all data from Supabase on mount ───────────────────
-  const loadAllData = useCallback(async () => {
+  // ─── Load all data — runs ONLY ONCE per unique userId ───────
+  useEffect(() => {
+    const userId = user?.id;
     if (!userId) return;
-    if (!initialLoadedRef.current) {
-      setDataLoading(true);
-    }
-    try {
-      const [fetchedRules, fetchedTags, profile, fetchedAccounts, fetchedTransfers] = await Promise.all([
-        fetchRecurrenceRules(),
-        fetchTags(),
-        fetchUserProfile(),
-        fetchAccounts(),
-        fetchAccountTransfers(),
-      ]);
+    // If we already loaded for this userId, don't run again
+    if (loadedUserIdRef.current === userId) return;
 
-      setRules(fetchedRules);
-      setTags(fetchedTags);
-      setAccounts(fetchedAccounts);
-      setTransfers(fetchedTransfers);
+    loadedUserIdRef.current = userId;
+    setDataLoading(true);
 
-      if (profile) {
-        setUserProfile(profile);
-      } else if (user) {
-        // Build profile from Google auth user data
-        const googleProfile: UserProfile = {
-          ...DEFAULT_PROFILE,
-          name: user.user_metadata?.full_name || user.email || 'Usuário',
-          email: user.email || '',
-          avatarUrl: user.user_metadata?.avatar_url || '',
-        };
-        setUserProfile(googleProfile);
-        await saveUserProfile(googleProfile);
-      }
+    const doLoad = async () => {
+      try {
+        const [fetchedRules, fetchedTags, profile, fetchedAccounts, fetchedTransfers] = await Promise.all([
+          fetchRecurrenceRules(),
+          fetchTags(),
+          fetchUserProfile(),
+          fetchAccounts(),
+          fetchAccountTransfers(),
+        ]);
 
-      // Sync recurrences (Supabase-aware)
-      if (fetchedRules.length > 0) {
-        await syncRecurrencesSupabase(fetchedRules);
+        setRules(fetchedRules);
+        setTags(fetchedTags);
+        setAccounts(fetchedAccounts);
+        setTransfers(fetchedTransfers);
+
+        if (profile) {
+          setUserProfile(profile);
+        } else {
+          const googleProfile: UserProfile = {
+            ...DEFAULT_PROFILE,
+            name: user.user_metadata?.full_name || user.email || 'Usuário',
+            email: user.email || '',
+            avatarUrl: user.user_metadata?.avatar_url || '',
+          };
+          setUserProfile(googleProfile);
+          await saveUserProfile(googleProfile);
+        }
+
+        if (fetchedRules.length > 0) {
+          await syncRecurrencesSupabase(fetchedRules);
+        }
         const allTxs = await fetchTransactions();
         setTransactions(allTxs);
-      } else {
-        const allTxs = await fetchTransactions();
-        setTransactions(allTxs);
+      } catch (err) {
+        console.error('Error loading data:', err);
+      } finally {
+        setDataLoading(false);
       }
-    } catch (err) {
-      console.error('Error loading data:', err);
-    } finally {
-      initialLoadedRef.current = true;
-      setDataLoading(false);
-    }
-  }, [userId, user]);
+    };
+
+    doLoad();
+  }, [user]);
 
   // ─── Accounts & Transfers Handlers ────────────────────────────
   const handleSaveAccount = async (account: Account) => {
@@ -169,10 +170,6 @@ export default function App() {
     setAccounts(updated);
     showToast('Conta excluída com sucesso!');
   };
-
-  useEffect(() => {
-    loadAllData();
-  }, [loadAllData]);
 
   // ─── Profile ─────────────────────────────────────────────────
   const handleSaveProfile = async (updatedProfile: UserProfile) => {
