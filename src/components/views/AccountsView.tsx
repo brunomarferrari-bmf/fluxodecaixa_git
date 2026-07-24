@@ -35,10 +35,6 @@ export const AccountsView: React.FC<AccountsViewProps> = ({
 }) => {
   const todayIso = getTodayISO();
 
-  // Navigation mode inside accounts view
-  const [subMode, setSubMode] = useState<ViewSubMode>('list');
-  const [selectedAccountId, setSelectedAccountId] = useState<string | null>(null);
-
   // Form states for new/edit account
   const [editingAccount, setEditingAccount] = useState<Account | null>(null);
   const [nickname, setNickname] = useState('');
@@ -55,9 +51,6 @@ export const AccountsView: React.FC<AccountsViewProps> = ({
   const [transferAmount, setTransferAmount] = useState('');
   const [transferDate, setTransferDate] = useState(todayIso);
   const [transferError, setTransferError] = useState('');
-
-  // State for 28-day simulation checkboxes
-  const [simulatedTxIds, setSimulatedTxIds] = useState<Set<string>>(new Set());
 
   // ─── Helper: calculate updated real balance for an account ───
   const calculateAccountBalance = (account: Account, untilDate: string = todayIso) => {
