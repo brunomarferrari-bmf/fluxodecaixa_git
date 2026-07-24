@@ -421,6 +421,8 @@ export async function deleteAccount(id: string): Promise<void> {
   } catch {
     // Ignore error if table not created
   }
+}
+
 export async function fetchAccountTransfers(): Promise<AccountTransfer[]> {
   try {
     const { data, error } = await supabase
