@@ -411,15 +411,16 @@ export async function upsertAccounts(accounts: Account[]): Promise<void> {
 export async function deleteAccount(id: string): Promise<void> {
   const current = await fetchAccounts();
   const updated = current.filter(a => a.id !== id);
+  if (updated.length > 0 && !updated.some(a => a.isDefault)) {
+    updated[0].isDefault = true;
+  }
   localStorage.setItem(LOCAL_STORAGE_ACCOUNTS, JSON.stringify(updated));
 
   try {
     await supabase.from('accounts').delete().eq('id', id);
   } catch {
-    // Ignore
+    // Ignore error if table not created
   }
-}
-
 export async function fetchAccountTransfers(): Promise<AccountTransfer[]> {
   try {
     const { data, error } = await supabase

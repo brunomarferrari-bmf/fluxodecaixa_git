@@ -27,6 +27,7 @@ import {
   saveUserProfile,
   fetchAccounts,
   upsertAccount,
+  deleteAccount as dbDeleteAccount,
   fetchAccountTransfers,
   upsertAccountTransfer,
 } from './services/database';
@@ -157,6 +158,13 @@ export default function App() {
     const updated = await fetchAccountTransfers();
     setTransfers(updated);
     showToast('Transferência realizada com sucesso!');
+  };
+
+  const handleDeleteAccount = async (id: string) => {
+    await dbDeleteAccount(id);
+    const updated = await fetchAccounts();
+    setAccounts(updated);
+    showToast('Conta excluída com sucesso!');
   };
 
   useEffect(() => {
@@ -541,6 +549,7 @@ export default function App() {
             transactions={transactions}
             onSaveAccount={handleSaveAccount}
             onSaveTransfer={handleSaveTransfer}
+            onDeleteAccount={handleDeleteAccount}
             onNavigateView={setActiveView}
           />
         )}
