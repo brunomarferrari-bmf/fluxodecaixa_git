@@ -14,6 +14,7 @@ import {
 } from '../../utils/formatters';
 import { exportTransactionsToExcel } from '../../utils/excel';
 import {
+  Database,
   Search,
   Filter,
   RotateCcw,
