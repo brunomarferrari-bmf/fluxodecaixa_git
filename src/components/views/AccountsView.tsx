@@ -334,7 +334,7 @@ export const AccountsView: React.FC<AccountsViewProps> = ({
                 return (
                   <div
                     key={acc.id}
-                    onClick={() => handleOpenDetail(acc.id)}
+                    onClick={() => handleOpenEditAccount(acc)}
                     className="bg-white border border-gray-200 hover:border-[#C19848]/60 hover:shadow-md rounded-lg p-5 transition-all cursor-pointer flex flex-col justify-between relative group"
                   >
                     <div>
@@ -365,7 +365,9 @@ export const AccountsView: React.FC<AccountsViewProps> = ({
                       <span className="inline-block text-[10px] uppercase font-semibold text-gray-400 bg-gray-100 px-2 py-0.5 rounded">
                         {acc.ownerType === 'PF' ? 'Pessoa Física (PF)' : 'Pessoa Jurídica (PJ)'}
                       </span>
-                      {/* Updated Balance Section */}
+                    </div>
+
+                    {/* Updated Balance Section */}
                     <div className="mt-6 pt-4 border-t border-gray-100 flex items-end justify-between gap-2">
                       <div>
                         <span className="text-[10px] text-gray-400 uppercase font-semibold block">
