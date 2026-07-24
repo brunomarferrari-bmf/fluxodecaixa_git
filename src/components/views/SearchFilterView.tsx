@@ -21,6 +21,11 @@ import {
   ArrowDownRight,
   Download,
   RefreshCw,
+  Scale,
+  TrendingUp,
+  TrendingDown,
+  Grid,
+  CreditCard,
 } from 'lucide-react';
 
 interface SearchFilterViewProps {
@@ -102,16 +107,39 @@ export const SearchFilterView: React.FC<SearchFilterViewProps> = ({
     return true;
   });
 
-  // Totals for filtered transactions
-  const totalEntries = filteredTransactions
-    .filter((tx) => tx.type === 'entrada')
-    .reduce((sum, tx) => sum + tx.amount, 0);
+  // Filtered Lists & Totals
+  const filteredEntriesList = filteredTransactions.filter((tx) => tx.type === 'entrada');
+  const filteredExitsList = filteredTransactions.filter((tx) => tx.type === 'saida');
 
-  const totalExits = filteredTransactions
-    .filter((tx) => tx.type === 'saida')
-    .reduce((sum, tx) => sum + tx.amount, 0);
-
+  const totalEntries = filteredEntriesList.reduce((sum, tx) => sum + tx.amount, 0);
+  const totalExits = filteredExitsList.reduce((sum, tx) => sum + tx.amount, 0);
   const netFilteredBalance = totalEntries - totalExits;
+
+  // Category breakdown for filtered exits
+  const categoryExitsMap: Record<string, number> = {};
+  filteredExitsList.forEach((tx) => {
+    categoryExitsMap[tx.category] = (categoryExitsMap[tx.category] || 0) + tx.amount;
+  });
+
+  // Category breakdown for filtered entries
+  const categoryEntriesMap: Record<string, number> = {};
+  filteredEntriesList.forEach((tx) => {
+    categoryEntriesMap[tx.category] = (categoryEntriesMap[tx.category] || 0) + tx.amount;
+  });
+
+  // Payment methods breakdown for filtered transactions
+  const paymentMethodMap: Record<string, { entries: number; exits: number }> = {};
+  filteredTransactions.forEach((tx) => {
+    const method = tx.paymentMethod || 'Outros';
+    if (!paymentMethodMap[method]) {
+      paymentMethodMap[method] = { entries: 0, exits: 0 };
+    }
+    if (tx.type === 'entrada') {
+      paymentMethodMap[method].entries += tx.amount;
+    } else {
+      paymentMethodMap[method].exits += tx.amount;
+    }
+  });
 
   const handleExportExcel = () => {
     exportTransactionsToExcel(
@@ -264,35 +292,186 @@ export const SearchFilterView: React.FC<SearchFilterViewProps> = ({
         </div>
       </div>
 
-      {/* Filtered Results Summary Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div className="p-4 rounded-lg bg-white border border-gray-200 flex justify-between items-center shadow-xs">
-          <div>
-            <span className="text-[10px] font-semibold uppercase text-gray-500">Resultado dos Filtros</span>
-            <p className={`text-xl font-bold font-mono mt-0.5 ${
-              netFilteredBalance >= 0 ? 'text-emerald-600' : 'text-red-600'
+      {/* Main KPI Cards (Matching Dashboard style for Filtered Results) */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        
+        {/* Resultado dos Filtros */}
+        <div className="p-5 rounded-lg bg-white border border-gray-200 shadow-xs">
+          <div className="flex items-center justify-between">
+            <span className="text-[11px] font-semibold uppercase tracking-wider text-gray-500">
+              Resultado dos Filtros
+            </span>
+            <div className={`w-8 h-8 rounded-md flex items-center justify-center ${
+              netFilteredBalance >= 0 ? 'bg-emerald-50 text-emerald-600' : 'bg-red-50 text-red-600'
             }`}>
-              {formatCurrency(netFilteredBalance)}
-            </p>
+              <Scale className="w-4 h-4" />
+            </div>
           </div>
-          <span className="text-xs font-semibold text-gray-600 bg-gray-100 px-2.5 py-1 rounded-md">
-            {filteredTransactions.length} item(s)
-          </span>
+          <p className={`text-2xl sm:text-3xl font-bold font-mono mt-2 ${
+            netFilteredBalance >= 0 ? 'text-emerald-600' : 'text-red-600'
+          }`}>
+            {formatCurrency(netFilteredBalance)}
+          </p>
+          <p className="text-[11px] text-gray-500 mt-1.5 font-medium">
+            {filteredTransactions.length} item(s) selecionado(s) pelos filtros
+          </p>
         </div>
 
-        <div className="p-4 rounded-lg bg-white border border-gray-200 shadow-xs">
-          <span className="text-[10px] font-semibold uppercase text-gray-500">Total Entradas Filtradas</span>
-          <p className="text-xl font-bold font-mono text-emerald-600 mt-0.5">
+        {/* Total Entradas Filtradas */}
+        <div className="p-5 rounded-lg bg-white border border-gray-200 shadow-xs">
+          <div className="flex items-center justify-between">
+            <span className="text-[11px] font-semibold uppercase tracking-wider text-gray-500">
+              Total de Entradas
+            </span>
+            <div className="w-8 h-8 rounded-md bg-emerald-50 text-emerald-600 flex items-center justify-center">
+              <TrendingUp className="w-4 h-4" />
+            </div>
+          </div>
+          <p className="text-2xl sm:text-3xl font-bold font-mono text-emerald-600 mt-2">
             +{formatCurrency(totalEntries)}
           </p>
-        </div>
-
-        <div className="p-4 rounded-lg bg-white border border-gray-200 shadow-xs">
-          <span className="text-[10px] font-semibold uppercase text-gray-500">Total Saídas Filtradas</span>
-          <p className="text-xl font-bold font-mono text-red-600 mt-0.5">
-            -{formatCurrency(totalExits)}
+          <p className="text-[11px] text-gray-500 mt-1.5 font-medium">
+            {filteredEntriesList.length} recebimento(s)
           </p>
         </div>
+
+        {/* Total Saídas Filtradas */}
+        <div className="p-5 rounded-lg bg-white border border-gray-200 shadow-xs">
+          <div className="flex items-center justify-between">
+            <span className="text-[11px] font-semibold uppercase tracking-wider text-gray-500">
+              Total de Saídas
+            </span>
+            <div className="w-8 h-8 rounded-md bg-red-50 text-red-600 flex items-center justify-center">
+              <TrendingDown className="w-4 h-4" />
+            </div>
+          </div>
+          <p className="text-2xl sm:text-3xl font-bold font-mono text-red-600 mt-2">
+            -{formatCurrency(totalExits)}
+          </p>
+          <p className="text-[11px] text-gray-500 mt-1.5 font-medium">
+            {filteredExitsList.length} pagamento(s)
+          </p>
+        </div>
+
+      </div>
+
+      {/* Breakdowns Section (Category Exits & Entries) */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        
+        {/* Category Breakdown (Despesas / Saídas Filtradas) */}
+        <div className="bg-white border border-gray-200 rounded-lg p-5 shadow-xs space-y-4">
+          <div className="flex items-center gap-2 text-red-600 font-bold text-xs uppercase tracking-wider">
+            <Grid className="w-4 h-4" />
+            <span>Detalhamento de Saídas por Categoria</span>
+          </div>
+
+          {Object.keys(categoryExitsMap).length === 0 ? (
+            <p className="text-xs text-gray-400 py-6 text-center font-medium">Sem saídas nos filtros selecionados.</p>
+          ) : (
+            <div className="space-y-3">
+              {Object.entries(categoryExitsMap)
+                .sort((a, b) => b[1] - a[1])
+                .map(([cat, val]) => {
+                  const percent = totalExits > 0 ? (val / totalExits) * 100 : 0;
+                  return (
+                    <div key={cat} className="space-y-1">
+                      <div className="flex justify-between text-xs font-semibold">
+                        <span className="text-gray-800">{cat}</span>
+                        <span className="font-mono text-red-600">{formatCurrency(val)} ({percent.toFixed(1)}%)</span>
+                      </div>
+                      <div className="w-full bg-gray-100 rounded-full h-2 overflow-hidden">
+                        <div
+                          className="bg-red-500 h-2 rounded-full transition-all duration-500"
+                          style={{ width: `${percent}%` }}
+                        />
+                      </div>
+                    </div>
+                  );
+                })}
+            </div>
+          )}
+        </div>
+
+        {/* Category Breakdown (Receitas / Entradas Filtradas) */}
+        <div className="bg-white border border-gray-200 rounded-lg p-5 shadow-xs space-y-4">
+          <div className="flex items-center gap-2 text-emerald-600 font-bold text-xs uppercase tracking-wider">
+            <Grid className="w-4 h-4" />
+            <span>Detalhamento de Entradas por Categoria</span>
+          </div>
+
+          {Object.keys(categoryEntriesMap).length === 0 ? (
+            <p className="text-xs text-gray-400 py-6 text-center font-medium">Sem entradas nos filtros selecionados.</p>
+          ) : (
+            <div className="space-y-3">
+              {Object.entries(categoryEntriesMap)
+                .sort((a, b) => b[1] - a[1])
+                .map(([cat, val]) => {
+                  const percent = totalEntries > 0 ? (val / totalEntries) * 100 : 0;
+                  return (
+                    <div key={cat} className="space-y-1">
+                      <div className="flex justify-between text-xs font-semibold">
+                        <span className="text-gray-800">{cat}</span>
+                        <span className="font-mono text-emerald-600">{formatCurrency(val)} ({percent.toFixed(1)}%)</span>
+                      </div>
+                      <div className="w-full bg-gray-100 rounded-full h-2 overflow-hidden">
+                        <div
+                          className="bg-emerald-500 h-2 rounded-full transition-all duration-500"
+                          style={{ width: `${percent}%` }}
+                        />
+                      </div>
+                    </div>
+                  );
+                })}
+            </div>
+          )}
+        </div>
+
+      </div>
+
+      {/* Payment Method Distribution Table */}
+      <div className="bg-white border border-gray-200 rounded-lg p-5 shadow-xs space-y-4">
+        <div className="flex items-center gap-2 text-[#C19848] font-bold text-xs uppercase tracking-wider">
+          <CreditCard className="w-4 h-4" />
+          <span>Movimentação por Forma de Pagamento</span>
+        </div>
+
+        {Object.keys(paymentMethodMap).length === 0 ? (
+          <p className="text-xs text-gray-400 py-4 text-center font-medium">Sem movimentação nos filtros selecionados.</p>
+        ) : (
+          <div className="overflow-x-auto border border-gray-200 rounded-md">
+            <table className="w-full text-left text-xs">
+              <thead className="bg-gray-50 text-gray-500 uppercase tracking-wider text-[10px] font-semibold border-b border-gray-200">
+                <tr>
+                  <th className="p-3">Forma de Pagamento</th>
+                  <th className="p-3 text-right">Entradas (R$)</th>
+                  <th className="p-3 text-right">Saídas (R$)</th>
+                  <th className="p-3 text-right">Líquido (R$)</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-100 text-gray-800">
+                {Object.entries(paymentMethodMap).map(([method, data]) => {
+                  const net = data.entries - data.exits;
+                  return (
+                    <tr key={method} className="hover:bg-gray-50/80">
+                      <td className="p-3 font-semibold text-gray-900">{method}</td>
+                      <td className="p-3 text-right font-mono text-emerald-600 font-semibold">
+                        +{formatCurrency(data.entries)}
+                      </td>
+                      <td className="p-3 text-right font-mono text-red-600 font-semibold">
+                        -{formatCurrency(data.exits)}
+                      </td>
+                      <td className={`p-3 text-right font-mono font-bold ${
+                        net >= 0 ? 'text-emerald-600' : 'text-red-600'
+                      }`}>
+                        {formatCurrency(net)}
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        )}
       </div>
 
       {/* Results List */}
