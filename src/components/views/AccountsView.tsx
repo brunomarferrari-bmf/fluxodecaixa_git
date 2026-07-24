@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { Account, AccountTransfer, Transaction } from '../../types';
+import { ActiveView, Account, AccountTransfer, Transaction } from '../../types';
 import { formatCurrency, formatDateBR, getTodayISO, generateUniqueId } from '../../utils/formatters';
 import {
   Wallet,
@@ -10,11 +9,9 @@ import {
   Building2,
   User,
   AlertCircle,
-  RefreshCw,
-  Info,
-  RotateCcw,
-  Check,
   ShieldCheck,
+  TrendingUp,
+  Edit2,
 } from 'lucide-react';
 
 interface AccountsViewProps {
@@ -23,9 +20,10 @@ interface AccountsViewProps {
   transactions: Transaction[];
   onSaveAccount: (account: Account) => Promise<void>;
   onSaveTransfer: (transfer: AccountTransfer) => Promise<void>;
+  onNavigateView?: (view: ActiveView) => void;
 }
 
-type ViewSubMode = 'list' | 'new' | 'edit' | 'transfer' | 'detail';
+type ViewSubMode = 'list' | 'new' | 'edit' | 'transfer';
 
 export const AccountsView: React.FC<AccountsViewProps> = ({
   accounts,
@@ -33,6 +31,7 @@ export const AccountsView: React.FC<AccountsViewProps> = ({
   transactions,
   onSaveAccount,
   onSaveTransfer,
+  onNavigateView,
 }) => {
   const todayIso = getTodayISO();
 
@@ -370,15 +369,12 @@ export const AccountsView: React.FC<AccountsViewProps> = ({
                       <span className="inline-block text-[10px] uppercase font-semibold text-gray-400 bg-gray-100 px-2 py-0.5 rounded">
                         {acc.ownerType === 'PF' ? 'Pessoa Física (PF)' : 'Pessoa Jurídica (PJ)'}
                       </span>
-                    </div>
-
-                    {/* Updated Balance Section */}
-                    <div className="mt-6 pt-4 border-t border-gray-100 flex items-end justify-between">
+                      {/* Updated Balance Section */}
+                    <div className="mt-6 pt-4 border-t border-gray-100 flex items-end justify-between gap-2">
                       <div>
                         <span className="text-[10px] text-gray-400 uppercase font-semibold block">
                           Saldo Atualizado
                         </span>
-                        {/* Neutral Red for negative balance exception as per Section 2.1 */}
                         <p className={`text-xl font-bold font-mono ${
                           isNegative ? 'text-slate-800 bg-slate-100 px-1.5 py-0.5 rounded inline-block mt-0.5' : 'text-emerald-700'
                         }`}>
@@ -386,9 +382,34 @@ export const AccountsView: React.FC<AccountsViewProps> = ({
                         </p>
                       </div>
 
-                      <div className="flex items-center gap-1 text-xs font-semibold text-[#C19848] group-hover:translate-x-1 transition-transform">
-                        <span>Detalhes</span>
-                        <ChevronRight className="w-4 h-4" />
+                      <div className="flex items-center gap-1.5 shrink-0">
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleOpenEditAccount(acc);
+                          }}
+                          className="px-2.5 py-1.5 rounded bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs font-semibold flex items-center gap-1 transition-colors cursor-pointer"
+                          title="Editar esta conta"
+                        >
+                          <Edit2 className="w-3.5 h-3.5" />
+                          <span>Editar</span>
+                        </button>
+
+                        {onNavigateView && (
+                          <button
+                            type="button"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              onNavigateView('projecao');
+                            }}
+                            className="px-2.5 py-1.5 rounded bg-[#C19848] hover:bg-[#C19848]/90 text-[#203723] text-xs font-bold flex items-center gap-1 transition-colors cursor-pointer shadow-2xs"
+                            title="Ver Projeção de Caixa"
+                          >
+                            <TrendingUp className="w-3.5 h-3.5" />
+                            <span>Projeção</span>
+                          </button>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -692,176 +713,6 @@ export const AccountsView: React.FC<AccountsViewProps> = ({
               </button>
             </div>
           </form>
-        </div>
-      )}
-
-      {/* ==================== SUB-VIEW 4: DETALHE DA CONTA & SIMULAÇÃO 28 DIAS ==================== */}
-      {subMode === 'detail' && selectedAccount && (
-        <div className="space-y-6">
-          {/* Header Bar */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white border border-gray-200 p-5 rounded-lg shadow-xs">
-            <div className="flex items-center gap-3">
-              <button
-                type="button"
-                onClick={() => setSubMode('list')}
-                className="p-1.5 rounded-lg text-gray-500 hover:bg-gray-100 transition-colors cursor-pointer"
-                title="Voltar à lista"
-              >
-                <ArrowLeft className="w-5 h-5" />
-              </button>
-              <div>
-                <div className="flex items-center gap-2">
-                  <h2 className="text-xl font-extrabold text-gray-900 tracking-tight">
-                    {selectedAccount.nickname}
-                  </h2>
-                  {selectedAccount.isDefault && accounts.length >= 2 && (
-                    <span className="text-[10px] bg-[#E4D8BE]/30 text-[#203723] px-2 py-0.5 rounded font-bold border border-[#C19848]/30">
-                      Conta padrão
-                    </span>
-                  )}
-                </div>
-                <p className="text-xs text-gray-500 font-medium">
-                  {selectedAccount.financialInstitution || 'Instituição não informada'} • {selectedAccount.ownerType === 'PF' ? 'Pessoa Física' : 'Pessoa Jurídica'}
-                </p>
-              </div>
-            </div>
-
-            <button
-              type="button"
-              onClick={() => handleOpenEditAccount(selectedAccount)}
-              className="px-3.5 py-2 rounded-md bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs font-semibold transition-colors cursor-pointer"
-            >
-              Editar Conta
-            </button>
-          </div>
-
-          {/* PARTE 1: SALDO ATUALIZADO (FATO) */}
-          <div className="bg-white border border-gray-200 rounded-lg p-5 shadow-xs space-y-2">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-bold uppercase tracking-wider text-gray-500">
-                Parte 1: Saldo Atualizado (Fato)
-              </span>
-              <span className="text-[11px] text-gray-400">
-                Data de referência: {formatDateBR(selectedAccount.referenceDate)}
-              </span>
-            </div>
-
-            <div className="p-4 bg-emerald-50/60 border border-emerald-200 rounded-lg flex items-center justify-between">
-              <div>
-                <span className="text-[11px] text-emerald-800 font-semibold block">Saldo Atualizado</span>
-                <p className="text-2xl font-extrabold font-mono text-emerald-700 mt-0.5">
-                  {formatCurrency(updatedRealBalance)}
-                </p>
-              </div>
-              <div className="text-right text-[11px] text-gray-500 space-y-0.5">
-                <p>Saldo de partida: <span className="font-mono font-semibold">{formatCurrency(selectedAccount.initialBalance)}</span></p>
-              </div>
-            </div>
-          </div>
-
-          {/* PARTE 2: PRÓXIMOS 28 DIAS (HIPÓTESE, SOB DEMANDA) */}
-          <div className="bg-white border border-gray-200 rounded-lg p-5 shadow-xs space-y-4">
-            <div className="border-b border-gray-100 pb-3">
-              <h3 className="text-base font-bold text-gray-900">
-                Parte 2: Próximos 28 Dias (Simulação)
-              </h3>
-              <p className="text-xs text-gray-500 font-medium mt-0.5">
-                Selecione lançamentos futuros para simular como seu saldo pode se comportar.
-              </p>
-            </div>
-
-            {/* Simulated Balance Box */}
-            <div className="p-4 bg-amber-50/50 border border-amber-200 rounded-lg flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-              <div>
-                <span className="text-xs font-bold text-amber-900 block">Saldo Simulado</span>
-                <p className="text-2xl font-extrabold font-mono text-amber-800 mt-0.5">
-                  {formatCurrency(simulatedBalance)}
-                </p>
-                <p className="text-[10px] text-amber-700 mt-1 italic">
-                  Simulação não salva. Suas seleções são apagadas ao sair desta tela.
-                </p>
-              </div>
-
-              {simulatedTxIds.size > 0 && (
-                <button
-                  type="button"
-                  onClick={() => setSimulatedTxIds(new Set())}
-                  className="flex items-center gap-1.5 px-3 py-1.5 rounded bg-amber-100 hover:bg-amber-200 text-amber-900 text-xs font-semibold transition-colors cursor-pointer self-start sm:self-auto"
-                >
-                  <RotateCcw className="w-3.5 h-3.5" />
-                  <span>Limpar Seleção ({simulatedTxIds.size})</span>
-                </button>
-              )}
-            </div>
-
-            {/* List of Future Transactions in the Next 28 Days */}
-            <div className="space-y-2">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-gray-500">
-                Lançamentos Futuros ({future28DaysTxs.length})
-              </h4>
-
-              {future28DaysTxs.length === 0 ? (
-                <div className="p-6 text-center bg-gray-50 border border-gray-200 rounded-md text-gray-500 text-xs font-medium">
-                  Nenhum lançamento previsto para os próximos 28 dias nesta conta.
-                </div>
-              ) : (
-                <div className="border border-gray-200 rounded-md divide-y divide-gray-100 overflow-hidden bg-white">
-                  {future28DaysTxs.map((tx) => {
-                    const isChecked = simulatedTxIds.has(tx.id);
-                    const isRecurrence = Boolean(tx.recurrenceRuleId);
-
-                    return (
-                      <div
-                        key={tx.id}
-                        onClick={() => toggleSimulatedTx(tx.id)}
-                        className={`p-3 flex items-center justify-between gap-3 transition-colors cursor-pointer select-none ${
-                          isChecked ? 'bg-amber-50/60' : 'hover:bg-gray-50'
-                        }`}
-                      >
-                        <div className="flex items-center gap-3 min-w-0">
-                          <button
-                            type="button"
-                            className={`w-5 h-5 rounded flex items-center justify-center border transition-colors shrink-0 ${
-                              isChecked
-                                ? 'bg-[#C19848] border-[#C19848] text-[#203723]'
-                                : 'bg-white border-gray-300 text-transparent'
-                            }`}
-                          >
-                            <Check className="w-3.5 h-3.5 stroke-[3]" />
-                          </button>
-
-                          <div className="min-w-0">
-                            <div className="flex items-center gap-2">
-                              <p className="text-xs font-bold text-gray-900 truncate">
-                                {tx.title}
-                              </p>
-                              {isRecurrence && (
-                                <span className="inline-flex items-center gap-0.5 text-[10px] text-amber-700 bg-amber-100 px-1.5 py-0.2 rounded font-semibold" title="Gerado por recorrência">
-                                  <RefreshCw className="w-3 h-3" />
-                                  <span>Recorrente</span>
-                                </span>
-                              )}
-                            </div>
-                            <p className="text-[11px] text-gray-500">
-                              {formatDateBR(tx.date)} • {tx.category}
-                            </p>
-                          </div>
-                        </div>
-
-                        <div className="text-right shrink-0">
-                          <p className={`text-xs font-bold font-mono ${
-                            tx.type === 'entrada' ? 'text-emerald-600' : 'text-red-600'
-                          }`}>
-                            {tx.type === 'entrada' ? '+' : '-'} {formatCurrency(tx.amount)}
-                          </p>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              )}
-            </div>
-          </div>
         </div>
       )}
     </div>
