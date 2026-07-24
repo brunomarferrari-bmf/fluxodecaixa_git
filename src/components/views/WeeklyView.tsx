@@ -404,21 +404,8 @@ export const WeeklyView: React.FC<WeeklyViewProps> = ({
             </div>
           </div>
 
-          {/* Daily Metrics Cards */}
+          {/* Daily Metrics Cards (Reordered: Entradas, Saídas, Saldo do Dia, Saldo das Contas) */}
           <div className={`grid grid-cols-1 ${accounts.length > 0 ? 'sm:grid-cols-4' : 'sm:grid-cols-3'} gap-3`}>
-            <div className={`p-3.5 rounded-md border ${
-              activeDayData.balance >= 0
-                ? 'bg-emerald-50 border-emerald-200 text-emerald-800'
-                : 'bg-red-50 border-red-200 text-red-800'
-            }`}>
-              <span className="text-[10px] uppercase font-semibold tracking-wider text-gray-500">Saldo do Dia</span>
-              <p className={`text-xl font-bold font-mono mt-1 ${
-                activeDayData.balance >= 0 ? 'text-emerald-700' : 'text-red-700'
-              }`}>
-                {formatCurrency(activeDayData.balance)}
-              </p>
-            </div>
-
             <div className="p-3.5 rounded-md bg-gray-50 border border-gray-200">
               <span className="text-[10px] uppercase font-semibold tracking-wider text-gray-500">Total de Entradas</span>
               <p className="text-xl font-bold font-mono text-emerald-600 mt-1">
@@ -430,6 +417,19 @@ export const WeeklyView: React.FC<WeeklyViewProps> = ({
               <span className="text-[10px] uppercase font-semibold tracking-wider text-gray-500">Total de Saídas</span>
               <p className="text-xl font-bold font-mono text-red-600 mt-1">
                 {formatCurrency(activeDayData.exits)}
+              </p>
+            </div>
+
+            <div className={`p-3.5 rounded-md border ${
+              activeDayData.balance >= 0
+                ? 'bg-emerald-50 border-emerald-200 text-emerald-800'
+                : 'bg-red-50 border-red-200 text-red-800'
+            }`}>
+              <span className="text-[10px] uppercase font-semibold tracking-wider text-gray-500">Saldo do Dia</span>
+              <p className={`text-xl font-bold font-mono mt-1 ${
+                activeDayData.balance >= 0 ? 'text-emerald-700' : 'text-red-700'
+              }`}>
+                {formatCurrency(activeDayData.balance)}
               </p>
             </div>
 
