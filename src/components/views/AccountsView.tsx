@@ -35,6 +35,9 @@ export const AccountsView: React.FC<AccountsViewProps> = ({
 }) => {
   const todayIso = getTodayISO();
 
+  // Navigation mode inside accounts view
+  const [subMode, setSubMode] = useState<ViewSubMode>('list');
+
   // Form states for new/edit account
   const [editingAccount, setEditingAccount] = useState<Account | null>(null);
   const [nickname, setNickname] = useState('');
