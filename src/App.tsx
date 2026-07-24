@@ -49,6 +49,7 @@ import { ExcelView } from './components/views/ExcelView';
 import { TagsManagementView } from './components/views/TagsManagementView';
 import { RecurrencesView } from './components/views/RecurrencesView';
 import { AccountsView } from './components/views/AccountsView';
+import { ProjecaoCaixaView } from './components/views/ProjecaoCaixaView';
 
 const DEFAULT_PROFILE: UserProfile = {
   name: 'Administrador',
@@ -540,6 +541,15 @@ export default function App() {
             transactions={transactions}
             onSaveAccount={handleSaveAccount}
             onSaveTransfer={handleSaveTransfer}
+            onNavigateView={setActiveView}
+          />
+        )}
+
+        {activeView === 'projecao' && (
+          <ProjecaoCaixaView
+            transactions={transactions}
+            accounts={accounts}
+            transfers={transfers}
           />
         )}
 
