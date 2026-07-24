@@ -73,6 +73,7 @@ export default function App() {
   const [transfers, setTransfers] = useState<AccountTransfer[]>([]);
   const [userProfile, setUserProfile] = useState<UserProfile>(DEFAULT_PROFILE);
   const [dataLoading, setDataLoading] = useState(true);
+  const initialLoadedRef = useRef(false);
 
   // User Profile Sidebar State
   const [isProfileOpen, setIsProfileOpen] = useState(false);
@@ -94,10 +95,14 @@ export default function App() {
     setTimeout(() => setToastMessage(''), 3500);
   };
 
+  const userId = user?.id;
+
   // ─── Load all data from Supabase on mount ───────────────────
   const loadAllData = useCallback(async () => {
-    if (!user) return;
-    setDataLoading(true);
+    if (!userId) return;
+    if (!initialLoadedRef.current) {
+      setDataLoading(true);
+    }
     try {
       const [fetchedRules, fetchedTags, profile, fetchedAccounts, fetchedTransfers] = await Promise.all([
         fetchRecurrenceRules(),
@@ -114,7 +119,7 @@ export default function App() {
 
       if (profile) {
         setUserProfile(profile);
-      } else {
+      } else if (user) {
         // Build profile from Google auth user data
         const googleProfile: UserProfile = {
           ...DEFAULT_PROFILE,
@@ -128,12 +133,9 @@ export default function App() {
 
       // Sync recurrences (Supabase-aware)
       if (fetchedRules.length > 0) {
-        const newTxs = await syncRecurrencesSupabase(fetchedRules);
+        await syncRecurrencesSupabase(fetchedRules);
         const allTxs = await fetchTransactions();
         setTransactions(allTxs);
-        if (newTxs.length > 0) {
-          // transactions already saved by syncRecurrencesSupabase
-        }
       } else {
         const allTxs = await fetchTransactions();
         setTransactions(allTxs);
@@ -141,9 +143,10 @@ export default function App() {
     } catch (err) {
       console.error('Error loading data:', err);
     } finally {
+      initialLoadedRef.current = true;
       setDataLoading(false);
     }
-  }, [user]);
+  }, [userId, user]);
 
   // ─── Accounts & Transfers Handlers ────────────────────────────
   const handleSaveAccount = async (account: Account) => {
