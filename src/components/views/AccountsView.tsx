@@ -273,7 +273,7 @@ export const AccountsView: React.FC<AccountsViewProps> = ({
               </div>
               <div>
                 <h2 className="text-xl font-extrabold text-gray-900 tracking-tight">
-                  Gestão de Contas
+                  Cadastro de Contas
                 </h2>
                 <p className="text-xs text-gray-500 font-medium">
                   Acompanhamento do estoque real de dinheiro por conta bancária e caixa

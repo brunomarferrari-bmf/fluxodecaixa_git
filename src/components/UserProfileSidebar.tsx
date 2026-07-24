@@ -223,7 +223,7 @@ export const UserProfileSidebar: React.FC<UserProfileSidebarProps> = ({
 
             {/* Navigation Shortcut Options Section */}
             <div className="space-y-2 pt-2 border-t border-gray-100">
-              {/* Gestão de Contas */}
+              {/* Cadastro de Contas */}
               <button
                 type="button"
                 onClick={() => {
@@ -235,7 +235,7 @@ export const UserProfileSidebar: React.FC<UserProfileSidebarProps> = ({
                 <div className="flex items-center gap-2.5">
                   <Wallet className="w-4 h-4 text-[#C19848]" />
                   <span className="text-xs font-semibold text-gray-800 group-hover:text-[#203723]">
-                    Gestão de Contas
+                    Cadastro de Contas
                   </span>
                 </div>
                 <ChevronRight className="w-3.5 h-3.5 text-gray-400 group-hover:text-[#C19848]" />
