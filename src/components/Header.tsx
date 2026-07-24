@@ -1,10 +1,9 @@
 import React from 'react';
 import { ActiveView, UserProfile } from '../types';
 import {
-  LayoutDashboard,
   Calendar,
   TrendingUp,
-  Search,
+  Database,
   Menu,
 } from 'lucide-react';
 
@@ -26,6 +25,7 @@ export const Header: React.FC<HeaderProps> = ({
   const navItems = [
     { id: 'calendario', label: 'Calendário', icon: Calendar },
     { id: 'projecao', label: 'Projeção de Caixa', icon: TrendingUp },
+    { id: 'busca', label: 'Banco de Dados', icon: Database },
   ] as const;
 
   return (
@@ -82,22 +82,6 @@ export const Header: React.FC<HeaderProps> = ({
               );
             })}
           </nav>
-
-          {/* Action buttons */}
-          <div className="flex items-center gap-2 shrink-0">
-            {/* Magnifying Glass Search Button */}
-            <button
-              onClick={() => setActiveView('busca')}
-              className={`p-2 rounded-md text-xs font-semibold transition-all cursor-pointer flex items-center justify-center ${
-                activeView === 'busca'
-                  ? 'bg-[#C19848] text-[#203723] shadow-sm'
-                  : 'text-[#E4D8BE] hover:text-[#C19848] hover:bg-[#C19848]/10'
-              }`}
-              title="Buscar Lançamentos"
-            >
-              <Search className="w-4 h-4 shrink-0" />
-            </button>
-          </div>
         </div>
 
         {/* Mobile Navigation bar */}
@@ -120,19 +104,6 @@ export const Header: React.FC<HeaderProps> = ({
               </button>
             );
           })}
-          
-          {/* Search Button in Mobile Nav as well */}
-          <button
-            onClick={() => setActiveView('busca')}
-            className={`p-1.5 rounded-md text-xs font-medium shrink-0 transition-all flex items-center justify-center ${
-              activeView === 'busca'
-                ? 'bg-[#C19848] text-[#203723] font-bold'
-                : 'text-[#E4D8BE] bg-[#203723]/40 hover:bg-[#C19848]/10'
-            }`}
-            title="Buscar Lançamentos"
-          >
-            <Search className="w-3.5 h-3.5" />
-          </button>
         </div>
 
       </div>

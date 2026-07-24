@@ -155,11 +155,11 @@ export const SearchFilterView: React.FC<SearchFilterViewProps> = ({
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 bg-white border border-gray-200 p-5 rounded-lg shadow-xs">
         <div>
           <div className="flex items-center gap-2 text-[#C19848] text-[11px] font-semibold uppercase tracking-wider mb-1">
-            <Search className="w-3.5 h-3.5" />
-            Consulta e Busca
+            <Database className="w-3.5 h-3.5 text-[#C19848]" />
+            Consulta e Banco de Dados
           </div>
           <h2 className="text-lg font-bold text-gray-900">
-            Busca de Lançamentos
+            Banco de Dados
           </h2>
           <p className="text-xs text-gray-500 font-medium mt-0.5">
             Pesquise por texto, período, tipo, categoria ou forma de pagamento.
