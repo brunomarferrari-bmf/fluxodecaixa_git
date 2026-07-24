@@ -298,71 +298,274 @@ export const CalendarView: React.FC<CalendarViewProps> = ({
                 Saldo do Mês
               </span>
               <p className={`text-2xl font-bold font-mono mt-1 ${
-                monthBalance >= 0 ? 'text-emerald-700' : 'text-red-700'
+                monthBalance >= 0 ? 'text-emerald-600' : 'text-red-600'
               }`}>
-            </h4>
+                {formatCurrency(monthBalance)}
+              </p>
+              <p className="text-[11px] text-gray-400 mt-1 font-medium">
+                Soma dos saldos diários dos dias do mês
+              </p>
+            </div>
 
-            {selectedDayMetrics.dayTxs.length === 0 ? (
-              <div className="p-6 text-center bg-gray-50 border border-gray-200 rounded-md text-gray-500 text-xs font-medium">
-                Nenhum lançamento registrado neste dia.
-              </div>
-            ) : (
-              <div className="border border-gray-200 rounded-md overflow-hidden bg-white divide-y divide-gray-100">
-                {selectedDayMetrics.dayTxs.map((tx) => (
-                  <div
-                    key={tx.id}
-                    onClick={() => onEditTransaction(tx)}
-                    className="p-3 hover:bg-gray-50 transition-all cursor-pointer flex items-center justify-between gap-4 group"
-                  >
-                    <div className="flex items-center gap-3 min-w-0">
-                      <div className={`w-8 h-8 rounded-md shrink-0 flex items-center justify-center font-bold ${
-                        tx.type === 'entrada'
-                          ? 'bg-emerald-50 text-emerald-600 border border-emerald-100'
-                          : 'bg-red-50 text-red-600 border border-red-100'
-                      }`}>
-                        {tx.type === 'entrada' ? (
-                          <ArrowUpRight className="w-4 h-4" />
-                        ) : (
-                          <ArrowDownRight className="w-4 h-4" />
-                        )}
-                      </div>
-
-                      <div className="min-w-0">
-                        <div className="flex items-center gap-2">
-                          <p className="text-xs font-semibold text-gray-900 group-hover:text-[#C19848] transition-colors truncate">
-                            {tx.title}
-                          </p>
-                          <TagBadge categoryName={tx.category || tx.tagCode} tags={tags} />
-                        </div>
-                        <div className="flex items-center gap-2 text-[11px] text-gray-500 mt-0.5">
-                          <span>{tx.category}</span>
-                          <span>•</span>
-                          <span>{tx.paymentMethod}</span>
-                          {tx.description && (
-                            <>
-                              <span>•</span>
-                              <span className="italic text-gray-400 truncate max-w-xs">{tx.description}</span>
-                            </>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="text-right shrink-0">
-                      <p className={`text-sm sm:text-base font-bold font-mono ${
-                        tx.type === 'entrada' ? 'text-emerald-600' : 'text-red-600'
-                      }`}>
-                        {tx.type === 'entrada' ? '+' : '-'} {formatCurrency(tx.amount)}
-                      </p>
-                    </div>
-                  </div>
-                ))}
+            {accounts.length > 0 && (
+              <div className="p-4 rounded-lg bg-[#E4D8BE]/15 border border-[#C19848]/30 shadow-xs">
+                <span className="text-[10px] uppercase font-semibold text-gray-600 tracking-wider flex items-center gap-1">
+                  <Wallet className="w-3.5 h-3.5 text-[#C19848]" />
+                  Saldo das contas ao fim do mês
+                </span>
+                <p className="text-2xl font-bold font-mono text-slate-800 mt-1">
+                  {formatCurrency(getAccountTotalOnDate(endOfMonthIso))}
+                </p>
+                <p className="text-[11px] text-gray-500 mt-1 font-medium">
+                  Posição consolidada no fim do mês ({formatDateBR(endOfMonthIso)})
+                </p>
               </div>
             )}
           </div>
 
-        </div>
-      )}
+          {/* Calendar Grid */}
+          <div className="bg-white border border-gray-200 rounded-lg p-2.5 sm:p-4 shadow-xs">
+            {/* Days of week header (Segunda a Domingo) */}
+            <div className="grid grid-cols-7 gap-1.5 mb-2.5 text-center text-[11px] font-semibold uppercase tracking-wider text-gray-500">
+              <div>Seg</div>
+              <div>Ter</div>
+              <div>Qua</div>
+              <div>Qui</div>
+              <div>Sex</div>
+              <div>Sáb</div>
+              <div>Dom</div>
+            </div>
+
+            {/* Day Squares Grid (7 colunas) */}
+            <div className="grid grid-cols-7 gap-1.5">
+              {dayBoxes.map((box, idx) => {
+                if (!box) {
+                  return (
+                    <div
+                      key={`blank-${idx}`}
+                      className="h-20 sm:h-24 rounded-lg bg-gray-50/50 border border-transparent"
+                    />
+                  );
+                }
+
+                const { dateIso, dayNumber } = box;
+                const metrics = getDayMetrics(dateIso);
+                const isToday = dateIso === todayIso;
+                const isSelected = dateIso === selectedDayIso;
+
+                return (
+                  <div
+                    key={dateIso}
+                    onClick={() => setSelectedDayIso(dateIso)}
+                    className={`relative h-20 sm:h-24 p-1.5 sm:p-2 rounded-lg border transition-all cursor-pointer flex flex-col justify-between group ${
+                      isSelected
+                        ? 'ring-2 ring-[#C19848] border-[#C19848] bg-[#C19848]/5 shadow-xs'
+                        : isToday
+                        ? 'bg-amber-50/40 border-[#C19848]/40 hover:border-[#C19848]'
+                        : 'bg-white border-gray-200 hover:border-gray-300 hover:shadow-xs'
+                    }`}
+                  >
+                    {/* Day Header Row: Number + Today indicator + (+) Add Button */}
+                    <div className="flex items-center justify-between">
+                      <span className={`text-xs font-extrabold ${
+                        isToday ? 'text-[#C19848]' : 'text-gray-800'
+                      }`}>
+                        {dayNumber}
+                      </span>
+                      
+                      <div className="flex items-center gap-1">
+                        {isToday && (
+                          <span className="text-[9px] font-extrabold bg-[#C19848] text-[#203723] px-1.5 py-0.2 rounded-full uppercase tracking-tighter shadow-2xs">
+                            Hoje
+                          </span>
+                        )}
+
+                        {/* Quick Add (+) Button */}
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            onOpenNewTransaction(dateIso);
+                          }}
+                          className="w-5 h-5 rounded-full bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white border border-emerald-200 flex items-center justify-center transition-all opacity-80 hover:opacity-100 cursor-pointer"
+                          title="Adicionar lançamento neste dia"
+                        >
+                          <Plus className="w-3 h-3 stroke-[3]" />
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Day Balance Display (Independent rule - Section 7) */}
+                    <div className="mt-auto">
+                      {metrics.hasTxs ? (
+                        <div>
+                          <p className={`text-[10px] sm:text-xs font-bold font-mono ${
+                            metrics.balance >= 0 ? 'text-emerald-600' : 'text-red-600'
+                          }`}>
+                            {formatCurrency(metrics.balance)}
+                          </p>
+                          <p className="text-[9px] text-gray-400 font-medium hidden sm:block">
+                            {metrics.dayTxs.length} lançamento(s)
+                          </p>
+                        </div>
+                      ) : (
+                        <span className="text-[10px] text-gray-300 font-medium italic">
+                          —
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Selected Day Details Panel */}
+          {selectedDayIso && selectedDayMetrics && (
+            <div className="bg-white border border-gray-200 rounded-lg p-5 shadow-xs space-y-4 animate-fade-in">
+              {/* Header Bar */}
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pb-3 border-b border-gray-100">
+                <div>
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#C19848]">
+                    Detalhes do Dia
+                  </span>
+                  <h3 className="text-base font-bold text-gray-900 capitalize">
+                    {formatDayOfWeek(selectedDayIso)}, {formatDateBR(selectedDayIso)}
+                  </h3>
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={() => onOpenNewTransaction(selectedDayIso)}
+                    className="flex items-center gap-1 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold px-3 py-1.5 rounded-md shadow-2xs transition-all cursor-pointer"
+                  >
+                    <Plus className="w-3.5 h-3.5" />
+                    <span>Adicionar Lançamento neste Dia</span>
+                  </button>
+
+                  <button
+                    onClick={() => setSelectedDayIso(null)}
+                    className="p-1.5 rounded-md text-gray-400 hover:text-gray-700 hover:bg-gray-100 transition-colors"
+                    title="Fechar Detalhes"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+
+              {/* Daily Metrics Top Cards (Reordered: 1. Entradas, 2. Saídas, 3. Saldo do Dia, 4. Saldo das Contas) */}
+              <div className={`grid grid-cols-1 ${accounts.length > 0 ? 'sm:grid-cols-4' : 'sm:grid-cols-3'} gap-3`}>
+                <div className="p-3.5 rounded-md bg-gray-50 border border-gray-200">
+                  <span className="text-[10px] uppercase font-semibold tracking-wider text-gray-500">Total de Entradas</span>
+                  <p className="text-xl font-bold font-mono text-emerald-600 mt-1">
+                    {formatCurrency(selectedDayMetrics.entries)}
+                  </p>
+                </div>
+
+                <div className="p-3.5 rounded-md bg-gray-50 border border-gray-200">
+                  <span className="text-[10px] uppercase font-semibold tracking-wider text-gray-500">Total de Saídas</span>
+                  <p className="text-xl font-bold font-mono text-red-600 mt-1">
+                    {formatCurrency(selectedDayMetrics.exits)}
+                  </p>
+                </div>
+
+                <div className={`p-3.5 rounded-md border ${
+                  selectedDayMetrics.balance >= 0
+                    ? 'bg-emerald-50 border-emerald-200 text-emerald-800'
+                    : 'bg-red-50 border-red-200 text-red-800'
+                }`}>
+                  <span className="text-[10px] uppercase font-semibold tracking-wider text-gray-500">Saldo do Dia</span>
+                  <p className={`text-xl font-bold font-mono mt-1 ${
+                    selectedDayMetrics.balance >= 0 ? 'text-emerald-700' : 'text-red-700'
+                  }`}>
+                    {formatCurrency(selectedDayMetrics.balance)}
+                  </p>
+                </div>
+
+                {accounts.length > 0 && (() => {
+                  const totalAccountBal = getAccountTotalOnDate(selectedDayIso);
+
+                  return (
+                    <div className="p-3.5 rounded-md bg-[#E4D8BE]/15 border border-[#C19848]/30">
+                      <span className="text-[10px] uppercase font-semibold tracking-wider text-gray-600 flex items-center gap-1">
+                        <Wallet className="w-3 h-3 text-[#C19848]" />
+                        Saldo das Contas
+                      </span>
+                      <p className="text-xl font-bold font-mono text-slate-800 mt-1">
+                        {formatCurrency(totalAccountBal)}
+                      </p>
+                    </div>
+                  );
+                })()}
+              </div>
+
+              {/* List of transactions for this specific day */}
+              <div className="space-y-2">
+                <h4 className="text-[11px] font-semibold uppercase tracking-wider text-gray-500">
+                  Lista de Transações ({selectedDayMetrics.dayTxs.length})
+                </h4>
+
+                {selectedDayMetrics.dayTxs.length === 0 ? (
+                  <div className="p-6 text-center bg-gray-50 border border-gray-200 rounded-md text-gray-500 text-xs font-medium">
+                    Nenhum lançamento registrado neste dia.
+                  </div>
+                ) : (
+                  <div className="border border-gray-200 rounded-md overflow-hidden bg-white divide-y divide-gray-100">
+                    {selectedDayMetrics.dayTxs.map((tx) => (
+                      <div
+                        key={tx.id}
+                        onClick={() => onEditTransaction(tx)}
+                        className="p-3 hover:bg-gray-50 transition-all cursor-pointer flex items-center justify-between gap-4 group"
+                      >
+                        <div className="flex items-center gap-3 min-w-0">
+                          <div className={`w-8 h-8 rounded-md shrink-0 flex items-center justify-center font-bold ${
+                            tx.type === 'entrada'
+                              ? 'bg-emerald-50 text-emerald-600 border border-emerald-100'
+                              : 'bg-red-50 text-red-600 border border-red-100'
+                          }`}>
+                            {tx.type === 'entrada' ? (
+                              <ArrowUpRight className="w-4 h-4" />
+                            ) : (
+                              <ArrowDownRight className="w-4 h-4" />
+                            )}
+                          </div>
+
+                          <div className="min-w-0">
+                            <div className="flex items-center gap-2">
+                              <p className="text-xs font-semibold text-gray-900 group-hover:text-[#C19848] transition-colors truncate">
+                                {tx.title}
+                              </p>
+                              <TagBadge categoryName={tx.category || tx.tagCode} tags={tags} />
+                            </div>
+                            <div className="flex items-center gap-2 text-[11px] text-gray-500 mt-0.5">
+                              <span>{tx.category}</span>
+                              <span>•</span>
+                              <span>{tx.paymentMethod}</span>
+                              {tx.description && (
+                                <>
+                                  <span>•</span>
+                                  <span className="italic text-gray-400 truncate max-w-xs">{tx.description}</span>
+                                </>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="text-right shrink-0">
+                          <p className={`text-sm sm:text-base font-bold font-mono ${
+                            tx.type === 'entrada' ? 'text-emerald-600' : 'text-red-600'
+                          }`}>
+                            {tx.type === 'entrada' ? '+' : '-'} {formatCurrency(tx.amount)}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
         </>
       )}
 
