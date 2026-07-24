@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { ActiveView, Account, AccountTransfer, Transaction } from '../../types';
 import { formatCurrency, formatDateBR, getTodayISO, generateUniqueId } from '../../utils/formatters';
 import {
@@ -12,6 +13,8 @@ import {
   ShieldCheck,
   TrendingUp,
   Edit2,
+  Trash2,
+  Info,
 } from 'lucide-react';
 
 interface AccountsViewProps {
@@ -20,6 +23,7 @@ interface AccountsViewProps {
   transactions: Transaction[];
   onSaveAccount: (account: Account) => Promise<void>;
   onSaveTransfer: (transfer: AccountTransfer) => Promise<void>;
+  onDeleteAccount?: (accountId: string) => Promise<void>;
   onNavigateView?: (view: ActiveView) => void;
 }
 
@@ -31,6 +35,7 @@ export const AccountsView: React.FC<AccountsViewProps> = ({
   transactions,
   onSaveAccount,
   onSaveTransfer,
+  onDeleteAccount,
   onNavigateView,
 }) => {
   const todayIso = getTodayISO();
@@ -55,11 +60,10 @@ export const AccountsView: React.FC<AccountsViewProps> = ({
   const [transferDate, setTransferDate] = useState(todayIso);
   const [transferError, setTransferError] = useState('');
 
-  // ─── Helper: calculate updated real balance for an account ───
+  // Helper: calculate updated real balance for an account
   const calculateAccountBalance = (account: Account, untilDate: string = todayIso) => {
     let balance = account.initialBalance;
 
-    // Add/subtract real transactions linked to this account starting from referenceDate
     transactions.forEach((tx) => {
       if (tx.accountId === account.id || (!tx.accountId && account.isDefault)) {
         if (tx.date >= account.referenceDate && tx.date <= untilDate) {
@@ -72,7 +76,6 @@ export const AccountsView: React.FC<AccountsViewProps> = ({
       }
     });
 
-    // Add/subtract transfers involving this account
     transfers.forEach((tr) => {
       if (tr.date >= account.referenceDate && tr.date <= untilDate) {
         if (tr.sourceAccountId === account.id) {
@@ -113,6 +116,15 @@ export const AccountsView: React.FC<AccountsViewProps> = ({
     setSubMode('edit');
   };
 
+  // Delete Account
+  const handleDeleteAccountConfirm = async (acc: Account) => {
+    if (window.confirm(`Deseja realmente excluir a conta "${acc.nickname}"?`)) {
+      if (onDeleteAccount) {
+        await onDeleteAccount(acc.id);
+      }
+    }
+  };
+
   // Save Account
   const handleSaveAccountForm = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -134,12 +146,10 @@ export const AccountsView: React.FC<AccountsViewProps> = ({
       return;
     }
 
-    // Rule: first account is automatically default
     const finalIsDefault = accounts.length === 0 ? true : isDefault;
 
-    // Rule: block unchecking if it's the only default account
     if (editingAccount && editingAccount.isDefault && !finalIsDefault) {
-      const otherDefaults = accounts.filter(a => a.id !== editingAccount.id && a.isDefault);
+      const otherDefaults = accounts.filter((a) => a.id !== editingAccount.id && a.isDefault);
       if (otherDefaults.length === 0) {
         setFormError('O sistema precisa ter pelo menos uma conta padrão. Marque outra conta como padrão antes de alterar esta.');
         return;
@@ -161,11 +171,16 @@ export const AccountsView: React.FC<AccountsViewProps> = ({
     setSubMode('list');
   };
 
-  // Open Transfer Form
-  const handleOpenTransfer = () => {
-    if (accounts.length < 2) return;
-    setTransferSourceId(accounts[0]?.id || '');
-    setTransferDestId(accounts[1]?.id || '');
+  // Open Transfer Form (with optional default source account ID)
+  const handleOpenTransfer = (sourceId?: string) => {
+    if (accounts.length < 2) {
+      alert('É necessário ter pelo menos duas contas cadastradas para realizar uma transferência entre contas.');
+      return;
+    }
+    const source = sourceId || accounts[0]?.id || '';
+    const dest = accounts.find((a) => a.id !== source)?.id || '';
+    setTransferSourceId(source);
+    setTransferDestId(dest);
     setTransferAmount('');
     setTransferDate(todayIso);
     setTransferError('');
@@ -206,55 +221,6 @@ export const AccountsView: React.FC<AccountsViewProps> = ({
     setSubMode('list');
   };
 
-  // Open Account Detail
-  const handleOpenDetail = (accountId: string) => {
-    setSelectedAccountId(accountId);
-    setSimulatedTxIds(new Set());
-    setSubMode('detail');
-  };
-
-  // Selected account for detail view
-  const selectedAccount = accounts.find((a) => a.id === selectedAccountId);
-
-  // Future transactions for 28-day simulation (between today and next 28 days)
-  const next28DaysDate = (() => {
-    const d = new Date();
-    d.setDate(d.getDate() + 28);
-    return d.toISOString().split('T')[0];
-  })();
-
-  const future28DaysTxs = selectedAccount
-    ? transactions.filter((tx) => {
-        const isLinked = tx.accountId === selectedAccount.id || (!tx.accountId && selectedAccount.isDefault);
-        return isLinked && tx.date >= todayIso && tx.date <= next28DaysDate;
-      }).sort((a, b) => a.date.localeCompare(b.date))
-    : [];
-
-  // Calculate simulated balance for 28 days
-  const updatedRealBalance = selectedAccount ? calculateAccountBalance(selectedAccount, todayIso) : 0;
-  
-  const simulatedAddition = future28DaysTxs.reduce((sum, tx) => {
-    if (simulatedTxIds.has(tx.id)) {
-      return sum + (tx.type === 'entrada' ? tx.amount : -tx.amount);
-    }
-    return sum;
-  }, 0);
-
-  const simulatedBalance = updatedRealBalance + simulatedAddition;
-
-  const toggleSimulatedTx = (txId: string) => {
-    setSimulatedTxIds((prev) => {
-      const next = new Set(prev);
-      if (next.has(txId)) {
-        next.delete(txId);
-      } else {
-        next.add(txId);
-      }
-      return next;
-    });
-  };
-
-  // Render Sub-Views
   return (
     <div className="space-y-6 animate-fade-in pb-12">
       {/* ==================== SUB-VIEW 1: LISTA DE CONTAS ==================== */}
@@ -290,7 +256,7 @@ export const AccountsView: React.FC<AccountsViewProps> = ({
               {accounts.length >= 2 && (
                 <button
                   type="button"
-                  onClick={handleOpenTransfer}
+                  onClick={() => handleOpenTransfer()}
                   className="flex items-center gap-1.5 bg-white hover:bg-gray-50 text-gray-800 border border-gray-300 text-xs font-semibold px-4 py-2 rounded-md shadow-xs transition-all cursor-pointer"
                 >
                   <ArrowLeftRight className="w-4 h-4 text-[#C19848]" />
@@ -334,16 +300,23 @@ export const AccountsView: React.FC<AccountsViewProps> = ({
                 return (
                   <div
                     key={acc.id}
-                    onClick={() => handleOpenEditAccount(acc)}
-                    className="bg-white border border-gray-200 hover:border-[#C19848]/60 hover:shadow-md rounded-lg p-5 transition-all cursor-pointer flex flex-col justify-between relative group"
+                    className="bg-white border border-gray-200 hover:border-[#C19848]/60 hover:shadow-md rounded-lg p-5 transition-all flex flex-col justify-between relative group"
                   >
                     <div>
                       {/* Top Header of Card */}
                       <div className="flex items-start justify-between gap-2 mb-2">
-                        <div>
-                          <h3 className="text-base font-bold text-gray-900 group-hover:text-[#C19848] transition-colors leading-tight">
-                            {acc.nickname}
-                          </h3>
+                        <div className="min-w-0 flex-1">
+                          <div className="flex items-center gap-2 flex-wrap">
+                            <h3 className="text-base font-bold text-gray-900 leading-tight truncate">
+                              {acc.nickname}
+                            </h3>
+                            {acc.isDefault && accounts.length >= 2 && (
+                              <span className="inline-flex items-center gap-1 text-[10px] bg-[#E4D8BE]/30 text-[#203723] px-2 py-0.5 rounded font-bold border border-[#C19848]/30 shrink-0">
+                                <ShieldCheck className="w-3 h-3 text-[#C19848]" />
+                                Padrão
+                              </span>
+                            )}
+                          </div>
                           {acc.financialInstitution && (
                             <p className="text-xs text-gray-500 font-medium flex items-center gap-1 mt-0.5">
                               <Building2 className="w-3 h-3 text-gray-400" />
@@ -352,13 +325,27 @@ export const AccountsView: React.FC<AccountsViewProps> = ({
                           )}
                         </div>
 
-                        {/* Conta Padrão Badge */}
-                        {acc.isDefault && accounts.length >= 2 && (
-                          <span className="inline-flex items-center gap-1 text-[10px] bg-[#E4D8BE]/30 text-[#203723] px-2 py-0.5 rounded font-bold border border-[#C19848]/30 shrink-0">
-                            <ShieldCheck className="w-3 h-3 text-[#C19848]" />
-                            Conta padrão
-                          </span>
-                        )}
+                        {/* Card Header Actions (Edit & Delete) */}
+                        <div className="flex items-center gap-1 shrink-0">
+                          <button
+                            type="button"
+                            onClick={() => handleOpenEditAccount(acc)}
+                            className="p-1.5 rounded text-gray-400 hover:text-gray-700 hover:bg-gray-100 transition-colors cursor-pointer"
+                            title="Editar conta"
+                          >
+                            <Edit2 className="w-3.5 h-3.5" />
+                          </button>
+                          {onDeleteAccount && (
+                            <button
+                              type="button"
+                              onClick={() => handleDeleteAccountConfirm(acc)}
+                              className="p-1.5 rounded text-gray-400 hover:text-red-600 hover:bg-red-50 transition-colors cursor-pointer"
+                              title="Excluir conta"
+                            >
+                              <Trash2 className="w-3.5 h-3.5" />
+                            </button>
+                          )}
+                        </div>
                       </div>
 
                       {/* Owner type badge */}
@@ -380,32 +367,27 @@ export const AccountsView: React.FC<AccountsViewProps> = ({
                         </p>
                       </div>
 
-                      <div className="flex items-center gap-1.5 shrink-0">
+                      <div className="flex items-center gap-2 shrink-0">
+                        {/* Button 1: Transferência (Replaces Detalhes) */}
                         <button
                           type="button"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            handleOpenEditAccount(acc);
-                          }}
-                          className="px-2.5 py-1.5 rounded bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs font-semibold flex items-center gap-1 transition-colors cursor-pointer"
-                          title="Editar esta conta"
+                          onClick={() => handleOpenTransfer(acc.id)}
+                          className="px-3 py-1.5 rounded bg-[#C19848] hover:bg-[#C19848]/90 text-[#203723] text-xs font-bold flex items-center gap-1.5 transition-all cursor-pointer shadow-2xs active:scale-95"
+                          title="Transferir saldo entre contas"
                         >
-                          <Edit2 className="w-3.5 h-3.5" />
-                          <span>Editar</span>
+                          <ArrowLeftRight className="w-3.5 h-3.5" />
+                          <span>Transferência</span>
                         </button>
 
+                        {/* Button 2: Projeção Shortcut */}
                         {onNavigateView && (
                           <button
                             type="button"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              onNavigateView('projecao');
-                            }}
-                            className="px-2.5 py-1.5 rounded bg-[#C19848] hover:bg-[#C19848]/90 text-[#203723] text-xs font-bold flex items-center gap-1 transition-colors cursor-pointer shadow-2xs"
+                            onClick={() => onNavigateView('projecao')}
+                            className="p-1.5 rounded bg-gray-100 hover:bg-gray-200 text-gray-700 transition-colors cursor-pointer"
                             title="Ver Projeção de Caixa"
                           >
-                            <TrendingUp className="w-3.5 h-3.5" />
-                            <span>Projeção</span>
+                            <TrendingUp className="w-4 h-4 text-[#C19848]" />
                           </button>
                         )}
                       </div>
@@ -563,7 +545,7 @@ export const AccountsView: React.FC<AccountsViewProps> = ({
                   }`}
                 >
                   <span
-                    className={`w-4 h-4 rounded-full bg-white absolute top-1 transition-transform shadow-xs ${
+                    className={`w-4 h-4 rounded-full bg-[#203723] absolute top-1 transition-transform shadow-xs ${
                       isDefault ? 'right-1' : 'left-1'
                     }`}
                   />
