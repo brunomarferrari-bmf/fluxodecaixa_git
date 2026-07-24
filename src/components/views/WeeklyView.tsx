@@ -293,18 +293,32 @@ export const WeeklyView: React.FC<WeeklyViewProps> = ({
                 </button>
               </div>
 
-              {/* Clean Metric Totals (Name & Value) */}
+              {/* Metric Hierarchy (Importância 1: Saldo de Contas -> 2: Saldo do Dia -> 3: Entradas & Saídas) */}
               <div className="pt-2.5 space-y-2">
+                {/* Importância 1: Saldo de Contas (Destaque Principal) */}
                 <div>
-                  <span className="text-[9px] text-gray-400 block font-medium uppercase">Saldo do Dia</span>
-                  <p className={`text-sm font-extrabold font-mono ${
+                  <span className="text-[9px] text-gray-500 block font-semibold uppercase tracking-wider">
+                    Saldo de Contas
+                  </span>
+                  <p className="text-base font-extrabold font-mono text-slate-900 mt-0.5">
+                    {formatCurrency(getAccountTotalOnDate(d.dateIso))}
+                  </p>
+                </div>
+
+                {/* Importância 2: Saldo do Dia (Nível Intermediário) */}
+                <div className="pt-1.5 border-t border-gray-100">
+                  <span className="text-[9px] text-gray-400 block font-medium uppercase tracking-wider">
+                    Saldo do Dia
+                  </span>
+                  <p className={`text-xs font-bold font-mono mt-0.5 ${
                     d.balance > 0 ? 'text-emerald-600' : d.balance < 0 ? 'text-red-600' : 'text-gray-700'
                   }`}>
                     {formatCurrency(d.balance)}
                   </p>
                 </div>
 
-                <div className="pt-1.5 border-t border-gray-100 text-[10px] space-y-1 font-medium">
+                {/* Importância 3: Entradas e Saídas (Nível Menor / Detalhes) */}
+                <div className="pt-1.5 border-t border-gray-100 text-[10px] space-y-0.5 font-medium">
                   <div className="flex justify-between items-center text-gray-500">
                     <span>Entradas:</span>
                     <span className="text-emerald-600 font-mono font-semibold">+{formatCurrency(d.entries)}</span>
@@ -313,16 +327,6 @@ export const WeeklyView: React.FC<WeeklyViewProps> = ({
                     <span>Saídas:</span>
                     <span className="text-red-600 font-mono font-semibold">-{formatCurrency(d.exits)}</span>
                   </div>
-
-                  {/* Section 3: Line of Total Accounts Balance */}
-                  {accounts.length > 0 && (
-                    <div className="flex justify-between items-center text-gray-600 pt-1 border-t border-gray-100">
-                      <span className="text-[9px] font-semibold text-gray-500 truncate" title="Saldo total das contas">Total Contas:</span>
-                      <span className="text-[10px] font-bold font-mono text-slate-700">
-                        {formatCurrency(getAccountTotalOnDate(d.dateIso))}
-                      </span>
-                    </div>
-                  )}
                 </div>
               </div>
 
