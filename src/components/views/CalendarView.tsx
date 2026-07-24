@@ -95,6 +95,43 @@ export const CalendarView: React.FC<CalendarViewProps> = ({
     dayBoxes.push({ dateIso, dayNumber: day });
   }
 
+  // Month Totals & End of Month Account Balance
+  const monthStr = String(currentMonth + 1).padStart(2, '0');
+  const startOfMonthIso = `${currentYear}-${monthStr}-01`;
+  const endOfMonthIso = `${currentYear}-${monthStr}-${String(daysInMonth).padStart(2, '0')}`;
+
+  const monthTransactions = transactions.filter((tx) => tx.date >= startOfMonthIso && tx.date <= endOfMonthIso);
+  const monthEntries = monthTransactions
+    .filter((tx) => tx.type === 'entrada')
+    .reduce((sum, tx) => sum + tx.amount, 0);
+  const monthExits = monthTransactions
+    .filter((tx) => tx.type === 'saida')
+    .reduce((sum, tx) => sum + tx.amount, 0);
+  const monthBalance = monthEntries - monthExits;
+
+  const getAccountTotalOnDate = (dateIso: string) => {
+    let total = 0;
+    accounts.forEach((acc) => {
+      if (dateIso < acc.referenceDate) return;
+      let accBal = acc.initialBalance;
+      transactions.forEach((tx) => {
+        const isLinked = tx.accountId === acc.id || (!tx.accountId && acc.isDefault);
+        if (isLinked && tx.date >= acc.referenceDate && tx.date <= dateIso) {
+          if (tx.type === 'entrada') accBal += tx.amount;
+          else accBal -= tx.amount;
+        }
+      });
+      transfers.forEach((tr) => {
+        if (tr.date >= acc.referenceDate && tr.date <= dateIso) {
+          if (tr.sourceAccountId === acc.id) accBal -= tr.amount;
+          if (tr.destinationAccountId === acc.id) accBal += tr.amount;
+        }
+      });
+      total += accBal;
+    });
+    return total;
+  };
+
   // Helper to compute daily balance for a specific ISO date (Section 7 rule: day balance is independent)
   const getDayMetrics = (dateIso: string) => {
     const dayTxs = transactions.filter((tx) => tx.date === dateIso);
@@ -231,202 +268,38 @@ export const CalendarView: React.FC<CalendarViewProps> = ({
               </button>
             </div>
           </div>
-          {/* Calendar Grid */}
-      <div className="bg-white border border-gray-200 rounded-lg p-2.5 sm:p-4 shadow-xs">
-        
-        {/* Days of week header (Segunda a Domingo) */}
-        <div className="grid grid-cols-7 gap-1.5 mb-2.5 text-center text-[11px] font-semibold uppercase tracking-wider text-gray-500">
-          <div>Seg</div>
-          <div>Ter</div>
-          <div>Qua</div>
-          <div>Qui</div>
-          <div>Sex</div>
-          <div>Sáb</div>
-          <div>Dom</div>
-        </div>
 
-        {/* Day Squares Grid (7 colunas) */}
-        <div className="grid grid-cols-7 gap-1.5">
-          {dayBoxes.map((box, idx) => {
-            if (!box) {
-              return (
-                <div
-                  key={`empty_${idx}`}
-                  className="h-20 sm:h-24 rounded-md bg-gray-50/50 border border-gray-100 pointer-events-none"
-                />
-              );
-            }
-
-            const { dateIso, dayNumber } = box;
-            const { balance, hasTxs } = getDayMetrics(dateIso);
-            const isToday = dateIso === todayIso;
-            const isSelected = dateIso === selectedDayIso;
-
-            return (
-              <div
-                key={dateIso}
-                onClick={() => setSelectedDayIso(dateIso)}
-                className={`h-20 sm:h-24 rounded-md p-2 flex flex-col justify-between border transition-all cursor-pointer relative ${
-                  isSelected
-                    ? 'ring-2 ring-[#C19848] border-[#C19848] bg-[#E4D8BE]/15 shadow-xs'
-                    : isToday
-                    ? 'bg-amber-50/50 border-amber-300'
-                    : 'bg-white border-gray-200 hover:border-gray-300 hover:bg-gray-50/60'
-                }`}
-              >
-                {/* Header of square: Day Number & Plus Action Button */}
-                <div className="flex items-center justify-between">
-                  <span
-                    className={`text-[11px] sm:text-xs font-bold font-mono ${
-                      isToday
-                        ? 'text-amber-800 bg-amber-100 px-1.5 py-0.2 rounded'
-                        : 'text-gray-700'
-                    }`}
-                  >
-                    {dayNumber}
-                  </span>
-
-                  <button
-                    type="button"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setSelectedDayIso(dateIso);
-                      onOpenNewTransaction(dateIso);
-                    }}
-                    className="p-1 rounded bg-[#E4D8BE]/20 hover:bg-[#E4D8BE]/45 text-[#C19848] transition-colors cursor-pointer"
-                    title="Novo Lançamento neste dia"
-                  >
-                    <Plus className="w-3.5 h-3.5" />
-                  </button>
-                </div>
-
-                {/* Body of square: Daily Balance */}
-                <div className="mt-auto">
-                  <span className="text-[9px] text-gray-400 block font-sans font-medium">Saldo</span>
-                  <p
-                    className={`text-[11px] sm:text-xs font-bold font-mono truncate ${
-                      hasTxs
-                        ? balance > 0
-                          ? 'text-emerald-600'
-                          : balance < 0
-                          ? 'text-red-600'
-                          : 'text-gray-600'
-                        : 'text-gray-300'
-                    }`}
-                  >
-                    {hasTxs ? formatCurrency(balance) : 'R$ 0,00'}
-                  </p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-
-      {/* DETALHE DO DIA */}
-      {selectedDayIso && selectedDayMetrics && (
-        <div className="bg-white border border-gray-200 rounded-lg p-5 shadow-sm space-y-5">
-          
-          {/* Day Detail Header */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-gray-200">
-            <div>
-              <div className="text-[11px] font-semibold uppercase tracking-wider text-[#C19848] flex items-center gap-1.5">
-                <CalendarIcon className="w-3.5 h-3.5" />
-                Detalhe do Dia
-              </div>
-              <h3 className="text-lg font-bold text-gray-900 mt-0.5">
-                {formatDayOfWeek(selectedDayIso)}, {formatDateBR(selectedDayIso)}
-              </h3>
+          {/* Month Total KPI Bar */}
+          <div className={`grid grid-cols-1 ${accounts.length > 0 ? 'md:grid-cols-4' : 'md:grid-cols-3'} gap-4`}>
+            <div className="p-4 rounded-lg bg-white border border-gray-200 shadow-xs">
+              <span className="text-[10px] uppercase font-semibold text-gray-500 tracking-wider">
+                Entradas do Mês
+              </span>
+              <p className="text-2xl font-bold font-mono text-emerald-600 mt-1">
+                {formatCurrency(monthEntries)}
+              </p>
             </div>
 
-            <div className="flex items-center gap-2">
-              <button
-                onClick={() => onOpenNewTransaction(selectedDayIso)}
-                className="flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs px-3.5 py-2 rounded-md shadow-xs transition-all cursor-pointer"
-              >
-                <Plus className="w-3.5 h-3.5" />
-                <span>Adicionar Lançamento neste Dia</span>
-              </button>
-
-              <button
-                onClick={() => setSelectedDayIso(null)}
-                className="p-1.5 rounded-md text-gray-400 hover:text-gray-700 hover:bg-gray-100 transition-colors"
-                title="Fechar Detalhes"
-              >
-                <X className="w-4 h-4" />
-              </button>
+            <div className="p-4 rounded-lg bg-white border border-gray-200 shadow-xs">
+              <span className="text-[10px] uppercase font-semibold text-gray-500 tracking-wider">
+                Saídas do Mês
+              </span>
+              <p className="text-2xl font-bold font-mono text-red-600 mt-1">
+                {formatCurrency(monthExits)}
+              </p>
             </div>
-          </div>
 
-          {/* Daily Metrics Top Cards */}
-          <div className={`grid grid-cols-1 ${accounts.length > 0 ? 'sm:grid-cols-4' : 'sm:grid-cols-3'} gap-3`}>
-            <div className={`p-3.5 rounded-md border ${
-              selectedDayMetrics.balance >= 0
-                ? 'bg-emerald-50 border-emerald-200 text-emerald-800'
-                : 'bg-red-50 border-red-200 text-red-800'
+            <div className={`p-4 rounded-lg border shadow-xs ${
+              monthBalance >= 0
+                ? 'bg-white border-gray-200'
+                : 'bg-white border-red-200'
             }`}>
-              <span className="text-[10px] uppercase font-semibold tracking-wider text-gray-500">Saldo do Dia</span>
-              <p className={`text-xl font-bold font-mono mt-1 ${
-                selectedDayMetrics.balance >= 0 ? 'text-emerald-700' : 'text-red-700'
+              <span className="text-[10px] uppercase font-semibold text-gray-500 tracking-wider">
+                Saldo do Mês
+              </span>
+              <p className={`text-2xl font-bold font-mono mt-1 ${
+                monthBalance >= 0 ? 'text-emerald-700' : 'text-red-700'
               }`}>
-                {formatCurrency(selectedDayMetrics.balance)}
-              </p>
-            </div>
-
-            <div className="p-3.5 rounded-md bg-gray-50 border border-gray-200">
-              <span className="text-[10px] uppercase font-semibold tracking-wider text-gray-500">Total de Entradas</span>
-              <p className="text-xl font-bold font-mono text-emerald-600 mt-1">
-                {formatCurrency(selectedDayMetrics.entries)}
-              </p>
-            </div>
-
-            <div className="p-3.5 rounded-md bg-gray-50 border border-gray-200">
-              <span className="text-[10px] uppercase font-semibold tracking-wider text-gray-500">Total de Saídas</span>
-              <p className="text-xl font-bold font-mono text-red-600 mt-1">
-                {formatCurrency(selectedDayMetrics.exits)}
-              </p>
-            </div>
-
-            {/* Section 4: 4th Card - Saldo das Contas (Neutral Color) */}
-            {accounts.length > 0 && (() => {
-              let totalAccountBal = 0;
-              accounts.forEach((acc) => {
-                if (selectedDayIso < acc.referenceDate) return;
-                let accBal = acc.initialBalance;
-                transactions.forEach((tx) => {
-                  const isLinked = tx.accountId === acc.id || (!tx.accountId && acc.isDefault);
-                  if (isLinked && tx.date >= acc.referenceDate && tx.date <= selectedDayIso) {
-                    if (tx.type === 'entrada') accBal += tx.amount;
-                    else accBal -= tx.amount;
-                  }
-                });
-                transfers.forEach((tr) => {
-                  if (tr.date >= acc.referenceDate && tr.date <= selectedDayIso) {
-                    if (tr.sourceAccountId === acc.id) accBal -= tr.amount;
-                    if (tr.destinationAccountId === acc.id) accBal += tr.amount;
-                  }
-                });
-                totalAccountBal += accBal;
-              });
-
-              return (
-                <div className="p-3.5 rounded-md bg-[#E4D8BE]/15 border border-[#C19848]/30">
-                  <span className="text-[10px] uppercase font-semibold tracking-wider text-gray-600 flex items-center gap-1">
-                    <Wallet className="w-3 h-3 text-[#C19848]" />
-                    Saldo das Contas
-                  </span>
-                  <p className="text-xl font-bold font-mono text-slate-800 mt-1">
-                    {formatCurrency(totalAccountBal)}
-                  </p>
-                </div>
-              );
-            })()}
-          </div>
-
-          {/* List of transactions for this specific day */}
-          <div className="space-y-2">
-            <h4 className="text-[11px] font-semibold uppercase tracking-wider text-gray-500">
-              Lista de Transações ({selectedDayMetrics.dayTxs.length})
             </h4>
 
             {selectedDayMetrics.dayTxs.length === 0 ? (
