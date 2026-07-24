@@ -17,6 +17,7 @@ import {
   TransactionType,
   FORMAS_PAGAMENTO,
   Tag,
+  Account,
 } from '../types';
 import { TagBadge } from './TagBadge';
 import { getTodayISO, generateUniqueId } from '../utils/formatters';
@@ -30,6 +31,7 @@ interface TransactionPanelProps {
   defaultDate?: string;
   tags: Tag[];
   onAddNewTag: (newCategory: Tag) => void;
+  accounts?: Account[];
 }
 
 export const TransactionPanel: React.FC<TransactionPanelProps> = ({
@@ -41,6 +43,7 @@ export const TransactionPanel: React.FC<TransactionPanelProps> = ({
   defaultDate,
   tags,
   onAddNewTag,
+  accounts = [],
 }) => {
   const [title, setTitle] = useState('');
   const [date, setDate] = useState(getTodayISO());
@@ -50,6 +53,7 @@ export const TransactionPanel: React.FC<TransactionPanelProps> = ({
   const [tagCode, setTagCode] = useState('');
   const [paymentMethod, setPaymentMethod] = useState<string>(FORMAS_PAGAMENTO[0]);
   const [description, setDescription] = useState('');
+  const [accountId, setAccountId] = useState<string>('');
   const [editScope, setEditScope] = useState<'single' | 'future'>('single');
   const [confirmAction, setConfirmAction] = useState<'save' | 'delete' | null>(null);
 
@@ -61,6 +65,9 @@ export const TransactionPanel: React.FC<TransactionPanelProps> = ({
   const [catError, setCatError] = useState('');
 
   useEffect(() => {
+    const defaultAcc = accounts.find((a) => a.isDefault) || accounts[0];
+    const defaultAccId = defaultAcc ? defaultAcc.id : '';
+
     if (transactionToEdit) {
       setTitle(transactionToEdit.title);
       setDate(transactionToEdit.date);
@@ -70,6 +77,7 @@ export const TransactionPanel: React.FC<TransactionPanelProps> = ({
       setTagCode(transactionToEdit.tagCode || transactionToEdit.category || '');
       setPaymentMethod(transactionToEdit.paymentMethod || FORMAS_PAGAMENTO[0]);
       setDescription(transactionToEdit.description || '');
+      setAccountId(transactionToEdit.accountId || defaultAccId);
     } else {
       // Reset for new transaction
       setTitle('');
@@ -81,13 +89,14 @@ export const TransactionPanel: React.FC<TransactionPanelProps> = ({
       setTagCode(defaultCatName);
       setPaymentMethod(FORMAS_PAGAMENTO[0]);
       setDescription('');
+      setAccountId(defaultAccId);
     }
     setIsCreatingCategory(false);
     setNewCatName('');
     setNewCatColor('#C19848');
     setNewCatObservation('');
     setCatError('');
-  }, [transactionToEdit, defaultDate, isOpen, tags]);
+  }, [transactionToEdit, defaultDate, isOpen, tags, accounts]);
 
   const handleCreateInlineCategory = (e: React.FormEvent) => {
     e.preventDefault();
@@ -136,6 +145,7 @@ export const TransactionPanel: React.FC<TransactionPanelProps> = ({
       tagCode: tagCode || selectedCat,
       paymentMethod,
       description: description.trim(),
+      accountId: accountId || undefined,
     }, editScope);
     onClose();
   };
@@ -461,6 +471,26 @@ export const TransactionPanel: React.FC<TransactionPanelProps> = ({
               </select>
             </div>
           </div>
+
+          {/* Seleção de Conta Bancária */}
+          {accounts.length > 0 && (
+            <div>
+              <label className="block text-[10px] font-semibold text-gray-600 uppercase tracking-wider mb-1">
+                Conta Bancária / Destino
+              </label>
+              <select
+                value={accountId}
+                onChange={(e) => setAccountId(e.target.value)}
+                className="w-full bg-white border border-gray-300 rounded-md px-3 py-2 text-xs text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#C19848]/20 focus:border-[#C19848] cursor-pointer font-semibold"
+              >
+                {accounts.map((acc) => (
+                  <option key={acc.id} value={acc.id}>
+                    {acc.nickname} {acc.isDefault ? '(Padrão)' : ''}
+                  </option>
+                ))}
+              </select>
+            </div>
+          )}
 
           {/* Descrição opcional */}
           <div>

@@ -4,7 +4,7 @@
  * All data is scoped to the authenticated user via Row Level Security.
  */
 import { supabase } from './supabase';
-import { Transaction, Tag, UserProfile, RecurrenceRule } from '../types';
+import { Transaction, Tag, UserProfile, RecurrenceRule, Account, AccountTransfer } from '../types';
 
 // ─────────────────────────────────────────────
 // HELPER: get current user id (throws if not authed)
@@ -90,6 +90,7 @@ function transactionToDbRow(tx: Transaction, userId: string) {
     created_at: tx.createdAt,
     recurrence_rule_id: tx.recurrenceRuleId || null,
     recurrence_modified: tx.recurrenceModified || false,
+    account_id: tx.accountId || null,
   };
 }
 
@@ -107,6 +108,7 @@ function dbRowToTransaction(row: Record<string, unknown>): Transaction {
     createdAt: row.created_at as string,
     recurrenceRuleId: (row.recurrence_rule_id as string) || undefined,
     recurrenceModified: (row.recurrence_modified as boolean) || false,
+    accountId: (row.account_id as string) || undefined,
   };
 }
 
@@ -307,3 +309,167 @@ export async function saveUserProfile(profile: UserProfile): Promise<void> {
 
   if (error) console.error('Error saving user profile:', error);
 }
+
+// ─────────────────────────────────────────────
+// ACCOUNTS & TRANSFERS (with LocalStorage fallback)
+// ─────────────────────────────────────────────
+const LOCAL_STORAGE_ACCOUNTS = 'theparlor_accounts_v1';
+const LOCAL_STORAGE_TRANSFERS = 'theparlor_account_transfers_v1';
+
+export async function fetchAccounts(): Promise<Account[]> {
+  try {
+    const { data, error } = await supabase
+      .from('accounts')
+      .select('*')
+      .order('created_at', { ascending: true });
+
+    if (!error && data) {
+      return data.map((row: any) => ({
+        id: row.id,
+        nickname: row.nickname,
+        ownerType: row.owner_type || 'PF',
+        financialInstitution: row.financial_institution || '',
+        initialBalance: Number(row.initial_balance || 0),
+        referenceDate: row.reference_date,
+        isDefault: Boolean(row.is_default),
+        createdAt: row.created_at,
+      }));
+    }
+  } catch (err) {
+    console.warn('Supabase accounts table not available, using localStorage fallback');
+  }
+
+  // Fallback to localStorage
+  const saved = localStorage.getItem(LOCAL_STORAGE_ACCOUNTS);
+  if (saved) {
+    try {
+      return JSON.parse(saved);
+    } catch {
+      return [];
+    }
+  }
+  return [];
+}
+
+export async function upsertAccount(account: Account): Promise<void> {
+  // Update local storage first
+  const current = await fetchAccounts();
+  const exists = current.some(a => a.id === account.id);
+  const updated = exists
+    ? current.map(a => (a.id === account.id ? account : a))
+    : [...current, account];
+
+  // Enforce single default account rule
+  if (account.isDefault) {
+    updated.forEach(a => {
+      if (a.id !== account.id) a.isDefault = false;
+    });
+  }
+
+  localStorage.setItem(LOCAL_STORAGE_ACCOUNTS, JSON.stringify(updated));
+
+  try {
+    const userId = await getUserId();
+    await supabase.from('accounts').upsert({
+      id: account.id,
+      user_id: userId,
+      nickname: account.nickname,
+      owner_type: account.ownerType,
+      financial_institution: account.financialInstitution || null,
+      initial_balance: account.initialBalance,
+      reference_date: account.referenceDate,
+      is_default: account.isDefault,
+      created_at: account.createdAt,
+    }, { onConflict: 'id' });
+  } catch {
+    // Ignore error if table is not created yet
+  }
+}
+
+export async function upsertAccounts(accounts: Account[]): Promise<void> {
+  localStorage.setItem(LOCAL_STORAGE_ACCOUNTS, JSON.stringify(accounts));
+
+  try {
+    const userId = await getUserId();
+    const rows = accounts.map(a => ({
+      id: a.id,
+      user_id: userId,
+      nickname: a.nickname,
+      owner_type: a.ownerType,
+      financial_institution: a.financialInstitution || null,
+      initial_balance: a.initialBalance,
+      reference_date: a.referenceDate,
+      is_default: a.isDefault,
+      created_at: a.createdAt,
+    }));
+    await supabase.from('accounts').upsert(rows, { onConflict: 'id' });
+  } catch {
+    // Ignore error if table not created
+  }
+}
+
+export async function deleteAccount(id: string): Promise<void> {
+  const current = await fetchAccounts();
+  const updated = current.filter(a => a.id !== id);
+  localStorage.setItem(LOCAL_STORAGE_ACCOUNTS, JSON.stringify(updated));
+
+  try {
+    await supabase.from('accounts').delete().eq('id', id);
+  } catch {
+    // Ignore
+  }
+}
+
+export async function fetchAccountTransfers(): Promise<AccountTransfer[]> {
+  try {
+    const { data, error } = await supabase
+      .from('account_transfers')
+      .select('*')
+      .order('created_at', { ascending: false });
+
+    if (!error && data) {
+      return data.map((row: any) => ({
+        id: row.id,
+        sourceAccountId: row.source_account_id,
+        destinationAccountId: row.destination_account_id,
+        amount: Number(row.amount),
+        date: row.date,
+        createdAt: row.created_at,
+      }));
+    }
+  } catch {
+    // Fallback
+  }
+
+  const saved = localStorage.getItem(LOCAL_STORAGE_TRANSFERS);
+  if (saved) {
+    try {
+      return JSON.parse(saved);
+    } catch {
+      return [];
+    }
+  }
+  return [];
+}
+
+export async function upsertAccountTransfer(transfer: AccountTransfer): Promise<void> {
+  const current = await fetchAccountTransfers();
+  const updated = [transfer, ...current.filter(t => t.id !== transfer.id)];
+  localStorage.setItem(LOCAL_STORAGE_TRANSFERS, JSON.stringify(updated));
+
+  try {
+    const userId = await getUserId();
+    await supabase.from('account_transfers').upsert({
+      id: transfer.id,
+      user_id: userId,
+      source_account_id: transfer.sourceAccountId,
+      destination_account_id: transfer.destinationAccountId,
+      amount: transfer.amount,
+      date: transfer.date,
+      created_at: transfer.createdAt,
+    }, { onConflict: 'id' });
+  } catch {
+    // Ignore
+  }
+}
+

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Transaction, Tag } from '../../types';
+import { Transaction, Tag, Account, AccountTransfer } from '../../types';
 import { TagBadge } from '../TagBadge';
 import { WeeklyView } from './WeeklyView';
 import {
@@ -16,9 +16,9 @@ import {
   ArrowUpRight,
   ArrowDownRight,
   X,
-  Scale,
   Calendar as CalendarIcon,
   CalendarDays,
+  Wallet,
 } from 'lucide-react';
 
 interface CalendarViewProps {
@@ -26,6 +26,9 @@ interface CalendarViewProps {
   tags?: Tag[];
   onOpenNewTransaction: (date: string) => void;
   onEditTransaction: (tx: Transaction) => void;
+  accounts?: Account[];
+  transfers?: AccountTransfer[];
+  initialViewMode?: 'mensal' | 'semanal';
 }
 
 export const CalendarView: React.FC<CalendarViewProps> = ({
@@ -33,12 +36,15 @@ export const CalendarView: React.FC<CalendarViewProps> = ({
   tags,
   onOpenNewTransaction,
   onEditTransaction,
+  accounts = [],
+  transfers = [],
+  initialViewMode = 'semanal',
 }) => {
   const todayIso = getTodayISO();
   const todayParts = todayIso.split('-').map(Number);
 
-  // View mode state (mensal vs semanal)
-  const [viewMode, setViewMode] = useState<'mensal' | 'semanal'>('mensal');
+  // View mode state (mensal vs semanal - default semanal per Section 1)
+  const [viewMode, setViewMode] = useState<'mensal' | 'semanal'>(initialViewMode);
 
   // Month state (zero-based month index: 0 = January, 6 = July, etc.)
   const [currentYear, setCurrentYear] = useState<number>(todayParts[0]);
@@ -172,6 +178,8 @@ export const CalendarView: React.FC<CalendarViewProps> = ({
           tags={tags}
           onOpenNewTransaction={onOpenNewTransaction}
           onEditTransaction={onEditTransaction}
+          accounts={accounts}
+          transfers={transfers}
         />
       ) : (
         <>
@@ -266,7 +274,7 @@ export const CalendarView: React.FC<CalendarViewProps> = ({
                     : 'bg-white border-gray-200 hover:border-gray-300 hover:bg-gray-50/60'
                 }`}
               >
-                {/* Header of square: Day Number & Is Today Badge */}
+                {/* Header of square: Day Number & Plus Action Button */}
                 <div className="flex items-center justify-between">
                   <span
                     className={`text-[11px] sm:text-xs font-bold font-mono ${
@@ -277,59 +285,37 @@ export const CalendarView: React.FC<CalendarViewProps> = ({
                   >
                     {dayNumber}
                   </span>
-                  {hasTxs && (
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#C19848]" />
-                  )}
+
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedDayIso(dateIso);
+                      onOpenNewTransaction(dateIso);
+                    }}
+                    className="p-1 rounded bg-[#E4D8BE]/20 hover:bg-[#E4D8BE]/45 text-[#C19848] transition-colors cursor-pointer"
+                    title="Novo Lançamento neste dia"
+                  >
+                    <Plus className="w-3.5 h-3.5" />
+                  </button>
                 </div>
 
-                {/* Body of square: Daily Balance & Category Preview */}
-                <div className="mt-auto space-y-1">
-                  {hasTxs ? (
-                    <div>
-                      <div className="flex items-center justify-between">
-                        <span className="text-[9px] text-gray-400 block font-sans font-medium">Saldo</span>
-                        {/* Mini color dot indicators for categories in this day */}
-                        <div className="flex flex-wrap items-center justify-end gap-0.5 max-w-[48px] max-h-[16px] overflow-hidden">
-                          {[...getDayMetrics(dateIso).dayTxs]
-                            .sort((a, b) => {
-                              if (a.type === 'entrada' && b.type === 'saida') return -1;
-                              if (a.type === 'saida' && b.type === 'entrada') return 1;
-                              return 0;
-                            })
-                            .slice(0, 10)
-                            .map((tx) => {
-                              const catObj = tags?.find(
-                                (t) =>
-                                  t.name.toLowerCase() === (tx.category || '').toLowerCase() ||
-                                  (t.code && t.code.toLowerCase() === (tx.tagCode || '').toLowerCase())
-                              );
-                              const cColor = catObj?.color || (tx.type === 'entrada' ? '#059669' : '#e11d48');
-                              return (
-                                <span
-                                  key={tx.id}
-                                  style={{ backgroundColor: cColor }}
-                                  className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full shrink-0"
-                                  title={`${tx.title} (${tx.type === 'entrada' ? 'Entrada' : 'Saída'}: ${formatCurrency(tx.amount)})`}
-                                />
-                              );
-                            })}
-                        </div>
-                      </div>
-                      <p
-                        className={`text-[11px] sm:text-xs font-bold font-mono truncate ${
-                          balance > 0
-                            ? 'text-emerald-600'
-                            : balance < 0
-                            ? 'text-red-600'
-                            : 'text-gray-600'
-                        }`}
-                      >
-                        {formatCurrency(balance)}
-                      </p>
-                    </div>
-                  ) : (
-                    <span className="text-[9px] text-gray-300 font-mono block">R$ 0,00</span>
-                  )}
+                {/* Body of square: Daily Balance */}
+                <div className="mt-auto">
+                  <span className="text-[9px] text-gray-400 block font-sans font-medium">Saldo</span>
+                  <p
+                    className={`text-[11px] sm:text-xs font-bold font-mono truncate ${
+                      hasTxs
+                        ? balance > 0
+                          ? 'text-emerald-600'
+                          : balance < 0
+                          ? 'text-red-600'
+                          : 'text-gray-600'
+                        : 'text-gray-300'
+                    }`}
+                  >
+                    {hasTxs ? formatCurrency(balance) : 'R$ 0,00'}
+                  </p>
                 </div>
               </div>
             );
@@ -373,7 +359,7 @@ export const CalendarView: React.FC<CalendarViewProps> = ({
           </div>
 
           {/* Daily Metrics Top Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <div className={`grid grid-cols-1 ${accounts.length > 0 ? 'sm:grid-cols-4' : 'sm:grid-cols-3'} gap-3`}>
             <div className={`p-3.5 rounded-md border ${
               selectedDayMetrics.balance >= 0
                 ? 'bg-emerald-50 border-emerald-200 text-emerald-800'
@@ -400,6 +386,41 @@ export const CalendarView: React.FC<CalendarViewProps> = ({
                 {formatCurrency(selectedDayMetrics.exits)}
               </p>
             </div>
+
+            {/* Section 4: 4th Card - Saldo das Contas (Neutral Color) */}
+            {accounts.length > 0 && (() => {
+              let totalAccountBal = 0;
+              accounts.forEach((acc) => {
+                if (selectedDayIso < acc.referenceDate) return;
+                let accBal = acc.initialBalance;
+                transactions.forEach((tx) => {
+                  const isLinked = tx.accountId === acc.id || (!tx.accountId && acc.isDefault);
+                  if (isLinked && tx.date >= acc.referenceDate && tx.date <= selectedDayIso) {
+                    if (tx.type === 'entrada') accBal += tx.amount;
+                    else accBal -= tx.amount;
+                  }
+                });
+                transfers.forEach((tr) => {
+                  if (tr.date >= acc.referenceDate && tr.date <= selectedDayIso) {
+                    if (tr.sourceAccountId === acc.id) accBal -= tr.amount;
+                    if (tr.destinationAccountId === acc.id) accBal += tr.amount;
+                  }
+                });
+                totalAccountBal += accBal;
+              });
+
+              return (
+                <div className="p-3.5 rounded-md bg-[#E4D8BE]/15 border border-[#C19848]/30">
+                  <span className="text-[10px] uppercase font-semibold tracking-wider text-gray-600 flex items-center gap-1">
+                    <Wallet className="w-3 h-3 text-[#C19848]" />
+                    Saldo das Contas
+                  </span>
+                  <p className="text-xl font-bold font-mono text-slate-800 mt-1">
+                    {formatCurrency(totalAccountBal)}
+                  </p>
+                </div>
+              );
+            })()}
           </div>
 
           {/* List of transactions for this specific day */}

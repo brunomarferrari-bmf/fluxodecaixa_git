@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Transaction, Tag } from '../../types';
+import { Transaction, Tag, Account, AccountTransfer } from '../../types';
 import { TagBadge } from '../TagBadge';
 import {
   formatCurrency,
@@ -17,6 +17,7 @@ import {
   ArrowUpRight,
   ArrowDownRight,
   X,
+  Wallet,
 } from 'lucide-react';
 
 interface WeeklyViewProps {
@@ -24,6 +25,8 @@ interface WeeklyViewProps {
   tags?: Tag[];
   onOpenNewTransaction: (date: string) => void;
   onEditTransaction: (tx: Transaction) => void;
+  accounts?: Account[];
+  transfers?: AccountTransfer[];
 }
 
 export const WeeklyView: React.FC<WeeklyViewProps> = ({
@@ -31,8 +34,38 @@ export const WeeklyView: React.FC<WeeklyViewProps> = ({
   tags,
   onOpenNewTransaction,
   onEditTransaction,
+  accounts = [],
+  transfers = [],
 }) => {
   const todayIso = getTodayISO();
+
+  // Helper to compute total accounts balance for a specific date
+  const getAccountTotalOnDate = (dateIso: string) => {
+    if (!accounts || accounts.length === 0) return 0;
+    let total = 0;
+    accounts.forEach((acc) => {
+      if (dateIso < acc.referenceDate) return;
+      let accBal = acc.initialBalance;
+
+      transactions.forEach((tx) => {
+        const isLinked = tx.accountId === acc.id || (!tx.accountId && acc.isDefault);
+        if (isLinked && tx.date >= acc.referenceDate && tx.date <= dateIso) {
+          if (tx.type === 'entrada') accBal += tx.amount;
+          else accBal -= tx.amount;
+        }
+      });
+
+      transfers.forEach((tr) => {
+        if (tr.date >= acc.referenceDate && tr.date <= dateIso) {
+          if (tr.sourceAccountId === acc.id) accBal -= tr.amount;
+          if (tr.destinationAccountId === acc.id) accBal += tr.amount;
+        }
+      });
+
+      total += accBal;
+    });
+    return total;
+  };
 
   // Reference date ISO to anchor the current 7-day week
   const [refDateIso, setRefDateIso] = useState<string>(todayIso);
@@ -163,7 +196,7 @@ export const WeeklyView: React.FC<WeeklyViewProps> = ({
       </div>
 
       {/* Week Total KPI Bar */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className={`grid grid-cols-1 ${accounts.length > 0 ? 'md:grid-cols-4' : 'md:grid-cols-3'} gap-4`}>
         <div className={`p-4 rounded-lg border shadow-xs ${
           weekBalance >= 0
             ? 'bg-white border-gray-200'
@@ -199,6 +232,22 @@ export const WeeklyView: React.FC<WeeklyViewProps> = ({
             {formatCurrency(weekExits)}
           </p>
         </div>
+
+        {/* Section 3: 4th Top Card - Saldo das contas ao fim da semana */}
+        {accounts.length > 0 && (
+          <div className="p-4 rounded-lg bg-[#E4D8BE]/15 border border-[#C19848]/30 shadow-xs">
+            <span className="text-[10px] uppercase font-semibold text-gray-600 tracking-wider flex items-center gap-1">
+              <Wallet className="w-3.5 h-3.5 text-[#C19848]" />
+              Saldo das contas ao fim da semana
+            </span>
+            <p className="text-2xl font-bold font-mono text-slate-800 mt-1">
+              {formatCurrency(getAccountTotalOnDate(weekDays[6]))}
+            </p>
+            <p className="text-[11px] text-gray-500 mt-1 font-medium">
+              Posição consolidada no domingo ({formatDateBR(weekDays[6])})
+            </p>
+          </div>
+        )}
       </div>
 
       {/* 7 Daily Summary Cards Side-by-Side (Clean & Uncluttered) */}
@@ -264,6 +313,16 @@ export const WeeklyView: React.FC<WeeklyViewProps> = ({
                     <span>Saídas:</span>
                     <span className="text-red-600 font-mono font-semibold">-{formatCurrency(d.exits)}</span>
                   </div>
+
+                  {/* Section 3: Line of Total Accounts Balance */}
+                  {accounts.length > 0 && (
+                    <div className="flex justify-between items-center text-gray-600 pt-1 border-t border-gray-100">
+                      <span className="text-[9px] font-semibold text-gray-500 truncate" title="Saldo total das contas">Total Contas:</span>
+                      <span className="text-[10px] font-bold font-mono text-slate-700">
+                        {formatCurrency(getAccountTotalOnDate(d.dateIso))}
+                      </span>
+                    </div>
+                  )}
                 </div>
               </div>
 
@@ -346,7 +405,7 @@ export const WeeklyView: React.FC<WeeklyViewProps> = ({
           </div>
 
           {/* Daily Metrics Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <div className={`grid grid-cols-1 ${accounts.length > 0 ? 'sm:grid-cols-4' : 'sm:grid-cols-3'} gap-3`}>
             <div className={`p-3.5 rounded-md border ${
               activeDayData.balance >= 0
                 ? 'bg-emerald-50 border-emerald-200 text-emerald-800'
@@ -373,6 +432,19 @@ export const WeeklyView: React.FC<WeeklyViewProps> = ({
                 {formatCurrency(activeDayData.exits)}
               </p>
             </div>
+
+            {/* Section 4: 4th Card - Saldo das Contas */}
+            {accounts.length > 0 && (
+              <div className="p-3.5 rounded-md bg-[#E4D8BE]/15 border border-[#C19848]/30">
+                <span className="text-[10px] uppercase font-semibold tracking-wider text-gray-600 flex items-center gap-1">
+                  <Wallet className="w-3 h-3 text-[#C19848]" />
+                  Saldo das Contas
+                </span>
+                <p className="text-xl font-bold font-mono text-slate-800 mt-1">
+                  {formatCurrency(getAccountTotalOnDate(selectedDayIso))}
+                </p>
+              </div>
+            )}
           </div>
 
           {/* Descriptive List of Expenses and Postings */}

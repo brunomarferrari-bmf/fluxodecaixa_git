@@ -6,6 +6,8 @@ import {
   ImportValidationResult,
   UserProfile,
   RecurrenceRule,
+  Account,
+  AccountTransfer,
 } from './types';
 import {
   fetchTransactions,
@@ -23,6 +25,10 @@ import {
   deleteRecurrenceRule as dbDeleteRecurrenceRule,
   fetchUserProfile,
   saveUserProfile,
+  fetchAccounts,
+  upsertAccount,
+  fetchAccountTransfers,
+  upsertAccountTransfer,
 } from './services/database';
 import { syncRecurrencesSupabase } from './services/recurrence';
 import { generateUniqueId } from './utils/formatters';
@@ -42,6 +48,7 @@ import { SearchFilterView } from './components/views/SearchFilterView';
 import { ExcelView } from './components/views/ExcelView';
 import { TagsManagementView } from './components/views/TagsManagementView';
 import { RecurrencesView } from './components/views/RecurrencesView';
+import { AccountsView } from './components/views/AccountsView';
 
 const DEFAULT_PROFILE: UserProfile = {
   name: 'Administrador',
@@ -53,12 +60,15 @@ const DEFAULT_PROFILE: UserProfile = {
 
 export default function App() {
   const { user, status, signOut } = useAuth();
-  const [activeView, setActiveView] = useState<ActiveView>('fechamento');
+  // Default to 'calendario' as per Section 1 (Weekly view with today selected and details open)
+  const [activeView, setActiveView] = useState<ActiveView>('calendario');
 
   // Core Data State
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   const [tags, setTags] = useState<Tag[]>([]);
   const [rules, setRules] = useState<RecurrenceRule[]>([]);
+  const [accounts, setAccounts] = useState<Account[]>([]);
+  const [transfers, setTransfers] = useState<AccountTransfer[]>([]);
   const [userProfile, setUserProfile] = useState<UserProfile>(DEFAULT_PROFILE);
   const [dataLoading, setDataLoading] = useState(true);
 
@@ -87,14 +97,19 @@ export default function App() {
     if (!user) return;
     setDataLoading(true);
     try {
-      const [fetchedRules, fetchedTags, profile] = await Promise.all([
+      const [fetchedRules, fetchedTags, profile, fetchedAccounts, fetchedTransfers] = await Promise.all([
         fetchRecurrenceRules(),
         fetchTags(),
         fetchUserProfile(),
+        fetchAccounts(),
+        fetchAccountTransfers(),
       ]);
 
       setRules(fetchedRules);
       setTags(fetchedTags);
+      setAccounts(fetchedAccounts);
+      setTransfers(fetchedTransfers);
+
       if (profile) {
         setUserProfile(profile);
       } else {
@@ -127,6 +142,21 @@ export default function App() {
       setDataLoading(false);
     }
   }, [user]);
+
+  // ─── Accounts & Transfers Handlers ────────────────────────────
+  const handleSaveAccount = async (account: Account) => {
+    await upsertAccount(account);
+    const updated = await fetchAccounts();
+    setAccounts(updated);
+    showToast('Conta bancária salva com sucesso!');
+  };
+
+  const handleSaveTransfer = async (transfer: AccountTransfer) => {
+    await upsertAccountTransfer(transfer);
+    const updated = await fetchAccountTransfers();
+    setTransfers(updated);
+    showToast('Transferência realizada com sucesso!');
+  };
 
   useEffect(() => {
     loadAllData();
@@ -491,22 +521,25 @@ export default function App() {
           ? 'max-w-[1500px] px-2 sm:px-4 lg:px-5'
           : 'max-w-7xl px-4 sm:px-6 lg:px-8'
       }`}>
-        {activeView === 'inicio' && (
-          <HomeView
-            transactions={transactions}
-            tags={tags}
-            onOpenNewTransaction={handleOpenNewTransaction}
-            onEditTransaction={handleOpenEditTransaction}
-            setActiveView={setActiveView}
-          />
-        )}
-
-        {(activeView === 'calendario' || activeView === 'semanal') && (
+        {(activeView === 'inicio' || activeView === 'calendario' || activeView === 'semanal') && (
           <CalendarView
             transactions={transactions}
             tags={tags}
             onOpenNewTransaction={handleOpenNewTransaction}
             onEditTransaction={handleOpenEditTransaction}
+            accounts={accounts}
+            transfers={transfers}
+            initialViewMode="semanal"
+          />
+        )}
+
+        {activeView === 'contas' && (
+          <AccountsView
+            accounts={accounts}
+            transfers={transfers}
+            transactions={transactions}
+            onSaveAccount={handleSaveAccount}
+            onSaveTransfer={handleSaveTransfer}
           />
         )}
 
@@ -572,6 +605,7 @@ export default function App() {
         defaultDate={panelDefaultDate}
         tags={tags}
         onAddNewTag={handleAddNewTag}
+        accounts={accounts}
       />
 
       {/* Import Preview Modal */}

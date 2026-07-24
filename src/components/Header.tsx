@@ -25,7 +25,6 @@ export const Header: React.FC<HeaderProps> = ({
 }) => {
   const navItems = [
     { id: 'fechamento', label: 'Dashboard', icon: PieChart },
-    { id: 'inicio', label: 'Resumo do Dia', icon: LayoutDashboard },
     { id: 'calendario', label: 'Calendário', icon: Calendar },
   ] as const;
 

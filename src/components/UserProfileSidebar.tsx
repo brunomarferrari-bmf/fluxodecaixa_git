@@ -16,6 +16,7 @@ import {
   LogOut,
   Settings,
   RefreshCw,
+  Wallet,
 } from 'lucide-react';
 
 interface UserProfileSidebarProps {
@@ -222,6 +223,24 @@ export const UserProfileSidebar: React.FC<UserProfileSidebarProps> = ({
 
             {/* Navigation Shortcut Options Section */}
             <div className="space-y-2 pt-2 border-t border-gray-100">
+              {/* Gestão de Contas */}
+              <button
+                type="button"
+                onClick={() => {
+                  onNavigateView?.('contas');
+                  onClose();
+                }}
+                className="w-full flex items-center justify-between p-3 rounded-lg bg-gray-50 hover:bg-[#C19848]/5 border border-gray-200 hover:border-[#C19848]/20 transition-all text-left cursor-pointer group"
+              >
+                <div className="flex items-center gap-2.5">
+                  <Wallet className="w-4 h-4 text-[#C19848]" />
+                  <span className="text-xs font-semibold text-gray-800 group-hover:text-[#203723]">
+                    Gestão de Contas
+                  </span>
+                </div>
+                <ChevronRight className="w-3.5 h-3.5 text-gray-400 group-hover:text-[#C19848]" />
+              </button>
+
               {/* Importar / Exportar Excel */}
               <button
                 type="button"

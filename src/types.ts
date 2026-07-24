@@ -41,6 +41,26 @@ export interface Category {
 
 export type Tag = Category;
 
+export interface Account {
+  id: string;
+  nickname: string;
+  ownerType: 'PF' | 'PJ';
+  financialInstitution?: string;
+  initialBalance: number;
+  referenceDate: string; // YYYY-MM-DD
+  isDefault: boolean;
+  createdAt: string;
+}
+
+export interface AccountTransfer {
+  id: string;
+  sourceAccountId: string;
+  destinationAccountId: string;
+  amount: number;
+  date: string; // YYYY-MM-DD
+  createdAt: string;
+}
+
 export interface Transaction {
   id: string;
   date: string; // YYYY-MM-DD
@@ -54,6 +74,7 @@ export interface Transaction {
   createdAt: string;
   recurrenceRuleId?: string; // ID of the recurrence rule that generated this
   recurrenceModified?: boolean; // If this specific occurrence was modified manually
+  accountId?: string; // Linked account ID
 }
 
 export type RecurrenceFrequency = 'semanal' | 'quinzenal' | 'mensal' | 'bimestral' | 'anual';
@@ -72,6 +93,7 @@ export interface RecurrenceRule {
   endDate?: string;
   isPaused: boolean;
   createdAt: string;
+  accountId?: string;
 }
 
 export interface FilterState {
@@ -84,7 +106,7 @@ export interface FilterState {
   searchQuery: string;
 }
 
-export type ActiveView = 'inicio' | 'calendario' | 'semanal' | 'fechamento' | 'busca' | 'tags' | 'categorias' | 'excel' | 'recorrencias';
+export type ActiveView = 'inicio' | 'calendario' | 'semanal' | 'fechamento' | 'busca' | 'tags' | 'categorias' | 'excel' | 'recorrencias' | 'contas';
 
 export interface ImportValidationResult {
   validRows: Array<{
@@ -111,3 +133,4 @@ export interface UserProfile {
   role?: string;
   accessLevel?: string;
 }
+
