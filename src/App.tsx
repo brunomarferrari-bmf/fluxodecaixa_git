@@ -521,7 +521,7 @@ export default function App() {
           ? 'max-w-[1500px] px-2 sm:px-4 lg:px-5'
           : 'max-w-7xl px-4 sm:px-6 lg:px-8'
       }`}>
-        {(activeView === 'inicio' || activeView === 'calendario' || activeView === 'semanal') && (
+        {(activeView === 'inicio' || activeView === 'calendario' || activeView === 'semanal' || activeView === 'fechamento') && (
           <CalendarView
             transactions={transactions}
             tags={tags}
@@ -541,10 +541,6 @@ export default function App() {
             onSaveAccount={handleSaveAccount}
             onSaveTransfer={handleSaveTransfer}
           />
-        )}
-
-        {activeView === 'fechamento' && (
-          <MonthlyClosingView transactions={transactions} />
         )}
 
         {activeView === 'busca' && (

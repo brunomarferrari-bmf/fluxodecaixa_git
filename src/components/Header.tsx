@@ -24,7 +24,6 @@ export const Header: React.FC<HeaderProps> = ({
   onOpenProfile,
 }) => {
   const navItems = [
-    { id: 'fechamento', label: 'Dashboard', icon: PieChart },
     { id: 'calendario', label: 'Calendário', icon: Calendar },
   ] as const;
 
