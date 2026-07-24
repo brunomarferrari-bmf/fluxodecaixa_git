@@ -197,24 +197,6 @@ export const WeeklyView: React.FC<WeeklyViewProps> = ({
 
       {/* Week Total KPI Bar */}
       <div className={`grid grid-cols-1 ${accounts.length > 0 ? 'md:grid-cols-4' : 'md:grid-cols-3'} gap-4`}>
-        <div className={`p-4 rounded-lg border shadow-xs ${
-          weekBalance >= 0
-            ? 'bg-white border-gray-200'
-            : 'bg-white border-red-200'
-        }`}>
-          <span className="text-[10px] uppercase font-semibold text-gray-500 tracking-wider">
-            Saldo da Semana
-          </span>
-          <p className={`text-2xl font-bold font-mono mt-1 ${
-            weekBalance >= 0 ? 'text-emerald-600' : 'text-red-600'
-          }`}>
-            {formatCurrency(weekBalance)}
-          </p>
-          <p className="text-[11px] text-gray-400 mt-1 font-medium">
-            Soma dos saldos diários dos 7 dias da semana
-          </p>
-        </div>
-
         <div className="p-4 rounded-lg bg-white border border-gray-200 shadow-xs">
           <span className="text-[10px] uppercase font-semibold text-gray-500 tracking-wider">
             Entradas da Semana
@@ -230,6 +212,24 @@ export const WeeklyView: React.FC<WeeklyViewProps> = ({
           </span>
           <p className="text-2xl font-bold font-mono text-red-600 mt-1">
             {formatCurrency(weekExits)}
+          </p>
+        </div>
+
+        <div className={`p-4 rounded-lg border shadow-xs ${
+          weekBalance >= 0
+            ? 'bg-white border-gray-200'
+            : 'bg-white border-red-200'
+        }`}>
+          <span className="text-[10px] uppercase font-semibold text-gray-500 tracking-wider">
+            Saldo da Semana
+          </span>
+          <p className={`text-2xl font-bold font-mono mt-1 ${
+            weekBalance >= 0 ? 'text-emerald-600' : 'text-red-600'
+          }`}>
+            {formatCurrency(weekBalance)}
+          </p>
+          <p className="text-[11px] text-gray-400 mt-1 font-medium">
+            Soma dos saldos diários dos 7 dias da semana
           </p>
         </div>
 
