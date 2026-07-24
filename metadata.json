@@ -1,0 +1,6 @@
+{
+  "name": "TheParlor - Fluxo de Caixa",
+  "description": "Aplicativo de controle e gestão de fluxo de caixa diário, semanal e mensal para o TheParlor.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
