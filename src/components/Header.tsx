@@ -23,14 +23,14 @@ export const Header: React.FC<HeaderProps> = ({
   onOpenProfile,
 }) => {
   const navItems = [
-    { id: 'calendario', label: 'Calendário', icon: Calendar },
+    { id: 'calendario', label: 'Lançamentos', icon: Calendar },
     { id: 'projecao', label: 'Projeção de Caixa', icon: TrendingUp },
     { id: 'busca', label: 'Banco de Dados', icon: Database },
   ] as const;
 
   return (
     <header className="sticky top-0 z-30 bg-[#203723] text-white shadow-md border-b border-[#C19848]/25">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1500px] mx-auto px-2 sm:px-4 lg:px-5">
         <div className="flex items-center justify-between h-14 gap-4">
           
           {/* Logo & Fixed Title with Menu Button */}

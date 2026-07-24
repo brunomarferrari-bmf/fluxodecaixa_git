@@ -525,11 +525,7 @@ export default function App() {
       )}
 
       {/* Main Content Area */}
-      <main className={`flex-1 w-full mx-auto py-6 transition-all ${
-        activeView === 'calendario' || activeView === 'semanal'
-          ? 'max-w-[1500px] px-2 sm:px-4 lg:px-5'
-          : 'max-w-7xl px-4 sm:px-6 lg:px-8'
-      }`}>
+      <main className="flex-1 w-full max-w-[1500px] mx-auto py-6 px-2 sm:px-4 lg:px-5">
         {(activeView === 'inicio' || activeView === 'calendario' || activeView === 'semanal' || activeView === 'fechamento') && (
           <CalendarView
             transactions={transactions}
