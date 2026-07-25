@@ -217,8 +217,11 @@ export async function upsertTag(tag: Tag): Promise<void> {
   try {
     const userId = await getUserId();
     if (!userId) return;
-    await supabase.from('tags').upsert(tagToDbRow(tag, userId), { onConflict: 'id' });
-  } catch {}
+    const { error } = await supabase.from('tags').upsert(tagToDbRow(tag, userId), { onConflict: 'id' });
+    if (error) console.error('Supabase upsertTag error:', error);
+  } catch (err) {
+    console.error('Supabase upsertTag exception:', err);
+  }
 }
 
 export async function upsertTags(tags: Tag[]): Promise<void> {
@@ -311,8 +314,11 @@ export async function upsertRecurrenceRule(rule: RecurrenceRule): Promise<void> 
   try {
     const userId = await getUserId();
     if (!userId) return;
-    await supabase.from('recurrence_rules').upsert(ruleToDbRow(rule, userId), { onConflict: 'id' });
-  } catch {}
+    const { error } = await supabase.from('recurrence_rules').upsert(ruleToDbRow(rule, userId), { onConflict: 'id' });
+    if (error) console.error('Supabase upsertRecurrenceRule error:', error);
+  } catch (err) {
+    console.error('Supabase upsertRecurrenceRule exception:', err);
+  }
 }
 
 export async function upsertRecurrenceRules(rules: RecurrenceRule[]): Promise<void> {
@@ -433,7 +439,7 @@ export async function saveUserProfile(profile: UserProfile): Promise<void> {
   try {
     const userId = await getUserId();
     if (!userId) return;
-    await supabase.from('user_profiles').upsert({
+    const { error } = await supabase.from('user_profiles').upsert({
       id: userId,
       name: profile.name,
       email: profile.email,
@@ -442,7 +448,10 @@ export async function saveUserProfile(profile: UserProfile): Promise<void> {
       access_level: profile.accessLevel || '',
       updated_at: new Date().toISOString(),
     }, { onConflict: 'id' });
-  } catch {}
+    if (error) console.error('Supabase saveUserProfile error:', error);
+  } catch (err) {
+    console.error('Supabase saveUserProfile exception:', err);
+  }
 }
 
 // ─────────────────────────────────────────────
