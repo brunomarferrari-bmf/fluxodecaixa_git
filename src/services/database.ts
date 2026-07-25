@@ -16,8 +16,15 @@ const STORAGE_KEYS = {
 };
 
 // Helper: get current user id (if active session)
+// Usa getSession() (leitura local, sem rede) como fonte primária,
+// com fallback para getUser() caso a sessão local esteja vazia.
 async function getUserId(): Promise<string | null> {
   try {
+    // Tentativa rápida via sessão local (sem chamada de rede)
+    const { data: { session } } = await supabase.auth.getSession();
+    if (session?.user?.id) return session.user.id;
+
+    // Fallback: chamada de rede para validar token
     const { data: { user } } = await supabase.auth.getUser();
     return user?.id || null;
   } catch {

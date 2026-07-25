@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Transaction,
   Tag,
@@ -73,8 +73,6 @@ export default function App() {
   const [transfers, setTransfers] = useState<AccountTransfer[]>([]);
   const [userProfile, setUserProfile] = useState<UserProfile>(DEFAULT_PROFILE);
   const [dataLoading, setDataLoading] = useState(true);
-  // Tracks which userId has already been loaded — prevents re-running on auth state noise
-  const loadedUserIdRef = useRef<string | null>(null);
 
   // User Profile Sidebar State
   const [isProfileOpen, setIsProfileOpen] = useState(false);
@@ -96,10 +94,19 @@ export default function App() {
     setTimeout(() => setToastMessage(''), 3500);
   };
 
-  // ─── Load establishment data on mount ────────────────────────
+  // ─── Load establishment data ONLY when authenticated ─────────
+  // Depende de `status` em vez de `user`. Isso garante que o carregamento
+  // só acontece DEPOIS que a sessão Supabase está ativa (RLS funciona).
+  // Quando o usuário desloga (status → unauthenticated) e reloga
+  // (status → authenticated), o efeito dispara de novo e recarrega tudo.
   useEffect(() => {
-    if (loadedUserIdRef.current) return;
-    loadedUserIdRef.current = 'loaded';
+    if (status !== 'authenticated') {
+      // Enquanto não estiver autenticado, marca como carregando
+      // para não mostrar tela vazia
+      setDataLoading(true);
+      return;
+    }
+
     setDataLoading(true);
 
     const doLoad = async () => {
@@ -143,7 +150,7 @@ export default function App() {
     };
 
     doLoad();
-  }, [user]);
+  }, [status, user]);
 
   // ─── Accounts & Transfers Handlers ────────────────────────────
   const handleSaveAccount = async (account: Account) => {
