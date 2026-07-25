@@ -343,7 +343,7 @@ export const CalendarView: React.FC<CalendarViewProps> = ({
                   return (
                     <div
                       key={`blank-${idx}`}
-                      className="h-20 sm:h-24 rounded-lg bg-gray-50/50 border border-transparent"
+                      className="min-h-[96px] sm:min-h-[112px] rounded-lg bg-gray-50/50 border border-transparent"
                     />
                   );
                 }
@@ -352,12 +352,13 @@ export const CalendarView: React.FC<CalendarViewProps> = ({
                 const metrics = getDayMetrics(dateIso);
                 const isToday = dateIso === todayIso;
                 const isSelected = dateIso === selectedDayIso;
+                const accountBalance = accounts.length > 0 ? getAccountTotalOnDate(dateIso) : null;
 
                 return (
                   <div
                     key={dateIso}
                     onClick={() => setSelectedDayIso(dateIso)}
-                    className={`relative h-20 sm:h-24 p-1.5 sm:p-2 rounded-lg border transition-all cursor-pointer flex flex-col justify-between group ${
+                    className={`relative min-h-[96px] sm:min-h-[112px] p-1.5 sm:p-2 rounded-lg border transition-all cursor-pointer flex flex-col justify-between group ${
                       isSelected
                         ? 'ring-2 ring-[#C19848] border-[#C19848] bg-[#C19848]/5 shadow-xs'
                         : isToday
@@ -395,24 +396,42 @@ export const CalendarView: React.FC<CalendarViewProps> = ({
                       </div>
                     </div>
 
-                    {/* Day Balance Display (Independent rule - Section 7) */}
-                    <div className="mt-auto">
-                      {metrics.hasTxs ? (
-                        <div>
-                          <p className={`text-[10px] sm:text-xs font-bold font-mono ${
-                            metrics.balance >= 0 ? 'text-emerald-600' : 'text-red-600'
-                          }`}>
-                            {formatCurrency(metrics.balance)}
-                          </p>
-                          <p className="text-[9px] text-gray-400 font-medium hidden sm:block">
-                            {metrics.dayTxs.length} lançamento(s)
+                    {/* Day Metrics Section: Saldo de Contas (Imp. 1) & Saldo do Dia (Imp. 2) */}
+                    <div className="mt-2 space-y-1">
+                      {/* Saldo de Contas (Importância 1) */}
+                      {accounts.length > 0 && (
+                        <div className="bg-slate-50/80 border border-slate-100 p-1 rounded">
+                          <span className="text-[8px] uppercase font-extrabold text-slate-400 block leading-none">
+                            Saldo de Contas
+                          </span>
+                          <p className="text-[10px] sm:text-[11px] font-extrabold font-mono text-slate-800 leading-tight mt-0.5">
+                            {formatCurrency(accountBalance || 0)}
                           </p>
                         </div>
-                      ) : (
-                        <span className="text-[10px] text-gray-300 font-medium italic">
-                          —
-                        </span>
                       )}
+
+                      {/* Saldo do Dia (Importância 2) */}
+                      <div>
+                        {metrics.hasTxs ? (
+                          <div>
+                            <span className="text-[8px] uppercase font-bold text-gray-400 block leading-none">
+                              Saldo do Dia
+                            </span>
+                            <p className={`text-[10px] sm:text-[11px] font-bold font-mono leading-tight mt-0.5 ${
+                              metrics.balance >= 0 ? 'text-emerald-600' : 'text-red-600'
+                            }`}>
+                              {formatCurrency(metrics.balance)}
+                            </p>
+                            <p className="text-[8px] text-gray-400 font-medium hidden sm:block">
+                              {metrics.dayTxs.length} lançamento(s)
+                            </p>
+                          </div>
+                        ) : (
+                          <span className="text-[9px] text-gray-300 font-medium italic block">
+                            —
+                          </span>
+                        )}
+                      </div>
                     </div>
                   </div>
                 );
