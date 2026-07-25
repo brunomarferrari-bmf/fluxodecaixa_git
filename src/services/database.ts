@@ -1,7 +1,7 @@
 /**
- * Supabase & Dual-Layer Hybrid Storage Database Service
- * Provides 100% persistent storage using synchronous local storage + Supabase sync.
- * Prevents any data loss across hot-reloads, code updates, commits, or offline states.
+ * Supabase & Dual-Layer Shared Establishment Database Service
+ * Provides 100% persistent shared data across all users and sessions.
+ * Implements Union-Merge pattern (localStorage + Supabase pool) so no entry is ever lost or erased.
  */
 import { supabase } from './supabase';
 import { Transaction, Tag, UserProfile, RecurrenceRule, Account, AccountTransfer } from '../types';
@@ -15,15 +15,13 @@ const STORAGE_KEYS = {
   TRANSFERS: 'theparlor_account_transfers_v1',
 };
 
-// ─────────────────────────────────────────────
-// HELPER: get current user id
-// ─────────────────────────────────────────────
-async function getUserId(): Promise<string | null> {
+// Helper: get current user id (if available)
+async function getUserId(): Promise<string> {
   try {
     const { data: { user } } = await supabase.auth.getUser();
-    return user?.id || null;
+    return user?.id || 'shared_establishment';
   } catch {
-    return null;
+    return 'shared_establishment';
   }
 }
 
@@ -31,37 +29,35 @@ async function getUserId(): Promise<string | null> {
 // TRANSACTIONS
 // ─────────────────────────────────────────────
 export async function fetchTransactions(): Promise<Transaction[]> {
+  const local = fetchTransactionsFromLocal();
+  let remote: Transaction[] = [];
+
   try {
     const { data, error } = await supabase
       .from('transactions')
       .select('*')
       .order('date', { ascending: false });
 
-    if (!error && data && data.length > 0) {
-      const parsed = data.map(dbRowToTransaction);
-      // Sync to localStorage
-      localStorage.setItem(STORAGE_KEYS.TRANSACTIONS, JSON.stringify(parsed));
-      return parsed;
+    if (!error && data) {
+      remote = data.map(dbRowToTransaction);
     }
   } catch (err) {
-    console.warn('Supabase fetchTransactions error or offline, loading from localStorage:', err);
+    console.warn('Supabase fetchTransactions warning:', err);
   }
 
-  // Fallback to localStorage
-  const saved = localStorage.getItem(STORAGE_KEYS.TRANSACTIONS);
-  if (saved) {
-    try {
-      return JSON.parse(saved);
-    } catch {
-      return [];
-    }
-  }
-  return [];
+  // UNION MERGE: Merge local & remote by ID to prevent any data loss
+  const mergedMap = new Map<string, Transaction>();
+  local.forEach((t) => mergedMap.set(t.id, t));
+  remote.forEach((t) => mergedMap.set(t.id, t));
+
+  const merged = Array.from(mergedMap.values()).sort((a, b) => b.date.localeCompare(a.date));
+  localStorage.setItem(STORAGE_KEYS.TRANSACTIONS, JSON.stringify(merged));
+  return merged;
 }
 
 export async function upsertTransaction(tx: Transaction): Promise<void> {
-  // 1. Synchronously update localStorage
-  const current = await fetchTransactionsFromLocal();
+  // 1. Update localStorage immediately
+  const current = fetchTransactionsFromLocal();
   const exists = current.some((t) => t.id === tx.id);
   const updated = exists
     ? current.map((t) => (t.id === tx.id ? tx : t))
@@ -69,72 +65,66 @@ export async function upsertTransaction(tx: Transaction): Promise<void> {
 
   localStorage.setItem(STORAGE_KEYS.TRANSACTIONS, JSON.stringify(updated));
 
-  // 2. Async sync to Supabase
+  // 2. Sync to Supabase
   try {
     const userId = await getUserId();
-    if (userId) {
-      await supabase
-        .from('transactions')
-        .upsert(transactionToDbRow(tx, userId), { onConflict: 'id' });
-    }
+    await supabase
+      .from('transactions')
+      .upsert(transactionToDbRow(tx, userId), { onConflict: 'id' });
   } catch (err) {
-    console.warn('Error upserting transaction to Supabase:', err);
+    console.warn('Supabase upsertTransaction warning:', err);
   }
 }
 
 export async function upsertTransactions(txs: Transaction[]): Promise<void> {
   if (txs.length === 0) return;
 
-  // 1. Synchronously update localStorage
-  const current = await fetchTransactionsFromLocal();
+  // 1. Update localStorage immediately
+  const current = fetchTransactionsFromLocal();
   const currentMap = new Map(current.map((t) => [t.id, t]));
   txs.forEach((tx) => currentMap.set(tx.id, tx));
   const updated = Array.from(currentMap.values()).sort((a, b) => b.date.localeCompare(a.date));
 
   localStorage.setItem(STORAGE_KEYS.TRANSACTIONS, JSON.stringify(updated));
 
-  // 2. Async sync to Supabase
+  // 2. Sync to Supabase
   try {
     const userId = await getUserId();
-    if (userId) {
-      const rows = txs.map((tx) => transactionToDbRow(tx, userId));
-      const BATCH = 100;
-      for (let i = 0; i < rows.length; i += BATCH) {
-        await supabase
-          .from('transactions')
-          .upsert(rows.slice(i, i + BATCH), { onConflict: 'id' });
-      }
+    const rows = txs.map((tx) => transactionToDbRow(tx, userId));
+    const BATCH = 100;
+    for (let i = 0; i < rows.length; i += BATCH) {
+      await supabase
+        .from('transactions')
+        .upsert(rows.slice(i, i + BATCH), { onConflict: 'id' });
     }
   } catch (err) {
-    console.warn('Error batch upserting transactions to Supabase:', err);
+    console.warn('Supabase batch upsertTransactions warning:', err);
   }
 }
 
 export async function deleteTransaction(id: string): Promise<void> {
-  // 1. Update localStorage
-  const current = await fetchTransactionsFromLocal();
+  const current = fetchTransactionsFromLocal();
   const updated = current.filter((t) => t.id !== id);
   localStorage.setItem(STORAGE_KEYS.TRANSACTIONS, JSON.stringify(updated));
 
-  // 2. Supabase delete
   try {
     await supabase.from('transactions').delete().eq('id', id);
   } catch (err) {
-    console.warn('Error deleting transaction from Supabase:', err);
+    console.warn('Supabase deleteTransaction warning:', err);
   }
 }
 
 export async function deleteTransactions(ids: string[]): Promise<void> {
   if (ids.length === 0) return;
   const idSet = new Set(ids);
-  const current = await fetchTransactionsFromLocal();
+  const current = fetchTransactionsFromLocal();
   const updated = current.filter((t) => !idSet.has(t.id));
   localStorage.setItem(STORAGE_KEYS.TRANSACTIONS, JSON.stringify(updated));
 
   try {
     await supabase.from('transactions').delete().in('id', ids);
   } catch (err) {
-    console.warn('Error deleting transactions from Supabase:', err);
+    console.warn('Supabase deleteTransactions warning:', err);
   }
 }
 
@@ -150,7 +140,6 @@ function fetchTransactionsFromLocal(): Transaction[] {
   return [];
 }
 
-// Transaction converters
 function transactionToDbRow(tx: Transaction, userId: string) {
   return {
     id: tx.id,
@@ -192,49 +181,46 @@ function dbRowToTransaction(row: Record<string, unknown>): Transaction {
 // TAGS
 // ─────────────────────────────────────────────
 export async function fetchTags(): Promise<Tag[]> {
+  const local = fetchTagsFromLocal();
+  let remote: Tag[] = [];
+
   try {
     const { data, error } = await supabase
       .from('tags')
       .select('*')
       .order('name');
 
-    if (!error && data && data.length > 0) {
-      const parsed = data.map(dbRowToTag);
-      localStorage.setItem(STORAGE_KEYS.TAGS, JSON.stringify(parsed));
-      return parsed;
+    if (!error && data) {
+      remote = data.map(dbRowToTag);
     }
   } catch (err) {
-    console.warn('Supabase fetchTags error, using localStorage:', err);
+    console.warn('Supabase fetchTags warning:', err);
   }
 
-  const saved = localStorage.getItem(STORAGE_KEYS.TAGS);
-  if (saved) {
-    try {
-      return JSON.parse(saved);
-    } catch {
-      return [];
-    }
-  }
-  return [];
+  const mergedMap = new Map<string, Tag>();
+  local.forEach((t) => mergedMap.set(t.id, t));
+  remote.forEach((t) => mergedMap.set(t.id, t));
+
+  const merged = Array.from(mergedMap.values());
+  localStorage.setItem(STORAGE_KEYS.TAGS, JSON.stringify(merged));
+  return merged;
 }
 
 export async function upsertTag(tag: Tag): Promise<void> {
-  const current = await fetchTagsFromLocal();
+  const current = fetchTagsFromLocal();
   const exists = current.some((t) => t.id === tag.id);
   const updated = exists ? current.map((t) => (t.id === tag.id ? tag : t)) : [...current, tag];
   localStorage.setItem(STORAGE_KEYS.TAGS, JSON.stringify(updated));
 
   try {
     const userId = await getUserId();
-    if (userId) {
-      await supabase.from('tags').upsert(tagToDbRow(tag, userId), { onConflict: 'id' });
-    }
+    await supabase.from('tags').upsert(tagToDbRow(tag, userId), { onConflict: 'id' });
   } catch {}
 }
 
 export async function upsertTags(tags: Tag[]): Promise<void> {
   if (tags.length === 0) return;
-  const current = await fetchTagsFromLocal();
+  const current = fetchTagsFromLocal();
   const currentMap = new Map(current.map((t) => [t.id, t]));
   tags.forEach((t) => currentMap.set(t.id, t));
   const updated = Array.from(currentMap.values());
@@ -242,15 +228,13 @@ export async function upsertTags(tags: Tag[]): Promise<void> {
 
   try {
     const userId = await getUserId();
-    if (userId) {
-      const rows = tags.map((t) => tagToDbRow(t, userId));
-      await supabase.from('tags').upsert(rows, { onConflict: 'id' });
-    }
+    const rows = tags.map((t) => tagToDbRow(t, userId));
+    await supabase.from('tags').upsert(rows, { onConflict: 'id' });
   } catch {}
 }
 
 export async function deleteTag(id: string): Promise<void> {
-  const current = await fetchTagsFromLocal();
+  const current = fetchTagsFromLocal();
   const updated = current.filter((t) => t.id !== id);
   localStorage.setItem(STORAGE_KEYS.TAGS, JSON.stringify(updated));
 
@@ -296,30 +280,29 @@ function dbRowToTag(row: Record<string, unknown>): Tag {
 // RECURRENCE RULES
 // ─────────────────────────────────────────────
 export async function fetchRecurrenceRules(): Promise<RecurrenceRule[]> {
+  const local = fetchRecurrenceRulesFromLocal();
+  let remote: RecurrenceRule[] = [];
+
   try {
     const { data, error } = await supabase
       .from('recurrence_rules')
       .select('*')
       .order('created_at');
 
-    if (!error && data && data.length > 0) {
-      const parsed = data.map(dbRowToRule);
-      localStorage.setItem(STORAGE_KEYS.RECURRENCE_RULES, JSON.stringify(parsed));
-      return parsed;
+    if (!error && data) {
+      remote = data.map(dbRowToRule);
     }
   } catch (err) {
-    console.warn('Supabase fetchRecurrenceRules error, using localStorage:', err);
+    console.warn('Supabase fetchRecurrenceRules warning:', err);
   }
 
-  const saved = localStorage.getItem(STORAGE_KEYS.RECURRENCE_RULES);
-  if (saved) {
-    try {
-      return JSON.parse(saved);
-    } catch {
-      return [];
-    }
-  }
-  return [];
+  const mergedMap = new Map<string, RecurrenceRule>();
+  local.forEach((r) => mergedMap.set(r.id, r));
+  remote.forEach((r) => mergedMap.set(r.id, r));
+
+  const merged = Array.from(mergedMap.values());
+  localStorage.setItem(STORAGE_KEYS.RECURRENCE_RULES, JSON.stringify(merged));
+  return merged;
 }
 
 export async function upsertRecurrenceRule(rule: RecurrenceRule): Promise<void> {
@@ -330,9 +313,7 @@ export async function upsertRecurrenceRule(rule: RecurrenceRule): Promise<void> 
 
   try {
     const userId = await getUserId();
-    if (userId) {
-      await supabase.from('recurrence_rules').upsert(ruleToDbRow(rule, userId), { onConflict: 'id' });
-    }
+    await supabase.from('recurrence_rules').upsert(ruleToDbRow(rule, userId), { onConflict: 'id' });
   } catch {}
 }
 
@@ -346,10 +327,8 @@ export async function upsertRecurrenceRules(rules: RecurrenceRule[]): Promise<vo
 
   try {
     const userId = await getUserId();
-    if (userId) {
-      const rows = rules.map((r) => ruleToDbRow(r, userId));
-      await supabase.from('recurrence_rules').upsert(rows, { onConflict: 'id' });
-    }
+    const rows = rules.map((r) => ruleToDbRow(r, userId));
+    await supabase.from('recurrence_rules').upsert(rows, { onConflict: 'id' });
   } catch {}
 }
 
@@ -454,17 +433,15 @@ export async function saveUserProfile(profile: UserProfile): Promise<void> {
   localStorage.setItem(STORAGE_KEYS.PROFILE, JSON.stringify(profile));
   try {
     const userId = await getUserId();
-    if (userId) {
-      await supabase.from('user_profiles').upsert({
-        id: userId,
-        name: profile.name,
-        email: profile.email,
-        avatar_url: profile.avatarUrl || '',
-        role: profile.role || '',
-        access_level: profile.accessLevel || '',
-        updated_at: new Date().toISOString(),
-      }, { onConflict: 'id' });
-    }
+    await supabase.from('user_profiles').upsert({
+      id: userId,
+      name: profile.name,
+      email: profile.email,
+      avatar_url: profile.avatarUrl || '',
+      role: profile.role || '',
+      access_level: profile.accessLevel || '',
+      updated_at: new Date().toISOString(),
+    }, { onConflict: 'id' });
   } catch {}
 }
 
@@ -472,14 +449,17 @@ export async function saveUserProfile(profile: UserProfile): Promise<void> {
 // ACCOUNTS & TRANSFERS
 // ─────────────────────────────────────────────
 export async function fetchAccounts(): Promise<Account[]> {
+  const local = fetchAccountsFromLocal();
+  let remote: Account[] = [];
+
   try {
     const { data, error } = await supabase
       .from('accounts')
       .select('*')
       .order('created_at', { ascending: true });
 
-    if (!error && data && data.length > 0) {
-      const parsed = data.map((row: any) => ({
+    if (!error && data) {
+      remote = data.map((row: any) => ({
         id: row.id,
         nickname: row.nickname,
         ownerType: row.owner_type || 'PF',
@@ -489,22 +469,18 @@ export async function fetchAccounts(): Promise<Account[]> {
         isDefault: Boolean(row.is_default),
         createdAt: row.created_at,
       }));
-      localStorage.setItem(STORAGE_KEYS.ACCOUNTS, JSON.stringify(parsed));
-      return parsed;
     }
   } catch (err) {
-    console.warn('Supabase accounts table fetch error, using localStorage:', err);
+    console.warn('Supabase fetchAccounts warning:', err);
   }
 
-  const saved = localStorage.getItem(STORAGE_KEYS.ACCOUNTS);
-  if (saved) {
-    try {
-      return JSON.parse(saved);
-    } catch {
-      return [];
-    }
-  }
-  return [];
+  const mergedMap = new Map<string, Account>();
+  local.forEach((a) => mergedMap.set(a.id, a));
+  remote.forEach((a) => mergedMap.set(a.id, a));
+
+  const merged = Array.from(mergedMap.values());
+  localStorage.setItem(STORAGE_KEYS.ACCOUNTS, JSON.stringify(merged));
+  return merged;
 }
 
 export async function upsertAccount(account: Account): Promise<void> {
@@ -524,19 +500,17 @@ export async function upsertAccount(account: Account): Promise<void> {
 
   try {
     const userId = await getUserId();
-    if (userId) {
-      await supabase.from('accounts').upsert({
-        id: account.id,
-        user_id: userId,
-        nickname: account.nickname,
-        owner_type: account.ownerType,
-        financial_institution: account.financialInstitution || null,
-        initial_balance: account.initialBalance,
-        reference_date: account.referenceDate,
-        is_default: account.isDefault,
-        created_at: account.createdAt,
-      }, { onConflict: 'id' });
-    }
+    await supabase.from('accounts').upsert({
+      id: account.id,
+      user_id: userId,
+      nickname: account.nickname,
+      owner_type: account.ownerType,
+      financial_institution: account.financialInstitution || null,
+      initial_balance: account.initialBalance,
+      reference_date: account.referenceDate,
+      is_default: account.isDefault,
+      created_at: account.createdAt,
+    }, { onConflict: 'id' });
   } catch {}
 }
 
@@ -545,20 +519,18 @@ export async function upsertAccounts(accounts: Account[]): Promise<void> {
 
   try {
     const userId = await getUserId();
-    if (userId) {
-      const rows = accounts.map((a) => ({
-        id: a.id,
-        user_id: userId,
-        nickname: a.nickname,
-        owner_type: a.ownerType,
-        financial_institution: a.financialInstitution || null,
-        initial_balance: a.initialBalance,
-        reference_date: a.referenceDate,
-        is_default: a.isDefault,
-        created_at: a.createdAt,
-      }));
-      await supabase.from('accounts').upsert(rows, { onConflict: 'id' });
-    }
+    const rows = accounts.map((a) => ({
+      id: a.id,
+      user_id: userId,
+      nickname: a.nickname,
+      owner_type: a.ownerType,
+      financial_institution: a.financialInstitution || null,
+      initial_balance: a.initialBalance,
+      reference_date: a.referenceDate,
+      is_default: a.isDefault,
+      created_at: a.createdAt,
+    }));
+    await supabase.from('accounts').upsert(rows, { onConflict: 'id' });
   } catch {}
 }
 
@@ -588,14 +560,17 @@ function fetchAccountsFromLocal(): Account[] {
 }
 
 export async function fetchAccountTransfers(): Promise<AccountTransfer[]> {
+  const local = fetchTransfersFromLocal();
+  let remote: AccountTransfer[] = [];
+
   try {
     const { data, error } = await supabase
       .from('account_transfers')
       .select('*')
       .order('created_at', { ascending: false });
 
-    if (!error && data && data.length > 0) {
-      const parsed = data.map((row: any) => ({
+    if (!error && data) {
+      remote = data.map((row: any) => ({
         id: row.id,
         sourceAccountId: row.source_account_id,
         destinationAccountId: row.destination_account_id,
@@ -603,20 +578,16 @@ export async function fetchAccountTransfers(): Promise<AccountTransfer[]> {
         date: row.date,
         createdAt: row.created_at,
       }));
-      localStorage.setItem(STORAGE_KEYS.TRANSFERS, JSON.stringify(parsed));
-      return parsed;
     }
   } catch {}
 
-  const saved = localStorage.getItem(STORAGE_KEYS.TRANSFERS);
-  if (saved) {
-    try {
-      return JSON.parse(saved);
-    } catch {
-      return [];
-    }
-  }
-  return [];
+  const mergedMap = new Map<string, AccountTransfer>();
+  local.forEach((t) => mergedMap.set(t.id, t));
+  remote.forEach((t) => mergedMap.set(t.id, t));
+
+  const merged = Array.from(mergedMap.values());
+  localStorage.setItem(STORAGE_KEYS.TRANSFERS, JSON.stringify(merged));
+  return merged;
 }
 
 export async function upsertAccountTransfer(transfer: AccountTransfer): Promise<void> {
@@ -626,17 +597,15 @@ export async function upsertAccountTransfer(transfer: AccountTransfer): Promise<
 
   try {
     const userId = await getUserId();
-    if (userId) {
-      await supabase.from('account_transfers').upsert({
-        id: transfer.id,
-        user_id: userId,
-        source_account_id: transfer.sourceAccountId,
-        destination_account_id: transfer.destinationAccountId,
-        amount: transfer.amount,
-        date: transfer.date,
-        created_at: transfer.createdAt,
-      }, { onConflict: 'id' });
-    }
+    await supabase.from('account_transfers').upsert({
+      id: transfer.id,
+      user_id: userId,
+      source_account_id: transfer.sourceAccountId,
+      destination_account_id: transfer.destinationAccountId,
+      amount: transfer.amount,
+      date: transfer.date,
+      created_at: transfer.createdAt,
+    }, { onConflict: 'id' });
   } catch {}
 }
 

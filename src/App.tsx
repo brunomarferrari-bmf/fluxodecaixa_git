@@ -96,14 +96,10 @@ export default function App() {
     setTimeout(() => setToastMessage(''), 3500);
   };
 
-  // ─── Load all data — runs ONLY ONCE per unique userId ───────
+  // ─── Load establishment data on mount ────────────────────────
   useEffect(() => {
-    const userId = user?.id;
-    if (!userId) return;
-    // If we already loaded for this userId, don't run again
-    if (loadedUserIdRef.current === userId) return;
-
-    loadedUserIdRef.current = userId;
+    if (loadedUserIdRef.current) return;
+    loadedUserIdRef.current = 'loaded';
     setDataLoading(true);
 
     const doLoad = async () => {
@@ -123,7 +119,7 @@ export default function App() {
 
         if (profile) {
           setUserProfile(profile);
-        } else {
+        } else if (user) {
           const googleProfile: UserProfile = {
             ...DEFAULT_PROFILE,
             name: user.user_metadata?.full_name || user.email || 'Usuário',
