@@ -29,9 +29,6 @@ async function getUserId(): Promise<string | null> {
 // TRANSACTIONS
 // ─────────────────────────────────────────────
 export async function fetchTransactions(): Promise<Transaction[]> {
-  const local = fetchTransactionsFromLocal();
-  let remote: Transaction[] = [];
-
   try {
     const { data, error } = await supabase
       .from('transactions')
@@ -39,20 +36,17 @@ export async function fetchTransactions(): Promise<Transaction[]> {
       .order('date', { ascending: false });
 
     if (!error && data) {
-      remote = data.map(dbRowToTransaction);
+      const parsed = data.map(dbRowToTransaction);
+      // Sincroniza o localStorage com a versão limpa e desduplicada do banco
+      localStorage.setItem(STORAGE_KEYS.TRANSACTIONS, JSON.stringify(parsed));
+      return parsed;
     }
   } catch (err) {
     console.warn('Supabase fetchTransactions warning:', err);
   }
 
-  // UNION MERGE: Merge local & remote by ID to prevent any data loss
-  const mergedMap = new Map<string, Transaction>();
-  local.forEach((t) => mergedMap.set(t.id, t));
-  remote.forEach((t) => mergedMap.set(t.id, t));
-
-  const merged = Array.from(mergedMap.values()).sort((a, b) => b.date.localeCompare(a.date));
-  localStorage.setItem(STORAGE_KEYS.TRANSACTIONS, JSON.stringify(merged));
-  return merged;
+  // Fallback para o cache local caso ocorra falha de rede
+  return fetchTransactionsFromLocal();
 }
 
 export async function upsertTransaction(tx: Transaction): Promise<void> {
@@ -189,9 +183,6 @@ function dbRowToTransaction(row: Record<string, unknown>): Transaction {
 // TAGS
 // ─────────────────────────────────────────────
 export async function fetchTags(): Promise<Tag[]> {
-  const local = fetchTagsFromLocal();
-  let remote: Tag[] = [];
-
   try {
     const { data, error } = await supabase
       .from('tags')
@@ -199,19 +190,15 @@ export async function fetchTags(): Promise<Tag[]> {
       .order('name');
 
     if (!error && data) {
-      remote = data.map(dbRowToTag);
+      const parsed = data.map(dbRowToTag);
+      localStorage.setItem(STORAGE_KEYS.TAGS, JSON.stringify(parsed));
+      return parsed;
     }
   } catch (err) {
     console.warn('Supabase fetchTags warning:', err);
   }
 
-  const mergedMap = new Map<string, Tag>();
-  local.forEach((t) => mergedMap.set(t.id, t));
-  remote.forEach((t) => mergedMap.set(t.id, t));
-
-  const merged = Array.from(mergedMap.values());
-  localStorage.setItem(STORAGE_KEYS.TAGS, JSON.stringify(merged));
-  return merged;
+  return fetchTagsFromLocal();
 }
 
 export async function upsertTag(tag: Tag): Promise<void> {
@@ -290,9 +277,6 @@ function dbRowToTag(row: Record<string, unknown>): Tag {
 // RECURRENCE RULES
 // ─────────────────────────────────────────────
 export async function fetchRecurrenceRules(): Promise<RecurrenceRule[]> {
-  const local = fetchRecurrenceRulesFromLocal();
-  let remote: RecurrenceRule[] = [];
-
   try {
     const { data, error } = await supabase
       .from('recurrence_rules')
@@ -300,19 +284,15 @@ export async function fetchRecurrenceRules(): Promise<RecurrenceRule[]> {
       .order('created_at');
 
     if (!error && data) {
-      remote = data.map(dbRowToRule);
+      const parsed = data.map(dbRowToRule);
+      localStorage.setItem(STORAGE_KEYS.RECURRENCE_RULES, JSON.stringify(parsed));
+      return parsed;
     }
   } catch (err) {
     console.warn('Supabase fetchRecurrenceRules warning:', err);
   }
 
-  const mergedMap = new Map<string, RecurrenceRule>();
-  local.forEach((r) => mergedMap.set(r.id, r));
-  remote.forEach((r) => mergedMap.set(r.id, r));
-
-  const merged = Array.from(mergedMap.values());
-  localStorage.setItem(STORAGE_KEYS.RECURRENCE_RULES, JSON.stringify(merged));
-  return merged;
+  return fetchRecurrenceRulesFromLocal();
 }
 
 export async function upsertRecurrenceRule(rule: RecurrenceRule): Promise<void> {
