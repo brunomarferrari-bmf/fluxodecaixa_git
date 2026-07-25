@@ -107,7 +107,7 @@ const INITIAL_TAGS: Tag[] = [
     name: 'Serviços Prestados',
     color: '#15803d',
     observation: 'Receitas decorrentes de consultorias, eventos externos personalizados, locação de espaço ou serviços de buffet prestados.',
-    code: 'SERV_PRESTADOS',
+    code: 'SERVICOS_PRESTADOS',
   },
   {
     id: 'cat_11',
