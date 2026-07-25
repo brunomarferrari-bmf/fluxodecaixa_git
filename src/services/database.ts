@@ -449,9 +449,6 @@ export async function saveUserProfile(profile: UserProfile): Promise<void> {
 // ACCOUNTS & TRANSFERS
 // ─────────────────────────────────────────────
 export async function fetchAccounts(): Promise<Account[]> {
-  const local = fetchAccountsFromLocal();
-  let remote: Account[] = [];
-
   try {
     const { data, error } = await supabase
       .from('accounts')
@@ -459,7 +456,7 @@ export async function fetchAccounts(): Promise<Account[]> {
       .order('created_at', { ascending: true });
 
     if (!error && data) {
-      remote = data.map((row: any) => ({
+      const parsed: Account[] = data.map((row: any) => ({
         id: row.id,
         nickname: row.nickname,
         ownerType: row.owner_type || 'PF',
@@ -469,18 +466,14 @@ export async function fetchAccounts(): Promise<Account[]> {
         isDefault: Boolean(row.is_default),
         createdAt: row.created_at,
       }));
+      localStorage.setItem(STORAGE_KEYS.ACCOUNTS, JSON.stringify(parsed));
+      return parsed;
     }
   } catch (err) {
     console.warn('Supabase fetchAccounts warning:', err);
   }
 
-  const mergedMap = new Map<string, Account>();
-  local.forEach((a) => mergedMap.set(a.id, a));
-  remote.forEach((a) => mergedMap.set(a.id, a));
-
-  const merged = Array.from(mergedMap.values());
-  localStorage.setItem(STORAGE_KEYS.ACCOUNTS, JSON.stringify(merged));
-  return merged;
+  return fetchAccountsFromLocal();
 }
 
 export async function upsertAccount(account: Account): Promise<void> {
@@ -562,9 +555,6 @@ function fetchAccountsFromLocal(): Account[] {
 }
 
 export async function fetchAccountTransfers(): Promise<AccountTransfer[]> {
-  const local = fetchTransfersFromLocal();
-  let remote: AccountTransfer[] = [];
-
   try {
     const { data, error } = await supabase
       .from('account_transfers')
@@ -572,7 +562,7 @@ export async function fetchAccountTransfers(): Promise<AccountTransfer[]> {
       .order('created_at', { ascending: false });
 
     if (!error && data) {
-      remote = data.map((row: any) => ({
+      const parsed: AccountTransfer[] = data.map((row: any) => ({
         id: row.id,
         sourceAccountId: row.source_account_id,
         destinationAccountId: row.destination_account_id,
@@ -580,16 +570,12 @@ export async function fetchAccountTransfers(): Promise<AccountTransfer[]> {
         date: row.date,
         createdAt: row.created_at,
       }));
+      localStorage.setItem(STORAGE_KEYS.TRANSFERS, JSON.stringify(parsed));
+      return parsed;
     }
   } catch {}
 
-  const mergedMap = new Map<string, AccountTransfer>();
-  local.forEach((t) => mergedMap.set(t.id, t));
-  remote.forEach((t) => mergedMap.set(t.id, t));
-
-  const merged = Array.from(mergedMap.values());
-  localStorage.setItem(STORAGE_KEYS.TRANSFERS, JSON.stringify(merged));
-  return merged;
+  return fetchTransfersFromLocal();
 }
 
 export async function upsertAccountTransfer(transfer: AccountTransfer): Promise<void> {
