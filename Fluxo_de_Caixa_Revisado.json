@@ -1,0 +1,5825 @@
+[
+  {
+    "Data": "02/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 28.2,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "02/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 9.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "02/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 187.25,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "03/01/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 3931.44,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "05/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "ANA:",
+    "Valor": 1758.38,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "ANA: / Falta 2300"
+  },
+  {
+    "Data": "05/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "ANA:",
+    "Valor": 2300.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "ANA: / Falta 2300"
+  },
+  {
+    "Data": "06/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 3400.46,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "06/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 96.22,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "06/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 20.9,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "06/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 47.2,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "06/01/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 1265.03,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "07/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 9351.9,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "07/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 80.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "07/01/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 1249.36,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "08/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 350.3,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "08/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 55.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "08/01/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 5998.77,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "09/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 524.2,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "09/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 7229.6,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "09/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 113.68,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "09/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 37.17,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "09/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 62.5,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "09/01/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 2517.6,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "10/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 2500.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "10/01/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 3129.48,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "11/01/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Regis:",
+    "Valor": 8000.0,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Regis:"
+  },
+  {
+    "Data": "12/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 7791.54,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "12/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 900.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "12/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 151.9,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "12/01/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 20.51,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "12/01/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 2037.21,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "13/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 145.01,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "13/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 97.47,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "13/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 301.06,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "13/01/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 1301.2,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "14/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 105.01,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "14/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 379.71,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "14/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 109.6,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "14/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 16.59,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "14/01/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 81.45,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "14/01/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 3177.99,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "15/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 150.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "15/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 2320.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "15/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 1937.89,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "15/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 1640.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "15/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 1000.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "15/01/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 1432.18,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "16/01/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 500.0,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "16/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 160.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "16/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 160.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "16/01/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 4535.57,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "17/01/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 7101.22,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "19/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 286.74,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "19/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 319.39,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "19/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 450.55,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "19/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 343.33,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "20/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 109.84,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "20/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 148.42,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "20/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 407.81,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "20/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 84.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "20/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 327.2,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "20/01/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 948.5,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "21/01/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 9.0,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "21/01/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 75.0,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "21/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 787.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "21/01/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 20.0,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "21/01/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 972.53,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "22/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 596.28,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "22/01/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 1785.17,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "23/01/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 443.97,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "23/01/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 1865.04,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "24/01/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 1502.9,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "26/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 508.08,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "26/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 149.15,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "26/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 324.73,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "26/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 0.18,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "27/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 156.54,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "27/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 1451.77,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "27/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 93.07,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "27/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 444.42,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "27/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 597.36,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "27/01/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 729.29,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "28/01/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 15.0,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "28/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 60.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "28/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 127.49,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "28/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 125.9,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "28/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 320.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "28/01/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 1731.59,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "29/01/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 330.91,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "29/01/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 2075.64,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "30/01/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 7928.28,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "30/01/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 858.39,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "31/01/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 2607.43,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "01/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 2650.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "02/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Custos vs Vendas",
+    "Valor": 710.78,
+    "Categoria": "Compra de Insumos",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Custos vs Vendas / Cozinha / Bar / Vendas"
+  },
+  {
+    "Data": "02/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Custos vs Vendas",
+    "Valor": 151.9,
+    "Categoria": "Compra de Insumos",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Custos vs Vendas / Cozinha / Bar / Vendas"
+  },
+  {
+    "Data": "02/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Custos vs Vendas",
+    "Valor": 119.9,
+    "Categoria": "Compra de Insumos",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Custos vs Vendas / Cozinha / Bar / Vendas"
+  },
+  {
+    "Data": "03/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 287.72,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "03/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 79.45,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "03/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 113.8,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "03/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 300.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "03/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 605.81,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "03/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 499.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "03/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 132.93,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "03/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 88.06,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "03/02/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 812.11,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "04/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 427.2,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "04/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 566.97,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "04/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 153.44,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "04/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 126.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "04/02/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 649.73,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "05/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 21.32,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "05/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 689.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "05/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 709.58,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "05/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 52.12,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "05/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 99.99,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "05/02/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 40.0,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "05/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 166.44,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "05/02/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 3848.2,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "06/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 217.82,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "06/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 3200.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "06/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 25.9,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "06/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 48.39,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "06/02/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 2064.29,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "07/02/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 1165.51,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "09/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "cartao nu e meli",
+    "Valor": 687.13,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "cartao nu e meli / credito c6 gui"
+  },
+  {
+    "Data": "09/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "cartao nu e meli",
+    "Valor": 254.23,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "cartao nu e meli / credito c6 gui"
+  },
+  {
+    "Data": "09/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "cartao nu e meli",
+    "Valor": 1950.9,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "cartao nu e meli / credito c6 gui"
+  },
+  {
+    "Data": "09/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "cartao nu e meli",
+    "Valor": 1937.96,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "cartao nu e meli / credito c6 gui"
+  },
+  {
+    "Data": "09/02/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "cartao nu e meli",
+    "Valor": 5141.53,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "cartao nu e meli / credito c6 gui"
+  },
+  {
+    "Data": "10/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "cartao c6",
+    "Valor": 195.96,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "cartao c6 / cashback Gui"
+  },
+  {
+    "Data": "10/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "cartao c6",
+    "Valor": 2500.0,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "cartao c6 / cashback Gui"
+  },
+  {
+    "Data": "10/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "cartao c6",
+    "Valor": 610.45,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "cartao c6 / cashback Gui"
+  },
+  {
+    "Data": "10/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "cartao c6",
+    "Valor": 791.22,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "cartao c6 / cashback Gui"
+  },
+  {
+    "Data": "10/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "cartao c6",
+    "Valor": 386.8,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "cartao c6 / cashback Gui"
+  },
+  {
+    "Data": "10/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "cartao c6",
+    "Valor": 211.98,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "cartao c6 / cashback Gui"
+  },
+  {
+    "Data": "10/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "cartao c6",
+    "Valor": 340.0,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "cartao c6 / cashback Gui"
+  },
+  {
+    "Data": "10/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "cartao c6",
+    "Valor": 432.63,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "cartao c6 / cashback Gui"
+  },
+  {
+    "Data": "10/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "cartao c6",
+    "Valor": 9538.73,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "cartao c6 / cashback Gui"
+  },
+  {
+    "Data": "10/02/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "cartao c6",
+    "Valor": 500.0,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "cartao c6 / cashback Gui"
+  },
+  {
+    "Data": "11/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 137.17,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "11/02/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 2225.09,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "12/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 38.99,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "12/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 98.67,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "12/02/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 4658.48,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "13/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 134.62,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "13/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 25.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "13/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 88.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "13/02/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 2129.71,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "14/02/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 375.92,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "15/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "caixinha e vale",
+    "Valor": 2156.23,
+    "Categoria": "Benefícios",
+    "Forma de Pagamento": "Dinheiro / Caixinha",
+    "Descrição": "caixinha e vale"
+  },
+  {
+    "Data": "15/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "caixinha e vale",
+    "Valor": 2320.0,
+    "Categoria": "Benefícios",
+    "Forma de Pagamento": "Dinheiro / Caixinha",
+    "Descrição": "caixinha e vale"
+  },
+  {
+    "Data": "16/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 890.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "16/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 750.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "16/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 500.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "16/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 314.03,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "17/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 137.79,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "17/02/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 2069.09,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "18/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 150.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "18/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 126.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "18/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 265.12,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "18/02/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 752.24,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "19/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 92.65,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "19/02/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 663.92,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "20/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 92.86,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "20/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 45.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "20/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 771.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "20/02/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 30.0,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "21/02/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 3072.22,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "22/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 20.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "23/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 680.95,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "24/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 283.57,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "24/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 200.64,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "24/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 500.28,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "24/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 67.56,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "24/02/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 377.48,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "25/02/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 1144.46,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "26/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 109.84,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "26/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 69.8,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "26/02/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 15.0,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "26/02/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 2539.05,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "27/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 69.8,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "27/02/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 2844.38,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "28/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Caixinha",
+    "Valor": 1415.81,
+    "Categoria": "Salários",
+    "Forma de Pagamento": "Dinheiro / Caixinha",
+    "Descrição": "Caixinha / Salario / VT"
+  },
+  {
+    "Data": "28/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Caixinha",
+    "Valor": 3380.1,
+    "Categoria": "Salários",
+    "Forma de Pagamento": "Dinheiro / Caixinha",
+    "Descrição": "Caixinha / Salario / VT"
+  },
+  {
+    "Data": "28/02/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Caixinha",
+    "Valor": 1099.56,
+    "Categoria": "Salários",
+    "Forma de Pagamento": "Dinheiro / Caixinha",
+    "Descrição": "Caixinha / Salario / VT"
+  },
+  {
+    "Data": "28/02/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Caixinha",
+    "Valor": 3647.84,
+    "Categoria": "Salários",
+    "Forma de Pagamento": "Dinheiro / Caixinha",
+    "Descrição": "Caixinha / Salario / VT"
+  },
+  {
+    "Data": "02/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Custos vs Vendas",
+    "Valor": 138.35,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Nubank",
+    "Descrição": "Custos vs Vendas / Cozinha / Bar / Vendas / Fechamento Nubank / Fechamento MELI"
+  },
+  {
+    "Data": "02/03/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Custos vs Vendas",
+    "Valor": 69.8,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Nubank",
+    "Descrição": "Custos vs Vendas / Cozinha / Bar / Vendas / Fechamento Nubank / Fechamento MELI"
+  },
+  {
+    "Data": "03/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "reembolso cardapio buffalo",
+    "Valor": 236.42,
+    "Categoria": "Estorno ou Cashback de Cartão",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "reembolso cardapio buffalo / SEXTA FEIRA SANTA"
+  },
+  {
+    "Data": "03/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "reembolso cardapio buffalo",
+    "Valor": 320.0,
+    "Categoria": "Estorno ou Cashback de Cartão",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "reembolso cardapio buffalo / SEXTA FEIRA SANTA"
+  },
+  {
+    "Data": "03/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "reembolso cardapio buffalo",
+    "Valor": 21.0,
+    "Categoria": "Estorno ou Cashback de Cartão",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "reembolso cardapio buffalo / SEXTA FEIRA SANTA"
+  },
+  {
+    "Data": "03/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "reembolso cardapio buffalo",
+    "Valor": 54.46,
+    "Categoria": "Estorno ou Cashback de Cartão",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "reembolso cardapio buffalo / SEXTA FEIRA SANTA"
+  },
+  {
+    "Data": "03/03/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "reembolso cardapio buffalo",
+    "Valor": 427.2,
+    "Categoria": "Estorno ou Cashback de Cartão",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "reembolso cardapio buffalo / SEXTA FEIRA SANTA"
+  },
+  {
+    "Data": "03/03/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "reembolso cardapio buffalo",
+    "Valor": 2051.16,
+    "Categoria": "Estorno ou Cashback de Cartão",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "reembolso cardapio buffalo / SEXTA FEIRA SANTA"
+  },
+  {
+    "Data": "04/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 126.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "04/03/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 905.48,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "05/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 689.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "05/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 134.42,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "05/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 653.8,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "05/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 535.6,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "05/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 484.54,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "05/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 99.99,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "05/03/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 30.0,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "05/03/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 1209.69,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "06/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "ALUGUEL",
+    "Valor": 3345.3,
+    "Categoria": "Aluguel de Imóvel",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "ALUGUEL"
+  },
+  {
+    "Data": "06/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "ALUGUEL",
+    "Valor": 224.09,
+    "Categoria": "Aluguel de Imóvel",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "ALUGUEL"
+  },
+  {
+    "Data": "06/03/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "ALUGUEL",
+    "Valor": 923.33,
+    "Categoria": "Aluguel de Imóvel",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "ALUGUEL"
+  },
+  {
+    "Data": "07/03/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 139.55,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "09/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura NUBANK",
+    "Valor": 177.26,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Nubank",
+    "Descrição": "Fatura NUBANK / Fatura MELI"
+  },
+  {
+    "Data": "09/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura NUBANK",
+    "Valor": 205.16,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Nubank",
+    "Descrição": "Fatura NUBANK / Fatura MELI"
+  },
+  {
+    "Data": "09/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura NUBANK",
+    "Valor": 1080.85,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Nubank",
+    "Descrição": "Fatura NUBANK / Fatura MELI"
+  },
+  {
+    "Data": "09/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura NUBANK",
+    "Valor": 2923.74,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Nubank",
+    "Descrição": "Fatura NUBANK / Fatura MELI"
+  },
+  {
+    "Data": "10/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 114.9,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "10/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 371.29,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "10/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 2500.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "10/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 374.74,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "10/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 44.62,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "10/03/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 1016.32,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "11/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 263.63,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "11/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 13.09,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "11/03/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 1609.32,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "12/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 50.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "12/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 4.73,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "12/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 84.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "12/03/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 390.19,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "13/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 289.53,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "13/03/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 2644.91,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "14/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Vale dia 15",
+    "Valor": 2320.0,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Vale dia 15 / Caixinha / Fechamento C6 Gui"
+  },
+  {
+    "Data": "14/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Vale dia 15",
+    "Valor": 1120.98,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Vale dia 15 / Caixinha / Fechamento C6 Gui"
+  },
+  {
+    "Data": "14/03/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vale dia 15",
+    "Valor": 3447.99,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Vale dia 15 / Caixinha / Fechamento C6 Gui"
+  },
+  {
+    "Data": "16/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 890.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "16/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 750.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "16/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 150.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "16/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 500.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "17/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 184.21,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "17/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 320.49,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "17/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 64.93,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "17/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 559.6,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "17/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 59.66,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "17/03/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 894.36,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "18/03/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 948.94,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "19/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Crédito C6",
+    "Valor": 37.13,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Crédito C6"
+  },
+  {
+    "Data": "19/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Crédito C6",
+    "Valor": 30.27,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Crédito C6"
+  },
+  {
+    "Data": "19/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Crédito C6",
+    "Valor": 770.37,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Crédito C6"
+  },
+  {
+    "Data": "19/03/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Crédito C6",
+    "Valor": 6014.62,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Crédito C6"
+  },
+  {
+    "Data": "19/03/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Crédito C6",
+    "Valor": 2169.21,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Crédito C6"
+  },
+  {
+    "Data": "20/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura C6",
+    "Valor": 11388.05,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Fatura C6"
+  },
+  {
+    "Data": "20/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura C6",
+    "Valor": 267.66,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Fatura C6"
+  },
+  {
+    "Data": "20/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura C6",
+    "Valor": 160.0,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Fatura C6"
+  },
+  {
+    "Data": "20/03/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Fatura C6",
+    "Valor": 0.02,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Fatura C6"
+  },
+  {
+    "Data": "20/03/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Fatura C6",
+    "Valor": 3377.8,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Fatura C6"
+  },
+  {
+    "Data": "21/03/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "TIRADENTES",
+    "Valor": 2093.02,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "TIRADENTES"
+  },
+  {
+    "Data": "24/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Premio Buffalo Trace",
+    "Valor": 275.94,
+    "Categoria": "Estorno ou Cashback de Cartão",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Premio Buffalo Trace"
+  },
+  {
+    "Data": "24/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Premio Buffalo Trace",
+    "Valor": 306.19,
+    "Categoria": "Estorno ou Cashback de Cartão",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Premio Buffalo Trace"
+  },
+  {
+    "Data": "24/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Premio Buffalo Trace",
+    "Valor": 294.98,
+    "Categoria": "Estorno ou Cashback de Cartão",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Premio Buffalo Trace"
+  },
+  {
+    "Data": "24/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Premio Buffalo Trace",
+    "Valor": 367.0,
+    "Categoria": "Estorno ou Cashback de Cartão",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Premio Buffalo Trace"
+  },
+  {
+    "Data": "24/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Premio Buffalo Trace",
+    "Valor": 214.8,
+    "Categoria": "Estorno ou Cashback de Cartão",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Premio Buffalo Trace"
+  },
+  {
+    "Data": "24/03/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Premio Buffalo Trace",
+    "Valor": 500.0,
+    "Categoria": "Estorno ou Cashback de Cartão",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Premio Buffalo Trace"
+  },
+  {
+    "Data": "24/03/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Premio Buffalo Trace",
+    "Valor": 556.87,
+    "Categoria": "Estorno ou Cashback de Cartão",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Premio Buffalo Trace"
+  },
+  {
+    "Data": "25/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fechamento C6 PARLOR",
+    "Valor": 45.96,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Fechamento C6 PARLOR"
+  },
+  {
+    "Data": "25/03/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Fechamento C6 PARLOR",
+    "Valor": 1476.56,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Fechamento C6 PARLOR"
+  },
+  {
+    "Data": "26/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 103.62,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "26/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 51.01,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "26/03/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 2840.26,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "27/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 98.2,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "27/03/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 3461.15,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "28/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 62.56,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "28/03/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 2169.72,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "31/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "VT Func",
+    "Valor": 1099.56,
+    "Categoria": "Salários",
+    "Forma de Pagamento": "Dinheiro / Caixinha",
+    "Descrição": "VT Func / Caxinha 01/03 a 15/03 / Salarios Março / aumento eric / Feira ZOLA"
+  },
+  {
+    "Data": "31/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "VT Func",
+    "Valor": 1270.52,
+    "Categoria": "Salários",
+    "Forma de Pagamento": "Dinheiro / Caixinha",
+    "Descrição": "VT Func / Caxinha 01/03 a 15/03 / Salarios Março / aumento eric / Feira ZOLA"
+  },
+  {
+    "Data": "31/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "VT Func",
+    "Valor": 3396.11,
+    "Categoria": "Salários",
+    "Forma de Pagamento": "Dinheiro / Caixinha",
+    "Descrição": "VT Func / Caxinha 01/03 a 15/03 / Salarios Março / aumento eric / Feira ZOLA"
+  },
+  {
+    "Data": "31/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "VT Func",
+    "Valor": 300.0,
+    "Categoria": "Salários",
+    "Forma de Pagamento": "Dinheiro / Caixinha",
+    "Descrição": "VT Func / Caxinha 01/03 a 15/03 / Salarios Março / aumento eric / Feira ZOLA"
+  },
+  {
+    "Data": "31/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "VT Func",
+    "Valor": 200.0,
+    "Categoria": "Salários",
+    "Forma de Pagamento": "Dinheiro / Caixinha",
+    "Descrição": "VT Func / Caxinha 01/03 a 15/03 / Salarios Março / aumento eric / Feira ZOLA"
+  },
+  {
+    "Data": "31/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "VT Func",
+    "Valor": 161.66,
+    "Categoria": "Salários",
+    "Forma de Pagamento": "Dinheiro / Caixinha",
+    "Descrição": "VT Func / Caxinha 01/03 a 15/03 / Salarios Março / aumento eric / Feira ZOLA"
+  },
+  {
+    "Data": "31/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "VT Func",
+    "Valor": 64.93,
+    "Categoria": "Salários",
+    "Forma de Pagamento": "Dinheiro / Caixinha",
+    "Descrição": "VT Func / Caxinha 01/03 a 15/03 / Salarios Março / aumento eric / Feira ZOLA"
+  },
+  {
+    "Data": "31/03/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "VT Func",
+    "Valor": 30.0,
+    "Categoria": "Salários",
+    "Forma de Pagamento": "Dinheiro / Caixinha",
+    "Descrição": "VT Func / Caxinha 01/03 a 15/03 / Salarios Março / aumento eric / Feira ZOLA"
+  },
+  {
+    "Data": "31/03/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "VT Func",
+    "Valor": 775.6,
+    "Categoria": "Salários",
+    "Forma de Pagamento": "Dinheiro / Caixinha",
+    "Descrição": "VT Func / Caxinha 01/03 a 15/03 / Salarios Março / aumento eric / Feira ZOLA"
+  },
+  {
+    "Data": "01/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "dia trabalho",
+    "Valor": 76.37,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "dia trabalho"
+  },
+  {
+    "Data": "01/04/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "dia trabalho",
+    "Valor": 2840.33,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "dia trabalho"
+  },
+  {
+    "Data": "02/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "ALARME",
+    "Valor": 109.97,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "Cartão Nubank",
+    "Descrição": "ALARME / Custos vs Vendas / Cozinha / Bar / Vendas / Fechamento Nubank / Fechamento MELI"
+  },
+  {
+    "Data": "02/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "ALARME",
+    "Valor": 210.91,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "Cartão Nubank",
+    "Descrição": "ALARME / Custos vs Vendas / Cozinha / Bar / Vendas / Fechamento Nubank / Fechamento MELI"
+  },
+  {
+    "Data": "02/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "ALARME",
+    "Valor": 138.35,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "Cartão Nubank",
+    "Descrição": "ALARME / Custos vs Vendas / Cozinha / Bar / Vendas / Fechamento Nubank / Fechamento MELI"
+  },
+  {
+    "Data": "02/04/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "ALARME",
+    "Valor": 642.25,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "Cartão Nubank",
+    "Descrição": "ALARME / Custos vs Vendas / Cozinha / Bar / Vendas / Fechamento Nubank / Fechamento MELI"
+  },
+  {
+    "Data": "03/04/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 794.67,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "04/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "SABESP",
+    "Valor": 356.32,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "SABESP"
+  },
+  {
+    "Data": "04/04/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "SABESP",
+    "Valor": 784.89,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "SABESP"
+  },
+  {
+    "Data": "05/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura Vivo",
+    "Valor": 99.99,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "Fatura Vivo"
+  },
+  {
+    "Data": "06/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "ALUGUEL",
+    "Valor": 3345.3,
+    "Categoria": "Aluguel de Equipamento",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "ALUGUEL / MAQ. GELO"
+  },
+  {
+    "Data": "06/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "ALUGUEL",
+    "Valor": 689.0,
+    "Categoria": "Aluguel de Equipamento",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "ALUGUEL / MAQ. GELO"
+  },
+  {
+    "Data": "06/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "ALUGUEL",
+    "Valor": 239.7,
+    "Categoria": "Aluguel de Equipamento",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "ALUGUEL / MAQ. GELO"
+  },
+  {
+    "Data": "07/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura MELI",
+    "Valor": 792.56,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Mercado Pago",
+    "Descrição": "Fatura MELI / reembolso guest caso / freela Raury"
+  },
+  {
+    "Data": "07/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura MELI",
+    "Valor": 168.19,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Mercado Pago",
+    "Descrição": "Fatura MELI / reembolso guest caso / freela Raury"
+  },
+  {
+    "Data": "07/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura MELI",
+    "Valor": 421.4,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Mercado Pago",
+    "Descrição": "Fatura MELI / reembolso guest caso / freela Raury"
+  },
+  {
+    "Data": "07/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura MELI",
+    "Valor": 113.8,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Mercado Pago",
+    "Descrição": "Fatura MELI / reembolso guest caso / freela Raury"
+  },
+  {
+    "Data": "07/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura MELI",
+    "Valor": 5685.26,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Mercado Pago",
+    "Descrição": "Fatura MELI / reembolso guest caso / freela Raury"
+  },
+  {
+    "Data": "07/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura MELI",
+    "Valor": 160.0,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Mercado Pago",
+    "Descrição": "Fatura MELI / reembolso guest caso / freela Raury"
+  },
+  {
+    "Data": "07/04/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Fatura MELI",
+    "Valor": 264.17,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Mercado Pago",
+    "Descrição": "Fatura MELI / reembolso guest caso / freela Raury"
+  },
+  {
+    "Data": "07/04/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Fatura MELI",
+    "Valor": 721.51,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Mercado Pago",
+    "Descrição": "Fatura MELI / reembolso guest caso / freela Raury"
+  },
+  {
+    "Data": "08/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "ENEL",
+    "Valor": 547.69,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "ENEL"
+  },
+  {
+    "Data": "08/04/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "ENEL",
+    "Valor": 1013.93,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "ENEL"
+  },
+  {
+    "Data": "09/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura NUBANK",
+    "Valor": 2541.7,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Nubank",
+    "Descrição": "Fatura NUBANK"
+  },
+  {
+    "Data": "09/04/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Fatura NUBANK",
+    "Valor": 2432.37,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Nubank",
+    "Descrição": "Fatura NUBANK"
+  },
+  {
+    "Data": "10/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Prolabore Lucas",
+    "Valor": 106.7,
+    "Categoria": "Prólabore",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Prolabore Lucas"
+  },
+  {
+    "Data": "10/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Prolabore Lucas",
+    "Valor": 2132.52,
+    "Categoria": "Prólabore",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Prolabore Lucas"
+  },
+  {
+    "Data": "10/04/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Prolabore Lucas",
+    "Valor": 1708.65,
+    "Categoria": "Prólabore",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Prolabore Lucas"
+  },
+  {
+    "Data": "11/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 18.18,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "11/04/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 4348.88,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "13/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "easy ice gelos",
+    "Valor": 283.42,
+    "Categoria": "Compra de Insumos",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "easy ice gelos"
+  },
+  {
+    "Data": "13/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "easy ice gelos",
+    "Valor": 320.0,
+    "Categoria": "Compra de Insumos",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "easy ice gelos"
+  },
+  {
+    "Data": "14/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Credito C6 dia 20",
+    "Valor": 176.5,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Credito C6 dia 20 / Fechamento C6 Gui"
+  },
+  {
+    "Data": "14/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Credito C6 dia 20",
+    "Valor": 126.0,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Credito C6 dia 20 / Fechamento C6 Gui"
+  },
+  {
+    "Data": "14/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Credito C6 dia 20",
+    "Valor": 439.5,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Credito C6 dia 20 / Fechamento C6 Gui"
+  },
+  {
+    "Data": "14/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Credito C6 dia 20",
+    "Valor": 571.48,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Credito C6 dia 20 / Fechamento C6 Gui"
+  },
+  {
+    "Data": "14/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Credito C6 dia 20",
+    "Valor": 307.52,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Credito C6 dia 20 / Fechamento C6 Gui"
+  },
+  {
+    "Data": "14/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Credito C6 dia 20",
+    "Valor": 269.34,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Credito C6 dia 20 / Fechamento C6 Gui"
+  },
+  {
+    "Data": "14/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Credito C6 dia 20",
+    "Valor": 66.07,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Credito C6 dia 20 / Fechamento C6 Gui"
+  },
+  {
+    "Data": "14/04/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Credito C6 dia 20",
+    "Valor": 2910.3,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Credito C6 dia 20 / Fechamento C6 Gui"
+  },
+  {
+    "Data": "14/04/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Credito C6 dia 20",
+    "Valor": 517.33,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Credito C6 dia 20 / Fechamento C6 Gui"
+  },
+  {
+    "Data": "15/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "CILINDRO",
+    "Valor": 150.0,
+    "Categoria": "Aluguel de Equipamento",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "CILINDRO / MAQ. COZINHA / MAQ. BAR / NUTRI / Vale dia 15 / Caixinha / Smart Lixo"
+  },
+  {
+    "Data": "15/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "CILINDRO",
+    "Valor": 890.0,
+    "Categoria": "Aluguel de Equipamento",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "CILINDRO / MAQ. COZINHA / MAQ. BAR / NUTRI / Vale dia 15 / Caixinha / Smart Lixo"
+  },
+  {
+    "Data": "15/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "CILINDRO",
+    "Valor": 750.0,
+    "Categoria": "Aluguel de Equipamento",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "CILINDRO / MAQ. COZINHA / MAQ. BAR / NUTRI / Vale dia 15 / Caixinha / Smart Lixo"
+  },
+  {
+    "Data": "15/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "CILINDRO",
+    "Valor": 500.0,
+    "Categoria": "Aluguel de Equipamento",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "CILINDRO / MAQ. COZINHA / MAQ. BAR / NUTRI / Vale dia 15 / Caixinha / Smart Lixo"
+  },
+  {
+    "Data": "15/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "CILINDRO",
+    "Valor": 79.54,
+    "Categoria": "Aluguel de Equipamento",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "CILINDRO / MAQ. COZINHA / MAQ. BAR / NUTRI / Vale dia 15 / Caixinha / Smart Lixo"
+  },
+  {
+    "Data": "15/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "CILINDRO",
+    "Valor": 2440.0,
+    "Categoria": "Aluguel de Equipamento",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "CILINDRO / MAQ. COZINHA / MAQ. BAR / NUTRI / Vale dia 15 / Caixinha / Smart Lixo"
+  },
+  {
+    "Data": "15/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "CILINDRO",
+    "Valor": 1950.24,
+    "Categoria": "Aluguel de Equipamento",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "CILINDRO / MAQ. COZINHA / MAQ. BAR / NUTRI / Vale dia 15 / Caixinha / Smart Lixo"
+  },
+  {
+    "Data": "15/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "CILINDRO",
+    "Valor": 336.32,
+    "Categoria": "Aluguel de Equipamento",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "CILINDRO / MAQ. COZINHA / MAQ. BAR / NUTRI / Vale dia 15 / Caixinha / Smart Lixo"
+  },
+  {
+    "Data": "15/04/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "CILINDRO",
+    "Valor": 1144.28,
+    "Categoria": "Aluguel de Equipamento",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "CILINDRO / MAQ. COZINHA / MAQ. BAR / NUTRI / Vale dia 15 / Caixinha / Smart Lixo"
+  },
+  {
+    "Data": "16/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Transf. Dinheiro",
+    "Valor": 123.89,
+    "Categoria": "Transferência entre Contas",
+    "Forma de Pagamento": "Dinheiro / Caixinha",
+    "Descrição": "Transf. Dinheiro"
+  },
+  {
+    "Data": "16/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Transf. Dinheiro",
+    "Valor": 0.52,
+    "Categoria": "Transferência entre Contas",
+    "Forma de Pagamento": "Dinheiro / Caixinha",
+    "Descrição": "Transf. Dinheiro"
+  },
+  {
+    "Data": "16/04/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Transf. Dinheiro",
+    "Valor": 280.0,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "Dinheiro / Caixinha",
+    "Descrição": "Transf. Dinheiro"
+  },
+  {
+    "Data": "16/04/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Transf. Dinheiro",
+    "Valor": 2682.61,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "Dinheiro / Caixinha",
+    "Descrição": "Transf. Dinheiro"
+  },
+  {
+    "Data": "17/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 109.63,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "17/04/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 3005.57,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "18/04/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 887.28,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "19/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "caixinha gui e lucas",
+    "Valor": 770.37,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "caixinha gui e lucas / Credito C6 dia 20"
+  },
+  {
+    "Data": "19/04/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "caixinha gui e lucas",
+    "Valor": 9701.0,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "caixinha gui e lucas / Credito C6 dia 20"
+  },
+  {
+    "Data": "20/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura C6",
+    "Valor": 11724.62,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Fatura C6"
+  },
+  {
+    "Data": "21/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "MIYA RP",
+    "Valor": 218.0,
+    "Categoria": "Serviços Prestados",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "MIYA RP"
+  },
+  {
+    "Data": "21/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "MIYA RP",
+    "Valor": 77.81,
+    "Categoria": "Serviços Prestados",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "MIYA RP"
+  },
+  {
+    "Data": "21/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "MIYA RP",
+    "Valor": 2750.0,
+    "Categoria": "Serviços Prestados",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "MIYA RP"
+  },
+  {
+    "Data": "21/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "MIYA RP",
+    "Valor": 51.87,
+    "Categoria": "Serviços Prestados",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "MIYA RP"
+  },
+  {
+    "Data": "21/04/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "MIYA RP",
+    "Valor": 1424.06,
+    "Categoria": "Serviços Prestados",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "MIYA RP"
+  },
+  {
+    "Data": "22/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 439.5,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "22/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 289.25,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "22/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 357.79,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "22/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 123.89,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "22/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 9.57,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "22/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 509.74,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "22/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 110.2,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "22/04/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 487.24,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "23/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Freela Rauri",
+    "Valor": 106.7,
+    "Categoria": "Freelancer",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Freela Rauri"
+  },
+  {
+    "Data": "23/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Freela Rauri",
+    "Valor": 320.0,
+    "Categoria": "Freelancer",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Freela Rauri"
+  },
+  {
+    "Data": "23/04/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Freela Rauri",
+    "Valor": 1260.94,
+    "Categoria": "Freelancer",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Freela Rauri"
+  },
+  {
+    "Data": "24/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 307.82,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "24/04/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 2590.92,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "25/04/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 1996.68,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "27/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 393.5,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "27/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 83.89,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "28/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 62.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "28/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 172.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "28/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 68.2,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "28/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 502.09,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "28/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 549.39,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "28/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 64.13,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "28/04/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 2177.51,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "29/04/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 814.39,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "30/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "VT Func",
+    "Valor": 1099.56,
+    "Categoria": "Salários",
+    "Forma de Pagamento": "Dinheiro / Caixinha",
+    "Descrição": "VT Func / Caxinha 01/04 a 15/04 / Salarios Março"
+  },
+  {
+    "Data": "30/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "VT Func",
+    "Valor": 1248.93,
+    "Categoria": "Salários",
+    "Forma de Pagamento": "Dinheiro / Caixinha",
+    "Descrição": "VT Func / Caxinha 01/04 a 15/04 / Salarios Março"
+  },
+  {
+    "Data": "30/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "VT Func",
+    "Valor": 3498.01,
+    "Categoria": "Salários",
+    "Forma de Pagamento": "Dinheiro / Caixinha",
+    "Descrição": "VT Func / Caxinha 01/04 a 15/04 / Salarios Março"
+  },
+  {
+    "Data": "30/04/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "VT Func",
+    "Valor": 106.7,
+    "Categoria": "Salários",
+    "Forma de Pagamento": "Dinheiro / Caixinha",
+    "Descrição": "VT Func / Caxinha 01/04 a 15/04 / Salarios Março"
+  },
+  {
+    "Data": "30/04/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "VT Func",
+    "Valor": 600.0,
+    "Categoria": "Salários",
+    "Forma de Pagamento": "Dinheiro / Caixinha",
+    "Descrição": "VT Func / Caxinha 01/04 a 15/04 / Salarios Março"
+  },
+  {
+    "Data": "30/04/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "VT Func",
+    "Valor": 3282.0,
+    "Categoria": "Salários",
+    "Forma de Pagamento": "Dinheiro / Caixinha",
+    "Descrição": "VT Func / Caxinha 01/04 a 15/04 / Salarios Março"
+  },
+  {
+    "Data": "01/05/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 500.0,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "01/05/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 1864.03,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "02/05/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Custos vs Vendas",
+    "Valor": 2090.48,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Nubank",
+    "Descrição": "Custos vs Vendas / Cozinha / Bar / Vendas / Fechamento MELI / Fechamento Nubank"
+  },
+  {
+    "Data": "04/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura C6 Parlor",
+    "Valor": 1200.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Fatura C6 Parlor / ALARME"
+  },
+  {
+    "Data": "04/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura C6 Parlor",
+    "Valor": 214.25,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Fatura C6 Parlor / ALARME"
+  },
+  {
+    "Data": "04/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura C6 Parlor",
+    "Valor": 640.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Fatura C6 Parlor / ALARME"
+  },
+  {
+    "Data": "05/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura Vivo",
+    "Valor": 99.99,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "Fatura Vivo / SABESP / MAQ. GELO"
+  },
+  {
+    "Data": "05/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura Vivo",
+    "Valor": 420.44,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "Fatura Vivo / SABESP / MAQ. GELO"
+  },
+  {
+    "Data": "05/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura Vivo",
+    "Valor": 171.79,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "Fatura Vivo / SABESP / MAQ. GELO"
+  },
+  {
+    "Data": "05/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura Vivo",
+    "Valor": 689.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "Fatura Vivo / SABESP / MAQ. GELO"
+  },
+  {
+    "Data": "05/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura Vivo",
+    "Valor": 144.9,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "Fatura Vivo / SABESP / MAQ. GELO"
+  },
+  {
+    "Data": "05/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura Vivo",
+    "Valor": 202.41,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "Fatura Vivo / SABESP / MAQ. GELO"
+  },
+  {
+    "Data": "05/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura Vivo",
+    "Valor": 250.47,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "Fatura Vivo / SABESP / MAQ. GELO"
+  },
+  {
+    "Data": "05/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura Vivo",
+    "Valor": 24.88,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "Fatura Vivo / SABESP / MAQ. GELO"
+  },
+  {
+    "Data": "05/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura Vivo",
+    "Valor": 60.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "Fatura Vivo / SABESP / MAQ. GELO"
+  },
+  {
+    "Data": "05/05/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Fatura Vivo",
+    "Valor": 564.54,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "Fatura Vivo / SABESP / MAQ. GELO"
+  },
+  {
+    "Data": "06/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "ALUGUEL",
+    "Valor": 549.28,
+    "Categoria": "Aluguel de Imóvel",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "ALUGUEL / Credito C6 Gui"
+  },
+  {
+    "Data": "06/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "ALUGUEL",
+    "Valor": 3345.3,
+    "Categoria": "Aluguel de Imóvel",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "ALUGUEL / Credito C6 Gui"
+  },
+  {
+    "Data": "06/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "ALUGUEL",
+    "Valor": 64.08,
+    "Categoria": "Aluguel de Imóvel",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "ALUGUEL / Credito C6 Gui"
+  },
+  {
+    "Data": "06/05/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "ALUGUEL",
+    "Valor": 485.05,
+    "Categoria": "Aluguel de Imóvel",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "ALUGUEL / Credito C6 Gui"
+  },
+  {
+    "Data": "06/05/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "ALUGUEL",
+    "Valor": 1329.34,
+    "Categoria": "Aluguel de Imóvel",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "ALUGUEL / Credito C6 Gui"
+  },
+  {
+    "Data": "07/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura MELI",
+    "Valor": 278.0,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Mercado Pago",
+    "Descrição": "Fatura MELI"
+  },
+  {
+    "Data": "07/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura MELI",
+    "Valor": 4438.88,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Mercado Pago",
+    "Descrição": "Fatura MELI"
+  },
+  {
+    "Data": "07/05/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Fatura MELI",
+    "Valor": 3579.54,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Mercado Pago",
+    "Descrição": "Fatura MELI"
+  },
+  {
+    "Data": "08/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 353.97,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "08/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 100.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "08/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 16.35,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "08/05/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 3884.07,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "09/05/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 3321.27,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "10/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 160.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "10/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 160.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "11/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura Nubank",
+    "Valor": 3836.32,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "Cartão Nubank",
+    "Descrição": "Fatura Nubank / ENEL"
+  },
+  {
+    "Data": "11/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura Nubank",
+    "Valor": 2055.02,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "Cartão Nubank",
+    "Descrição": "Fatura Nubank / ENEL"
+  },
+  {
+    "Data": "11/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura Nubank",
+    "Valor": 2231.68,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "Cartão Nubank",
+    "Descrição": "Fatura Nubank / ENEL"
+  },
+  {
+    "Data": "12/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 243.05,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "12/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 328.8,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "12/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 253.93,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "12/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 263.72,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "12/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 302.5,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "12/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 66.5,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "12/05/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 1994.76,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "13/05/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Fechamento C6 Gui",
+    "Valor": 1585.55,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Fechamento C6 Gui"
+  },
+  {
+    "Data": "14/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Credito C6 Gui",
+    "Valor": 248.0,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Credito C6 Gui / "
+  },
+  {
+    "Data": "14/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Credito C6 Gui",
+    "Valor": 82.12,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Credito C6 Gui / "
+  },
+  {
+    "Data": "14/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Credito C6 Gui",
+    "Valor": 100.14,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Credito C6 Gui / "
+  },
+  {
+    "Data": "14/05/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Credito C6 Gui",
+    "Valor": 2716.28,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Credito C6 Gui / "
+  },
+  {
+    "Data": "14/05/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Credito C6 Gui",
+    "Valor": 765.54,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Credito C6 Gui / "
+  },
+  {
+    "Data": "15/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "CILINDRO",
+    "Valor": 150.0,
+    "Categoria": "Aluguel de Equipamento",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "CILINDRO / MAQ. COZINHA / MAQ. BAR / NUTRI / VALE / CAIXINHA / LIXO"
+  },
+  {
+    "Data": "15/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "CILINDRO",
+    "Valor": 890.0,
+    "Categoria": "Aluguel de Equipamento",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "CILINDRO / MAQ. COZINHA / MAQ. BAR / NUTRI / VALE / CAIXINHA / LIXO"
+  },
+  {
+    "Data": "15/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "CILINDRO",
+    "Valor": 750.0,
+    "Categoria": "Aluguel de Equipamento",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "CILINDRO / MAQ. COZINHA / MAQ. BAR / NUTRI / VALE / CAIXINHA / LIXO"
+  },
+  {
+    "Data": "15/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "CILINDRO",
+    "Valor": 500.0,
+    "Categoria": "Aluguel de Equipamento",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "CILINDRO / MAQ. COZINHA / MAQ. BAR / NUTRI / VALE / CAIXINHA / LIXO"
+  },
+  {
+    "Data": "15/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "CILINDRO",
+    "Valor": 2440.0,
+    "Categoria": "Aluguel de Equipamento",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "CILINDRO / MAQ. COZINHA / MAQ. BAR / NUTRI / VALE / CAIXINHA / LIXO"
+  },
+  {
+    "Data": "15/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "CILINDRO",
+    "Valor": 1570.83,
+    "Categoria": "Aluguel de Equipamento",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "CILINDRO / MAQ. COZINHA / MAQ. BAR / NUTRI / VALE / CAIXINHA / LIXO"
+  },
+  {
+    "Data": "15/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "CILINDRO",
+    "Valor": 350.0,
+    "Categoria": "Aluguel de Equipamento",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "CILINDRO / MAQ. COZINHA / MAQ. BAR / NUTRI / VALE / CAIXINHA / LIXO"
+  },
+  {
+    "Data": "15/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "CILINDRO",
+    "Valor": 193.42,
+    "Categoria": "Aluguel de Equipamento",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "CILINDRO / MAQ. COZINHA / MAQ. BAR / NUTRI / VALE / CAIXINHA / LIXO"
+  },
+  {
+    "Data": "15/05/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "CILINDRO",
+    "Valor": 6614.15,
+    "Categoria": "Aluguel de Equipamento",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "CILINDRO / MAQ. COZINHA / MAQ. BAR / NUTRI / VALE / CAIXINHA / LIXO"
+  },
+  {
+    "Data": "16/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 85.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "16/05/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 1525.47,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "17/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 771.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "18/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 399.1,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "18/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 269.7,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "19/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Credito C6 Gui",
+    "Valor": 182.86,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Credito C6 Gui"
+  },
+  {
+    "Data": "19/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Credito C6 Gui",
+    "Valor": 334.23,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Credito C6 Gui"
+  },
+  {
+    "Data": "19/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Credito C6 Gui",
+    "Valor": 254.4,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Credito C6 Gui"
+  },
+  {
+    "Data": "19/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Credito C6 Gui",
+    "Valor": 493.49,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Credito C6 Gui"
+  },
+  {
+    "Data": "19/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Credito C6 Gui",
+    "Valor": 126.0,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Credito C6 Gui"
+  },
+  {
+    "Data": "19/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Credito C6 Gui",
+    "Valor": 153.29,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Credito C6 Gui"
+  },
+  {
+    "Data": "19/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Credito C6 Gui",
+    "Valor": 137.94,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Credito C6 Gui"
+  },
+  {
+    "Data": "19/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Credito C6 Gui",
+    "Valor": 562.67,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Credito C6 Gui"
+  },
+  {
+    "Data": "19/05/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Credito C6 Gui",
+    "Valor": 14794.02,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Credito C6 Gui"
+  },
+  {
+    "Data": "19/05/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Credito C6 Gui",
+    "Valor": 376.84,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Credito C6 Gui"
+  },
+  {
+    "Data": "20/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura C6",
+    "Valor": 17323.76,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Fatura C6 / MIYA RP"
+  },
+  {
+    "Data": "20/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura C6",
+    "Valor": 2750.0,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Fatura C6 / MIYA RP"
+  },
+  {
+    "Data": "20/05/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Fatura C6",
+    "Valor": 1415.78,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Fatura C6 / MIYA RP"
+  },
+  {
+    "Data": "21/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 50.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "21/05/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 1393.96,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "22/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "DIAGEO PARECELA 1",
+    "Valor": 232.37,
+    "Categoria": "Transferência entre Sócios",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "DIAGEO PARECELA 1"
+  },
+  {
+    "Data": "22/05/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "DIAGEO PARECELA 1",
+    "Valor": 10000.0,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "DIAGEO PARECELA 1"
+  },
+  {
+    "Data": "22/05/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "DIAGEO PARECELA 1",
+    "Valor": 2675.29,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "DIAGEO PARECELA 1"
+  },
+  {
+    "Data": "23/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "adiantameno GUTO",
+    "Valor": 200.0,
+    "Categoria": "Prólabore",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "adiantameno GUTO"
+  },
+  {
+    "Data": "23/05/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "adiantameno GUTO",
+    "Valor": 879.02,
+    "Categoria": "Prólabore",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "adiantameno GUTO"
+  },
+  {
+    "Data": "25/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "compra prateleiras",
+    "Valor": 346.14,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "compra prateleiras / Fechamento C6 PARLOR"
+  },
+  {
+    "Data": "26/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 205.94,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "26/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 108.17,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "26/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 394.13,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "26/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 1061.88,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "26/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 78.32,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "26/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 126.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "26/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 290.6,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "26/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 137.76,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "26/05/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 556.9,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "27/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 83.35,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "27/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 48.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "27/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 45.08,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "27/05/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 1045.79,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "28/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 33.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "28/05/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 2796.22,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "29/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 67.01,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "30/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "VT Func",
+    "Valor": 1099.56,
+    "Categoria": "Salários",
+    "Forma de Pagamento": "Dinheiro / Caixinha",
+    "Descrição": "VT Func / Caxinha 01/05 a 15/05 / Salarios Maio"
+  },
+  {
+    "Data": "30/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "VT Func",
+    "Valor": 1948.28,
+    "Categoria": "Salários",
+    "Forma de Pagamento": "Dinheiro / Caixinha",
+    "Descrição": "VT Func / Caxinha 01/05 a 15/05 / Salarios Maio"
+  },
+  {
+    "Data": "30/05/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "VT Func",
+    "Valor": 3692.0,
+    "Categoria": "Salários",
+    "Forma de Pagamento": "Dinheiro / Caixinha",
+    "Descrição": "VT Func / Caxinha 01/05 a 15/05 / Salarios Maio"
+  },
+  {
+    "Data": "30/05/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "VT Func",
+    "Valor": 6431.68,
+    "Categoria": "Salários",
+    "Forma de Pagamento": "Dinheiro / Caixinha",
+    "Descrição": "VT Func / Caxinha 01/05 a 15/05 / Salarios Maio"
+  },
+  {
+    "Data": "01/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 463.54,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "01/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 239.8,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "01/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 40.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "02/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Custos vs Vendas",
+    "Valor": 317.92,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Nubank",
+    "Descrição": "Custos vs Vendas / Cozinha / Bar / Vendas / Fechamento MELI / Fechamento Nubank"
+  },
+  {
+    "Data": "02/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Custos vs Vendas",
+    "Valor": 214.25,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Nubank",
+    "Descrição": "Custos vs Vendas / Cozinha / Bar / Vendas / Fechamento MELI / Fechamento Nubank"
+  },
+  {
+    "Data": "02/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Custos vs Vendas",
+    "Valor": 195.43,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Nubank",
+    "Descrição": "Custos vs Vendas / Cozinha / Bar / Vendas / Fechamento MELI / Fechamento Nubank"
+  },
+  {
+    "Data": "02/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Custos vs Vendas",
+    "Valor": 555.49,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Nubank",
+    "Descrição": "Custos vs Vendas / Cozinha / Bar / Vendas / Fechamento MELI / Fechamento Nubank"
+  },
+  {
+    "Data": "02/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Custos vs Vendas",
+    "Valor": 322.51,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Nubank",
+    "Descrição": "Custos vs Vendas / Cozinha / Bar / Vendas / Fechamento MELI / Fechamento Nubank"
+  },
+  {
+    "Data": "02/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Custos vs Vendas",
+    "Valor": 68.96,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Nubank",
+    "Descrição": "Custos vs Vendas / Cozinha / Bar / Vendas / Fechamento MELI / Fechamento Nubank"
+  },
+  {
+    "Data": "02/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Custos vs Vendas",
+    "Valor": 48.92,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Nubank",
+    "Descrição": "Custos vs Vendas / Cozinha / Bar / Vendas / Fechamento MELI / Fechamento Nubank"
+  },
+  {
+    "Data": "02/06/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Custos vs Vendas",
+    "Valor": 3004.49,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Nubank",
+    "Descrição": "Custos vs Vendas / Cozinha / Bar / Vendas / Fechamento MELI / Fechamento Nubank"
+  },
+  {
+    "Data": "03/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "gelao",
+    "Valor": 320.0,
+    "Categoria": "Compra de Insumos",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "gelao"
+  },
+  {
+    "Data": "03/06/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "gelao",
+    "Valor": 1411.78,
+    "Categoria": "Compra de Insumos",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "gelao"
+  },
+  {
+    "Data": "04/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 70.38,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "04/06/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 2438.21,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "05/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura Vivo",
+    "Valor": 99.99,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "Fatura Vivo / MAQ. GELO / SABESP / JOGO 17h"
+  },
+  {
+    "Data": "05/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura Vivo",
+    "Valor": 689.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "Fatura Vivo / MAQ. GELO / SABESP / JOGO 17h"
+  },
+  {
+    "Data": "05/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura Vivo",
+    "Valor": 452.5,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "Fatura Vivo / MAQ. GELO / SABESP / JOGO 17h"
+  },
+  {
+    "Data": "05/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura Vivo",
+    "Valor": 87.16,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "Fatura Vivo / MAQ. GELO / SABESP / JOGO 17h"
+  },
+  {
+    "Data": "05/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura Vivo",
+    "Valor": 204.9,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "Fatura Vivo / MAQ. GELO / SABESP / JOGO 17h"
+  },
+  {
+    "Data": "05/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura Vivo",
+    "Valor": 195.84,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "Fatura Vivo / MAQ. GELO / SABESP / JOGO 17h"
+  },
+  {
+    "Data": "06/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Ana Arquiteta",
+    "Valor": 2300.0,
+    "Categoria": "Serviços Prestados",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Ana Arquiteta"
+  },
+  {
+    "Data": "06/06/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Ana Arquiteta",
+    "Valor": 4483.03,
+    "Categoria": "Serviços Prestados",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Ana Arquiteta"
+  },
+  {
+    "Data": "08/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "ENEL",
+    "Valor": 2369.8,
+    "Categoria": "Aluguel de Imóvel",
+    "Forma de Pagamento": "Cartão Mercado Pago",
+    "Descrição": "ENEL / Fatura MELI / ALUGUEL / TAXA RESERVA"
+  },
+  {
+    "Data": "08/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "ENEL",
+    "Valor": 5907.22,
+    "Categoria": "Aluguel de Imóvel",
+    "Forma de Pagamento": "Cartão Mercado Pago",
+    "Descrição": "ENEL / Fatura MELI / ALUGUEL / TAXA RESERVA"
+  },
+  {
+    "Data": "08/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "ENEL",
+    "Valor": 3345.3,
+    "Categoria": "Aluguel de Imóvel",
+    "Forma de Pagamento": "Cartão Mercado Pago",
+    "Descrição": "ENEL / Fatura MELI / ALUGUEL / TAXA RESERVA"
+  },
+  {
+    "Data": "08/06/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "ENEL",
+    "Valor": 150.0,
+    "Categoria": "Aluguel de Imóvel",
+    "Forma de Pagamento": "Cartão Mercado Pago",
+    "Descrição": "ENEL / Fatura MELI / ALUGUEL / TAXA RESERVA"
+  },
+  {
+    "Data": "09/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura Nubank",
+    "Valor": 7000.81,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Nubank",
+    "Descrição": "Fatura Nubank / TAXA RESERVA"
+  },
+  {
+    "Data": "09/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura Nubank",
+    "Valor": 351.02,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Nubank",
+    "Descrição": "Fatura Nubank / TAXA RESERVA"
+  },
+  {
+    "Data": "09/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura Nubank",
+    "Valor": 331.29,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Nubank",
+    "Descrição": "Fatura Nubank / TAXA RESERVA"
+  },
+  {
+    "Data": "09/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura Nubank",
+    "Valor": 113.8,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Nubank",
+    "Descrição": "Fatura Nubank / TAXA RESERVA"
+  },
+  {
+    "Data": "09/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura Nubank",
+    "Valor": 141.28,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Nubank",
+    "Descrição": "Fatura Nubank / TAXA RESERVA"
+  },
+  {
+    "Data": "09/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura Nubank",
+    "Valor": 54.8,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Nubank",
+    "Descrição": "Fatura Nubank / TAXA RESERVA"
+  },
+  {
+    "Data": "09/06/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Fatura Nubank",
+    "Valor": 150.0,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Nubank",
+    "Descrição": "Fatura Nubank / TAXA RESERVA"
+  },
+  {
+    "Data": "09/06/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Fatura Nubank",
+    "Valor": 646.78,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Nubank",
+    "Descrição": "Fatura Nubank / TAXA RESERVA"
+  },
+  {
+    "Data": "10/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura LUCAS",
+    "Valor": 3043.6,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Fatura LUCAS / TAXA RESERVA"
+  },
+  {
+    "Data": "10/06/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Fatura LUCAS",
+    "Valor": 150.0,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Fatura LUCAS / TAXA RESERVA"
+  },
+  {
+    "Data": "10/06/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Fatura LUCAS",
+    "Valor": 400.0,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Fatura LUCAS / TAXA RESERVA"
+  },
+  {
+    "Data": "10/06/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Fatura LUCAS",
+    "Valor": 2894.97,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Fatura LUCAS / TAXA RESERVA"
+  },
+  {
+    "Data": "11/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "TAXA RESERVA",
+    "Valor": 85.94,
+    "Categoria": "Taxa de Reserva",
+    "Forma de Pagamento": "Cartão Nubank",
+    "Descrição": "TAXA RESERVA / Transferencia GUI NUBANK / Transferencia GUI MELI / JOGO 18h"
+  },
+  {
+    "Data": "11/06/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "TAXA RESERVA",
+    "Valor": 150.0,
+    "Categoria": "Taxa de Reserva",
+    "Forma de Pagamento": "Cartão Nubank",
+    "Descrição": "TAXA RESERVA / Transferencia GUI NUBANK / Transferencia GUI MELI / JOGO 18h"
+  },
+  {
+    "Data": "11/06/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "TAXA RESERVA",
+    "Valor": 150.0,
+    "Categoria": "Taxa de Reserva",
+    "Forma de Pagamento": "Cartão Nubank",
+    "Descrição": "TAXA RESERVA / Transferencia GUI NUBANK / Transferencia GUI MELI / JOGO 18h"
+  },
+  {
+    "Data": "11/06/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "TAXA RESERVA",
+    "Valor": 1293.92,
+    "Categoria": "Taxa de Reserva",
+    "Forma de Pagamento": "Cartão Nubank",
+    "Descrição": "TAXA RESERVA / Transferencia GUI NUBANK / Transferencia GUI MELI / JOGO 18h"
+  },
+  {
+    "Data": "12/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "DIAGEO Parcela 2",
+    "Valor": 156.91,
+    "Categoria": "Transferência entre Sócios",
+    "Forma de Pagamento": "PIX / Transferência",
+    "Descrição": "DIAGEO Parcela 2 / Campari acordo / Aporte Bussola"
+  },
+  {
+    "Data": "12/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "DIAGEO Parcela 2",
+    "Valor": 36.0,
+    "Categoria": "Transferência entre Sócios",
+    "Forma de Pagamento": "PIX / Transferência",
+    "Descrição": "DIAGEO Parcela 2 / Campari acordo / Aporte Bussola"
+  },
+  {
+    "Data": "12/06/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "DIAGEO Parcela 2",
+    "Valor": 1500.0,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Transferência",
+    "Descrição": "DIAGEO Parcela 2 / Campari acordo / Aporte Bussola"
+  },
+  {
+    "Data": "12/06/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "DIAGEO Parcela 2",
+    "Valor": 5000.0,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Transferência",
+    "Descrição": "DIAGEO Parcela 2 / Campari acordo / Aporte Bussola"
+  },
+  {
+    "Data": "12/06/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "DIAGEO Parcela 2",
+    "Valor": 7558.78,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Transferência",
+    "Descrição": "DIAGEO Parcela 2 / Campari acordo / Aporte Bussola"
+  },
+  {
+    "Data": "13/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 50.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "13/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 61.5,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "13/06/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 606.21,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "14/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": NaN,
+    "Valor": 181.16,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": " / Fechamento C6 Gui"
+  },
+  {
+    "Data": "15/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "CILINDRO",
+    "Valor": 150.0,
+    "Categoria": "Aluguel de Equipamento",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "CILINDRO / NUTRI / VALE / CAIXINHA / LIXO / MAQ. COZINHA / MAQ. BAR / JOGO 16h"
+  },
+  {
+    "Data": "15/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "CILINDRO",
+    "Valor": 500.0,
+    "Categoria": "Aluguel de Equipamento",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "CILINDRO / NUTRI / VALE / CAIXINHA / LIXO / MAQ. COZINHA / MAQ. BAR / JOGO 16h"
+  },
+  {
+    "Data": "15/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "CILINDRO",
+    "Valor": 1720.0,
+    "Categoria": "Aluguel de Equipamento",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "CILINDRO / NUTRI / VALE / CAIXINHA / LIXO / MAQ. COZINHA / MAQ. BAR / JOGO 16h"
+  },
+  {
+    "Data": "15/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "CILINDRO",
+    "Valor": 1442.81,
+    "Categoria": "Aluguel de Equipamento",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "CILINDRO / NUTRI / VALE / CAIXINHA / LIXO / MAQ. COZINHA / MAQ. BAR / JOGO 16h"
+  },
+  {
+    "Data": "15/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "CILINDRO",
+    "Valor": 374.21,
+    "Categoria": "Aluguel de Equipamento",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "CILINDRO / NUTRI / VALE / CAIXINHA / LIXO / MAQ. COZINHA / MAQ. BAR / JOGO 16h"
+  },
+  {
+    "Data": "15/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "CILINDRO",
+    "Valor": 890.0,
+    "Categoria": "Aluguel de Equipamento",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "CILINDRO / NUTRI / VALE / CAIXINHA / LIXO / MAQ. COZINHA / MAQ. BAR / JOGO 16h"
+  },
+  {
+    "Data": "15/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "CILINDRO",
+    "Valor": 750.0,
+    "Categoria": "Aluguel de Equipamento",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "CILINDRO / NUTRI / VALE / CAIXINHA / LIXO / MAQ. COZINHA / MAQ. BAR / JOGO 16h"
+  },
+  {
+    "Data": "15/06/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "CILINDRO",
+    "Valor": 2000.0,
+    "Categoria": "Aluguel de Equipamento",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "CILINDRO / NUTRI / VALE / CAIXINHA / LIXO / MAQ. COZINHA / MAQ. BAR / JOGO 16h"
+  },
+  {
+    "Data": "16/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 156.94,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "16/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 53.85,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "16/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 565.39,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "16/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 229.42,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "16/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 221.01,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "16/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 250.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "16/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 25.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "16/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 4.71,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "16/06/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 993.9,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "17/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 160.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "17/06/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 1668.01,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "18/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "caixinha gui e lucas",
+    "Valor": 771.0,
+    "Categoria": "Benefícios",
+    "Forma de Pagamento": "Dinheiro / Caixinha",
+    "Descrição": "caixinha gui e lucas"
+  },
+  {
+    "Data": "18/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "caixinha gui e lucas",
+    "Valor": 30.0,
+    "Categoria": "Benefícios",
+    "Forma de Pagamento": "Dinheiro / Caixinha",
+    "Descrição": "caixinha gui e lucas"
+  },
+  {
+    "Data": "18/06/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "caixinha gui e lucas",
+    "Valor": 2021.18,
+    "Categoria": "Benefícios",
+    "Forma de Pagamento": "Dinheiro / Caixinha",
+    "Descrição": "caixinha gui e lucas"
+  },
+  {
+    "Data": "19/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "JOGO 16h",
+    "Valor": 118.55,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "JOGO 16h"
+  },
+  {
+    "Data": "19/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "JOGO 16h",
+    "Valor": 160.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "JOGO 16h"
+  },
+  {
+    "Data": "19/06/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "JOGO 16h",
+    "Valor": 1354.88,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "JOGO 16h"
+  },
+  {
+    "Data": "20/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 56.28,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "20/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 160.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "20/06/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 3334.16,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "21/06/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "CREDITO C6 GUI",
+    "Valor": 10040.53,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "CREDITO C6 GUI"
+  },
+  {
+    "Data": "22/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura C6",
+    "Valor": 22186.25,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Fatura C6"
+  },
+  {
+    "Data": "22/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura C6",
+    "Valor": 312.2,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Fatura C6"
+  },
+  {
+    "Data": "22/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura C6",
+    "Valor": 162.1,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Fatura C6"
+  },
+  {
+    "Data": "23/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Augusto",
+    "Valor": 439.8,
+    "Categoria": "Prólabore",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Augusto"
+  },
+  {
+    "Data": "23/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Augusto",
+    "Valor": 492.68,
+    "Categoria": "Prólabore",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Augusto"
+  },
+  {
+    "Data": "23/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Augusto",
+    "Valor": 233.3,
+    "Categoria": "Prólabore",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Augusto"
+  },
+  {
+    "Data": "23/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Augusto",
+    "Valor": 1643.45,
+    "Categoria": "Prólabore",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Augusto"
+  },
+  {
+    "Data": "23/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Augusto",
+    "Valor": 225.26,
+    "Categoria": "Prólabore",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Augusto"
+  },
+  {
+    "Data": "23/06/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Augusto",
+    "Valor": 1201.92,
+    "Categoria": "Prólabore",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Augusto"
+  },
+  {
+    "Data": "24/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "MIYA RP",
+    "Valor": 6000.0,
+    "Categoria": "Serviços Prestados",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "MIYA RP"
+  },
+  {
+    "Data": "24/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "MIYA RP",
+    "Valor": 78.4,
+    "Categoria": "Serviços Prestados",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "MIYA RP"
+  },
+  {
+    "Data": "24/06/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "MIYA RP",
+    "Valor": 1332.29,
+    "Categoria": "Serviços Prestados",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "MIYA RP"
+  },
+  {
+    "Data": "25/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 36.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "26/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 514.97,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "26/06/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 2880.74,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "27/06/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 384.77,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "29/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 586.33,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "29/06/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 4656.48,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "30/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "VT Func",
+    "Valor": 5887.06,
+    "Categoria": "Salários",
+    "Forma de Pagamento": "Dinheiro / Caixinha",
+    "Descrição": "VT Func / Caxinha 01/06 a 15/06 / Salarios Junho"
+  },
+  {
+    "Data": "30/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "VT Func",
+    "Valor": 266.31,
+    "Categoria": "Salários",
+    "Forma de Pagamento": "Dinheiro / Caixinha",
+    "Descrição": "VT Func / Caxinha 01/06 a 15/06 / Salarios Junho"
+  },
+  {
+    "Data": "30/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "VT Func",
+    "Valor": 90.02,
+    "Categoria": "Salários",
+    "Forma de Pagamento": "Dinheiro / Caixinha",
+    "Descrição": "VT Func / Caxinha 01/06 a 15/06 / Salarios Junho"
+  },
+  {
+    "Data": "30/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "VT Func",
+    "Valor": 510.8,
+    "Categoria": "Salários",
+    "Forma de Pagamento": "Dinheiro / Caixinha",
+    "Descrição": "VT Func / Caxinha 01/06 a 15/06 / Salarios Junho"
+  },
+  {
+    "Data": "30/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "VT Func",
+    "Valor": 580.97,
+    "Categoria": "Salários",
+    "Forma de Pagamento": "Dinheiro / Caixinha",
+    "Descrição": "VT Func / Caxinha 01/06 a 15/06 / Salarios Junho"
+  },
+  {
+    "Data": "30/06/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "VT Func",
+    "Valor": 227.98,
+    "Categoria": "Salários",
+    "Forma de Pagamento": "Dinheiro / Caixinha",
+    "Descrição": "VT Func / Caxinha 01/06 a 15/06 / Salarios Junho"
+  },
+  {
+    "Data": "30/06/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "VT Func",
+    "Valor": 796.95,
+    "Categoria": "Salários",
+    "Forma de Pagamento": "Dinheiro / Caixinha",
+    "Descrição": "VT Func / Caxinha 01/06 a 15/06 / Salarios Junho"
+  },
+  {
+    "Data": "01/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura C6 Parlor",
+    "Valor": 89.9,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Fatura C6 Parlor"
+  },
+  {
+    "Data": "02/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "ALARME",
+    "Valor": 214.25,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "ALARME / Custos vs Vendas / Cozinha / Bar / Vendas"
+  },
+  {
+    "Data": "02/07/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "ALARME",
+    "Valor": 4820.12,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "ALARME / Custos vs Vendas / Cozinha / Bar / Vendas"
+  },
+  {
+    "Data": "02/07/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "ALARME",
+    "Valor": 1794.51,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "ALARME / Custos vs Vendas / Cozinha / Bar / Vendas"
+  },
+  {
+    "Data": "03/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "gelao",
+    "Valor": 320.0,
+    "Categoria": "Compra de Insumos",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "gelao"
+  },
+  {
+    "Data": "03/07/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "gelao",
+    "Valor": 3392.74,
+    "Categoria": "Compra de Insumos",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "gelao"
+  },
+  {
+    "Data": "04/07/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 4035.94,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "05/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "SABESP",
+    "Valor": 452.5,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "SABESP"
+  },
+  {
+    "Data": "06/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura Vivo",
+    "Valor": 586.32,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "Fatura Vivo / MAQ. GELO / ALUGUEL"
+  },
+  {
+    "Data": "06/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura Vivo",
+    "Valor": 99.99,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "Fatura Vivo / MAQ. GELO / ALUGUEL"
+  },
+  {
+    "Data": "06/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura Vivo",
+    "Valor": 689.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "Fatura Vivo / MAQ. GELO / ALUGUEL"
+  },
+  {
+    "Data": "06/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura Vivo",
+    "Valor": 3407.7,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "Fatura Vivo / MAQ. GELO / ALUGUEL"
+  },
+  {
+    "Data": "06/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura Vivo",
+    "Valor": 167.41,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "Fatura Vivo / MAQ. GELO / ALUGUEL"
+  },
+  {
+    "Data": "06/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura Vivo",
+    "Valor": 0.4,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "Fatura Vivo / MAQ. GELO / ALUGUEL"
+  },
+  {
+    "Data": "07/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura MELI",
+    "Valor": 412.23,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Mercado Pago",
+    "Descrição": "Fatura MELI / CAFÉ"
+  },
+  {
+    "Data": "07/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura MELI",
+    "Valor": 897.3,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Mercado Pago",
+    "Descrição": "Fatura MELI / CAFÉ"
+  },
+  {
+    "Data": "07/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura MELI",
+    "Valor": 91.33,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Mercado Pago",
+    "Descrição": "Fatura MELI / CAFÉ"
+  },
+  {
+    "Data": "07/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura MELI",
+    "Valor": 126.0,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Mercado Pago",
+    "Descrição": "Fatura MELI / CAFÉ"
+  },
+  {
+    "Data": "07/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura MELI",
+    "Valor": 190.0,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Mercado Pago",
+    "Descrição": "Fatura MELI / CAFÉ"
+  },
+  {
+    "Data": "07/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura MELI",
+    "Valor": 5817.78,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Mercado Pago",
+    "Descrição": "Fatura MELI / CAFÉ"
+  },
+  {
+    "Data": "07/07/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Fatura MELI",
+    "Valor": 3540.0,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Mercado Pago",
+    "Descrição": "Fatura MELI / CAFÉ"
+  },
+  {
+    "Data": "07/07/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Fatura MELI",
+    "Valor": 1363.75,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Mercado Pago",
+    "Descrição": "Fatura MELI / CAFÉ"
+  },
+  {
+    "Data": "08/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "ENEL",
+    "Valor": 210.18,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "ENEL / café / caixa / total"
+  },
+  {
+    "Data": "08/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "ENEL",
+    "Valor": 1215.75,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "ENEL / café / caixa / total"
+  },
+  {
+    "Data": "08/07/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "ENEL",
+    "Valor": 750.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "ENEL / café / caixa / total"
+  },
+  {
+    "Data": "08/07/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "ENEL",
+    "Valor": 1482.16,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "ENEL / café / caixa / total"
+  },
+  {
+    "Data": "09/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 63.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "09/07/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 1754.39,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "10/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura Nubank",
+    "Valor": 236.91,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Nubank",
+    "Descrição": "Fatura Nubank / CAFÉ"
+  },
+  {
+    "Data": "10/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura Nubank",
+    "Valor": 3483.04,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Nubank",
+    "Descrição": "Fatura Nubank / CAFÉ"
+  },
+  {
+    "Data": "10/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura Nubank",
+    "Valor": 2597.0,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Nubank",
+    "Descrição": "Fatura Nubank / CAFÉ"
+  },
+  {
+    "Data": "10/07/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Fatura Nubank",
+    "Valor": 1030.0,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Nubank",
+    "Descrição": "Fatura Nubank / CAFÉ"
+  },
+  {
+    "Data": "10/07/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Fatura Nubank",
+    "Valor": 2694.42,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão Nubank",
+    "Descrição": "Fatura Nubank / CAFÉ"
+  },
+  {
+    "Data": "11/07/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 423.74,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "13/07/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Venda banquetas",
+    "Valor": 245.0,
+    "Categoria": "Compra de Equipamentos",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Venda banquetas"
+  },
+  {
+    "Data": "14/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 140.38,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "14/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 268.89,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "14/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 481.78,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "14/07/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 1821.42,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "15/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "CILINDRO",
+    "Valor": 150.0,
+    "Categoria": "Aluguel de Equipamento",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "CILINDRO / NUTRI / LIXO / MAQ. COZINHA / MAQ. BAR / VALE / CAIXINHA / CAFÉ"
+  },
+  {
+    "Data": "15/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "CILINDRO",
+    "Valor": 500.0,
+    "Categoria": "Aluguel de Equipamento",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "CILINDRO / NUTRI / LIXO / MAQ. COZINHA / MAQ. BAR / VALE / CAIXINHA / CAFÉ"
+  },
+  {
+    "Data": "15/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "CILINDRO",
+    "Valor": 416.84,
+    "Categoria": "Aluguel de Equipamento",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "CILINDRO / NUTRI / LIXO / MAQ. COZINHA / MAQ. BAR / VALE / CAIXINHA / CAFÉ"
+  },
+  {
+    "Data": "15/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "CILINDRO",
+    "Valor": 890.0,
+    "Categoria": "Aluguel de Equipamento",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "CILINDRO / NUTRI / LIXO / MAQ. COZINHA / MAQ. BAR / VALE / CAIXINHA / CAFÉ"
+  },
+  {
+    "Data": "15/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "CILINDRO",
+    "Valor": 750.0,
+    "Categoria": "Aluguel de Equipamento",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "CILINDRO / NUTRI / LIXO / MAQ. COZINHA / MAQ. BAR / VALE / CAIXINHA / CAFÉ"
+  },
+  {
+    "Data": "15/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "CILINDRO",
+    "Valor": 50.0,
+    "Categoria": "Aluguel de Equipamento",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "CILINDRO / NUTRI / LIXO / MAQ. COZINHA / MAQ. BAR / VALE / CAIXINHA / CAFÉ"
+  },
+  {
+    "Data": "15/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "CILINDRO",
+    "Valor": 2600.0,
+    "Categoria": "Aluguel de Equipamento",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "CILINDRO / NUTRI / LIXO / MAQ. COZINHA / MAQ. BAR / VALE / CAIXINHA / CAFÉ"
+  },
+  {
+    "Data": "15/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "CILINDRO",
+    "Valor": 1251.51,
+    "Categoria": "Aluguel de Equipamento",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "CILINDRO / NUTRI / LIXO / MAQ. COZINHA / MAQ. BAR / VALE / CAIXINHA / CAFÉ"
+  },
+  {
+    "Data": "15/07/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "CILINDRO",
+    "Valor": 2310.0,
+    "Categoria": "Aluguel de Equipamento",
+    "Forma de Pagamento": "Boleto / Débito",
+    "Descrição": "CILINDRO / NUTRI / LIXO / MAQ. COZINHA / MAQ. BAR / VALE / CAIXINHA / CAFÉ"
+  },
+  {
+    "Data": "16/07/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 2988.11,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "17/07/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 90.4,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "18/07/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 7912.45,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "20/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura C6",
+    "Valor": 3800.0,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Fatura C6 / MIYA RP"
+  },
+  {
+    "Data": "20/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Fatura C6",
+    "Valor": 6000.0,
+    "Categoria": "Pagamento de Cartão de Crédito",
+    "Forma de Pagamento": "Cartão C6",
+    "Descrição": "Fatura C6 / MIYA RP"
+  },
+  {
+    "Data": "21/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 189.06,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "21/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 366.59,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "21/07/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 2400.93,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "22/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 278.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "22/07/2026",
+    "Tipo": "Entrada",
+    "Nome do Lançamento": "Vendas da Operação",
+    "Valor": 2853.9,
+    "Categoria": "Vendas da Operação",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Vendas da Operação"
+  },
+  {
+    "Data": "24/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 55.74,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "28/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 176.14,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "28/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 749.06,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "28/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 160.6,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "28/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 278.47,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "28/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 126.0,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  },
+  {
+    "Data": "30/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "FOPA+VT+CAIXINHA",
+    "Valor": 6656.93,
+    "Categoria": "Benefícios",
+    "Forma de Pagamento": "Dinheiro / Caixinha",
+    "Descrição": "FOPA+VT+CAIXINHA"
+  },
+  {
+    "Data": "31/07/2026",
+    "Tipo": "Saída",
+    "Nome do Lançamento": "Despesas Operacionais",
+    "Valor": 134.78,
+    "Categoria": "Contas Fixas",
+    "Forma de Pagamento": "PIX / Conta Corrente",
+    "Descrição": "Despesas Operacionais"
+  }
+]
