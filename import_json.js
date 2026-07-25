@@ -23,7 +23,8 @@ async function run() {
     const dateStr = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`;
     
     const value = typeof item.Valor === 'string' ? parseFloat(item.Valor.replace(',', '.')) : item.Valor;
-    const type = value >= 0 ? 'entrada' : 'saida';
+    const typeStr = (item.Tipo || '').toLowerCase();
+    const type = (typeStr.includes('saída') || typeStr.includes('saida')) ? 'saida' : 'entrada';
     const amount = Math.abs(value);
     
     const title = item.Tipo || (value >= 0 ? 'Entrada' : 'Saída');
