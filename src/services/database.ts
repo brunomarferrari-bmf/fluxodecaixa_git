@@ -1,6 +1,6 @@
 /**
  * Supabase & Dual-Layer Shared Establishment Database Service
- * Provides 100% persistent shared data across all users and sessions.
+ * Provides 100% persistent shared data across all authorized users and sessions.
  * Implements Union-Merge pattern (localStorage + Supabase pool) so no entry is ever lost or erased.
  */
 import { supabase } from './supabase';
@@ -15,13 +15,13 @@ const STORAGE_KEYS = {
   TRANSFERS: 'theparlor_account_transfers_v1',
 };
 
-// Helper: get current user id (if available)
-async function getUserId(): Promise<string> {
+// Helper: get current user id (if active session)
+async function getUserId(): Promise<string | null> {
   try {
     const { data: { user } } = await supabase.auth.getUser();
-    return user?.id || 'shared_establishment';
+    return user?.id || null;
   } catch {
-    return 'shared_establishment';
+    return null;
   }
 }
 
@@ -65,9 +65,13 @@ export async function upsertTransaction(tx: Transaction): Promise<void> {
 
   localStorage.setItem(STORAGE_KEYS.TRANSACTIONS, JSON.stringify(updated));
 
-  // 2. Sync to Supabase
+  // 2. Sync to Supabase if session exists
   try {
     const userId = await getUserId();
+    if (!userId) {
+      console.warn('Sem sessão ativa no Supabase, gravação local apenas.');
+      return;
+    }
     await supabase
       .from('transactions')
       .upsert(transactionToDbRow(tx, userId), { onConflict: 'id' });
@@ -90,6 +94,10 @@ export async function upsertTransactions(txs: Transaction[]): Promise<void> {
   // 2. Sync to Supabase
   try {
     const userId = await getUserId();
+    if (!userId) {
+      console.warn('Sem sessão ativa no Supabase, gravação local apenas.');
+      return;
+    }
     const rows = txs.map((tx) => transactionToDbRow(tx, userId));
     const BATCH = 100;
     for (let i = 0; i < rows.length; i += BATCH) {
@@ -214,6 +222,7 @@ export async function upsertTag(tag: Tag): Promise<void> {
 
   try {
     const userId = await getUserId();
+    if (!userId) return;
     await supabase.from('tags').upsert(tagToDbRow(tag, userId), { onConflict: 'id' });
   } catch {}
 }
@@ -228,6 +237,7 @@ export async function upsertTags(tags: Tag[]): Promise<void> {
 
   try {
     const userId = await getUserId();
+    if (!userId) return;
     const rows = tags.map((t) => tagToDbRow(t, userId));
     await supabase.from('tags').upsert(rows, { onConflict: 'id' });
   } catch {}
@@ -313,6 +323,7 @@ export async function upsertRecurrenceRule(rule: RecurrenceRule): Promise<void> 
 
   try {
     const userId = await getUserId();
+    if (!userId) return;
     await supabase.from('recurrence_rules').upsert(ruleToDbRow(rule, userId), { onConflict: 'id' });
   } catch {}
 }
@@ -327,6 +338,7 @@ export async function upsertRecurrenceRules(rules: RecurrenceRule[]): Promise<vo
 
   try {
     const userId = await getUserId();
+    if (!userId) return;
     const rows = rules.map((r) => ruleToDbRow(r, userId));
     await supabase.from('recurrence_rules').upsert(rows, { onConflict: 'id' });
   } catch {}
@@ -433,6 +445,7 @@ export async function saveUserProfile(profile: UserProfile): Promise<void> {
   localStorage.setItem(STORAGE_KEYS.PROFILE, JSON.stringify(profile));
   try {
     const userId = await getUserId();
+    if (!userId) return;
     await supabase.from('user_profiles').upsert({
       id: userId,
       name: profile.name,
@@ -500,6 +513,7 @@ export async function upsertAccount(account: Account): Promise<void> {
 
   try {
     const userId = await getUserId();
+    if (!userId) return;
     await supabase.from('accounts').upsert({
       id: account.id,
       user_id: userId,
@@ -519,6 +533,7 @@ export async function upsertAccounts(accounts: Account[]): Promise<void> {
 
   try {
     const userId = await getUserId();
+    if (!userId) return;
     const rows = accounts.map((a) => ({
       id: a.id,
       user_id: userId,
@@ -597,6 +612,7 @@ export async function upsertAccountTransfer(transfer: AccountTransfer): Promise<
 
   try {
     const userId = await getUserId();
+    if (!userId) return;
     await supabase.from('account_transfers').upsert({
       id: transfer.id,
       user_id: userId,
